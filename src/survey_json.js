@@ -1,9 +1,9 @@
 import example_1_gradcam_output from "./assets/p2_0232_3.jpg";
 import example_1_gradcam_explanation from "./assets/p2_0232_3_0_Positive_0_00__Grad_Cam___conv2d_1__heatmap_02021_05_26_12_36_05_982491.png";
 
-const xai_question_1 = "The information presented is intuitively understandable"
-const xai_question_2 = "The information presented helps me to make an informed decision"
-const xai_question_3 = "The information presented is useful only if available in realtime"
+const rating_question_1 = "The information presented is intuitively understandable"
+const rating_question_2 = "The information presented helps me to make an informed decision"
+const rating_question_3 = "The information presented is useful only if available in realtime"
 
 const minRateDescription = "Strongly disagree"
 const maxRateDescription = "Strongly agree"
@@ -106,7 +106,7 @@ function create_example(index) {
                         {
                             "type": "rating",
                             "name": "q" + index + "_1",
-                            "title": xai_question_1,
+                            "title": rating_question_1,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
                             "maxRateDescription": maxRateDescription,
@@ -114,7 +114,7 @@ function create_example(index) {
                         {
                             "type": "rating",
                             "name": "q" + index + "_2",
-                            "title": xai_question_2,
+                            "title": rating_question_2,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
                             "maxRateDescription": maxRateDescription
@@ -122,7 +122,7 @@ function create_example(index) {
                         {
                             "type": "rating",
                             "name": "q" + index + "_3",
-                            "title": xai_question_3,
+                            "title": rating_question_3,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
                             "maxRateDescription": maxRateDescription
