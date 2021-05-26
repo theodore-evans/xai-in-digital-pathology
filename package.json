@@ -1,0 +1,28 @@
+{
+  "name": "surveyjs_react_quickstart_new",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.3.1",
+    "jspdf": "1.5.3",
+    "jspdf-autotable": "3.0.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "1.1.4",
+    "react-surveyjs-vas-widget": "github:physera/react-surveyjs-vas-widget",
+    "survey-analytics": "latest",
+    "survey-creator": "latest",
+    "survey-pdf": "latest",
+    "survey-react": "latest",
+    "surveyjs-widgets": "latest",
+    "xlsx": "^0.16.9"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
