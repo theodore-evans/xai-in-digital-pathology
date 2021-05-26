@@ -3,6 +3,7 @@ import * as Survey from "survey-react";
 // import * as widgets from "surveyjs-widgets";
 
 import "survey-react/survey.css";
+// import "./survey.css";
 
 import { json } from "./survey_json.js";
 
@@ -18,6 +19,7 @@ function onComplete(result) {
 
 export function SurveyPage() {
     var model = new Survey.Model(json);
+    model.showProgressBar = 'bottom';
     return (
     <div className="container">
         <h2>Explainability usability study - FGCS Special Issue on XAI in healthcare</h2>
