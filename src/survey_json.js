@@ -1,3 +1,4 @@
+import { JsonMissingTypeError } from "survey-react"
 import {questions} from "./survey_questions.js"
 
 const rating_question_1 = "The information presented is intuitively understandable"
@@ -16,38 +17,24 @@ var json = {
     "requiredText": "*",
     "pages": [
         {
-            "name": "ai_familiarity",
-            "elements": [
-                {
-                    "type": "rating",
-                    "name": "q0_1",
-                    "title": "I use AI solutions regularly in my routine work",
-                    "rateMax": rateMax,
-                    "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription,
-                    "isRequired": answersAreRequired
-                },
-                {
-                    "type": "rating",
-                    "name": "q0_2",
-                    "title": "I am familiar with the use of AI applications in digital pathology",
-                    "rateMax": rateMax,
-                    "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription,
-                    "isRequired": answersAreRequired
-                },
-                {
-                    "type": "rating",
-                    "name": "q0_3",
-                    "title": "I am familiar with technical details of machine learning",
-                    "rateMax": rateMax,
-                    "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription,
-                    "isRequired": answersAreRequired
-                }
-            ]
+            "name": "user_profiling",
+            "elements": []
         }
     ]
+}
+
+function create_user_profiling_page(user_profiling_question){
+    return (
+        {
+            "type": "rating",
+            "name": user_profiling_question.id,
+            "title": user_profiling_question.text,
+            "rateMax": rateMax,
+            "minRateDescription": minRateDescription,
+            "maxRateDescription": maxRateDescription,
+            "isRequired": answersAreRequired
+        }
+    )
 }
 
 // EXAMPLE 1: GradCAM
@@ -132,6 +119,10 @@ function create_example_page(example) {
             ]
         }
     )
+}
+
+for (var user_profiling_question of questions.user_profiling_questions) {
+    json.pages[0].elements.push(create_user_profiling_page(user_profiling_question))
 }
 
 for (var example of questions.examples) {

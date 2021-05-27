@@ -5,6 +5,20 @@ import example_3_cross_validation_explanation from "./assets/p2_0232_3_adipose_d
 import placeholder_image from "./assets/placeholder.png";
 
 export var questions = {
+    "user_profiling_questions" : [
+        { 
+            "id" : "ai_in_routine",
+            "text" : "I use AI solutions regularly in my routine work"
+        },
+        { 
+            "id" : "ai_familiarity",
+            "text" : "I am familiar with the use of AI applications in digital pathology"
+        },
+        { 
+            "id" : "ml_familiarity",
+            "text" : "I am familiar with technical details of machine learning"
+        },
+    ],
     "examples" : [
         {
             "id":"gradcam",
