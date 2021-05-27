@@ -1,4 +1,3 @@
-import { JsonMissingTypeError } from "survey-react"
 import {questions} from "./survey_questions.js"
 
 const rating_question_1 = "The information presented is intuitively understandable"
@@ -110,7 +109,7 @@ function create_example_page(example) {
                         {
                             "type": "comment",
                             "name": "q" + example.id + "_comments",
-                            "title": "Comments (optional)",
+                            "title": "Comments",
                             "rows": comment_rows
                         }
                     ],
