@@ -7,13 +7,13 @@ const rating_question_3 = "The information presented is useful only if available
 const minRateDescription = "Strongly disagree"
 const maxRateDescription = "Strongly agree"
 const rateMax = 7
-const questions_on_new_line = false
+const questionsAreOnNewLine = false
+const answersAreRequired = false
 
 const comment_rows = 2
 
-var number_of_examples = questions.examples.length
-
 var json = {
+    "requiredText": "*",
     "pages": [
         {
             "name": "ai_familiarity",
@@ -24,7 +24,8 @@ var json = {
                     "title": "I use AI solutions regularly in my routine work",
                     "rateMax": rateMax,
                     "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription
+                    "maxRateDescription": maxRateDescription,
+                    "isRequired": answersAreRequired
                 },
                 {
                     "type": "rating",
@@ -32,7 +33,8 @@ var json = {
                     "title": "I am familiar with the use of AI applications in digital pathology",
                     "rateMax": rateMax,
                     "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription
+                    "maxRateDescription": maxRateDescription,
+                    "isRequired": answersAreRequired
                 },
                 {
                     "type": "rating",
@@ -40,7 +42,8 @@ var json = {
                     "title": "I am familiar with technical details of machine learning",
                     "rateMax": rateMax,
                     "minRateDescription": minRateDescription,
-                    "maxRateDescription": maxRateDescription
+                    "maxRateDescription": maxRateDescription,
+                    "isRequired": answersAreRequired
                 }
             ]
         }
@@ -48,24 +51,24 @@ var json = {
 }
 
 // EXAMPLE 1: GradCAM
-function create_example(index) {
+function create_example_page(example) {
     return (
         {
-            "name": "example_" + index,
-            "title": questions.examples[index].description,
+            "name": "example_" + example.id,
+            "title": example.description,
             "elements": [
                 {
                     "type": "panel",
                     "elements": [
                         {
                             "type": "image",
-                            "imageLink": questions.examples[index].output_image,
+                            "imageLink": example.output_image,
                             "imageWidth": "256px",
                             "imageHeight": "256px",
                         },
                         {
                             "type": "html",
-                            "html": questions.examples[index].output_description
+                            "html": example.output_description
                         }
                     ],
                     "width": "300px"
@@ -75,13 +78,13 @@ function create_example(index) {
                     "elements": [
                         {
                             "type": "image",
-                            "imageLink": questions.examples[index].explanation_image,
+                            "imageLink": example.explanation_image,
                             "imageWidth": "256px",
                             "imageHeight": "256px",
                         },
                         {
                             "type": "html",
-                            "html": questions.examples[index].explanation_description
+                            "html": example.explanation_description
                         }
                     ],
                     "width": "300px",
@@ -92,46 +95,47 @@ function create_example(index) {
                     "elements": [
                         {
                             "type": "rating",
-                            "name": "q" + index + "_1",
+                            "name": "q" + example.id + "_1",
                             "title": rating_question_1,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
                             "maxRateDescription": maxRateDescription,
+                            "isRequired": answersAreRequired
                         },
                         {
                             "type": "rating",
-                            "name": "q" + index + "_2",
+                            "name": "q" + example.id + "_2",
                             "title": rating_question_2,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
-                            "maxRateDescription": maxRateDescription
+                            "maxRateDescription": maxRateDescription,
+                            "isRequired": answersAreRequired
                         },
                         {
                             "type": "rating",
-                            "name": "q" + index + "_3",
+                            "name": "q" + example.id + "_3",
                             "title": rating_question_3,
                             "rateMax": rateMax,
                             "minRateDescription": minRateDescription,
-                            "maxRateDescription": maxRateDescription
+                            "maxRateDescription": maxRateDescription,
+                            "isRequired": answersAreRequired
                         },
                         {
                             "type": "comment",
-                            "name": "q" + index + "_comments",
+                            "name": "q" + example.id + "_comments",
                             "title": "Comments (optional)",
                             "rows": comment_rows
                         }
                     ],
-                    "startWithNewLine": questions_on_new_line
+                    "startWithNewLine": questionsAreOnNewLine
                 }
             ]
         }
     )
 }
 
-var i;
-
-for (i = 0; i < number_of_examples; i++) {
-    json.pages.push(create_example(i))
+for (var example of questions.examples) {
+    json.pages.push(create_example_page(example))
 }
 
 export {json};
