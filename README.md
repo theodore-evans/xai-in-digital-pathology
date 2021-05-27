@@ -1,55 +1,27 @@
-# React quickstart boilerplate for SurveyJS: Survey Library and Survey Creator 
+# Usability study for XAI approaches to a sample Ki-67 app
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+Questionnaire supporting a usability case study for submission to [FGCS Special Issue for Explainable AI in Healthcare](https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare).
 
-## How to run this sample application
- - git clone https://github.com/surveyjs/surveyjs_react_quickstart.git
- - cd surveyjs_react_quickstart
- - npm i
- - npm start
- - open http://localhost:3000/ in your web browser
+## Questionnaire contents:
 
+- User profiling questions, collecting data on familiarity with AI applications in pathology, and with machine learning in general
+- 8-10 (TBC) example implementations of explainability methods on a sample Ki-67 app output (some real, some mocked up), with 3 Likert-scale feedback questions to gauge intelligibility, usefulness and importance of timeliness (exact questions TBC)
 
+## Sample screenshot:
 
-You can find the detailed information on how to perform common tasks in [this guide](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+![](project_assets/screenshot.png)
 
-## Add survey component on your page
-```JavaScript
-//In your react App.js or yourComponent.js file add these lines to import
-import * as Survey from "survey-react";
-import "survey-react/survey.css";
+Sample Ki-67 model: [PathnoNet](https://github.com/SHIDCenter/PathoNet), trained for 20 epochs on the training set of [SHIDC-B-Ki-67-V1.0](https://shiraz-hidc.com/service/ki-67-dataset/) and demonstrated with the test set of the same dataset.
 
-class App extends Component {
- //Define Survey JSON
- //Here is the simplest Survey with one text question
- json = {
-  elements: [
-   { type: "text", name: "customerName", title: "What is your name?", isRequired: true}
-  ]
- };
+GradCAM heatmap generated using [Neuroscope-1.0](https://github.com/c3di/neuroscope)
 
- //Define a callback methods on survey complete
- onComplete(survey, options) {
-  //Write survey results into database
-  console.log("Survey results: " + JSON.stringify(survey.data));
- }
- render() {
-  //Create the model and pass it into react Survey component
-  //You may create survey model outside the render function and use it in your App or component
-  //The most model properties are reactive, on their change the component will change UI when needed.
-  var model = new Survey.Model(this.json);
-  return (<Survey.Survey model={model} onComplete={this.onComplete}/>);
-  /*
-  //The alternative way. react Survey component will create survey model internally
-  return (<Survey.Survey json={this.json} onComplete={this.onComplete}/>);
-  */
-  //You may pass model properties directly into component or set it into model
-  // <Survey.Survey model={model} mode="display"/>
-  //or 
-  // model.mode="display"
-  // <Survey.Survey model={model}/>
-  // You may change model properties outside render function. 
-  //If needed react Survey Component will change its behavior and change UI.
- }
-} 
+This project was adapted from the [SurveyJS for React quickstart project](https://github.com/surveyjs/surveyjs_react_quickstart.git)
+
+## How to view the survey
 ```
+git clone git@gitlab.cc-asp.fraunhofer.de:empaia/tu-berlin/xai-usability-survey.git
+cd surveyjs_react_quickstart
+npm i
+npm start
+```
+Open http://localhost:3000/ in your web browser
