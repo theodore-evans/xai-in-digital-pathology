@@ -1,19 +1,22 @@
-import example_app_output from "./assets/p2_0232_3.jpg";
-import example_app_output_with_selection from "./assets/p2_0232_3_with_selection.png";
-import gradcam_explanation from "./assets/p2_0232_3_0_Positive_0_00__Grad_Cam___conv2d_1__heatmap_02021_05_26_12_36_05_982491.png";
-import edge_cases_explanation from "./assets/p2_0232_3_edge_cases.png";
-import cross_validation_explanation from "./assets/p2_0232_3_adipose_detection.png"
-import interpolation from "./assets/prototype_interpolation.png";
-import prototypes from "./assets/prototypes.png";
-import counterfactuals from "./assets/counterfactuals_2axis.png"
-import text_attributes from "./assets/text_attributes.png"
-import color_coded_confidence from "./assets/color_coded_confidence.png"
+import {
+    example_app_output,
+    example_app_output_with_selection,
+    gradcam_explanation,
+    edge_cases_explanation,
+    cross_validation_explanation,
+    interpolation,
+    prototypes,
+    counterfactuals,
+    text_attributes,
+    color_coded_confidence
+} from "./assets"
 
-// import placeholder_image from "./assets/placeholder.png";
-
-const example_app_description = "<p>Sample app output ( <span style='color:red';>positive</span> / <span style='color:lightgreen';>negative</span> )</p>"
+const EXAMPLE_APP_DESCRIPTION = "<p>Sample app output ( <span style='color:red';>positive</span> / <span style='color:lightgreen';>negative</span> )</p>"
 
 export var questions = {
+    "minRateDescription" : "Strongly disagree",
+    "maxRateDescription" : "Strongly agree",
+    "rateMax" : 7,
     "user_profiling_questions" : [
         { 
             "id" : "ai_in_routine",
@@ -28,12 +31,26 @@ export var questions = {
             "text" : "I am familiar with technical details of machine learning"
         },
     ],
+    "rating_questions": [
+        {
+            "id" : "understandability",
+            "text" : "The information presented is intuitively understandable"
+        },
+        {
+            "id" : "informativeness",
+            "text" : "The information presented helps me to make an informed decision"
+        },
+        {
+            "id" : "time_criticality",
+            "text" : "The information presented is useful only if available in realtime"
+        }
+    ],
     "examples" : [
         {
             "id":"gradcam",
             "description": "Display most relevant pixels",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image": gradcam_explanation,
             "explanation_description": "<p>Most relevant regions for Ki-67 positive classifications</p>"
         },
@@ -41,7 +58,7 @@ export var questions = {
             "id": "edge_cases",
             "description": "Display edge cases for review",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image": edge_cases_explanation,
             "explanation_description": "<p>Least confident positive predictions for review</p>"
         },
@@ -49,7 +66,7 @@ export var questions = {
             "id": "cross_validation",
             "description": "Cross-validation from other apps",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image": cross_validation_explanation,
             "explanation_description": "<p>Segmentation of other tissues by a separate app</p>"
         },
@@ -57,7 +74,7 @@ export var questions = {
             "id": "prototypes",
             "description": "Show prototypical positive and negative classifications",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image" : prototypes,
             "explanation_description": "<p>Prototypical examples for positive and negative classifications</p>"
         },
@@ -65,7 +82,7 @@ export var questions = {
             "id": "prototype_interpolation",
             "description": "Show interpolation between positive and negative examples",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image" : interpolation,
             "explanation_description": "<p>Interpolation between positive and negative prototypes, showing model decision boundary for positive and negative classification</p>"
         },
@@ -73,7 +90,7 @@ export var questions = {
             "id": "counterfactuals",
             "description": "Show generated counterfactual examples with classifications",
             "output_image": example_app_output_with_selection,
-            "output_description": example_app_description + "<p>One annotation selected</p>",
+            "output_description": EXAMPLE_APP_DESCRIPTION + "<p>One annotation selected</p>",
             "explanation_image": counterfactuals,
             "explanation_description": "<p>Counterfactual examples generated in two axes of variation, showing decision boundaries</p>"
         },
@@ -81,7 +98,7 @@ export var questions = {
             "id": "text_attributes",
             "description": "Show most important features in text format",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image" : text_attributes,
             "explanation_description": "<p>Most important features attributed to positive classifications</p>"
         },
@@ -89,9 +106,9 @@ export var questions = {
             "id": "color_coded_confidence",
             "description": "Show positive cases color-coded by confidence class",
             "output_image": example_app_output,
-            "output_description": example_app_description,
+            "output_description": EXAMPLE_APP_DESCRIPTION,
             "explanation_image": color_coded_confidence,
-            "explanation_description": "<p>Classifications color coded according to <span style='color:blue';>high model confidence</span> / <span style='color:orange'>low model confidence</span> confidence</p>"
+            "explanation_description": "<p>Classifications color coded according to <span style='color:blue';>high </span> / <span style='color:orange'>low</span> model confidence</p>"
         }
 
     ]

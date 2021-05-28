@@ -1,0 +1,10 @@
+export const example_app_output = require("./p2_0232_3.jpg");
+export const example_app_output_with_selection = require("./p2_0232_3_with_selection.png");
+export const gradcam_explanation = require("./p2_0232_3_0_Positive_0_00__Grad_Cam___conv2d_1__heatmap_02021_05_26_12_36_05_982491.png");
+export const edge_cases_explanation = require("./p2_0232_3_edge_cases.png");
+export const cross_validation_explanation = require("./p2_0232_3_adipose_detection.png");
+export const interpolation = require("./prototype_interpolation.png");
+export const prototypes = require("./prototypes.png");
+export const counterfactuals = require("./counterfactuals_2axis.png");
+export const text_attributes = require("./text_attributes.png");
+export const color_coded_confidence = require("./color_coded_confidence.png");
