@@ -4,7 +4,7 @@ import * as Survey from "survey-react";
 
 import "survey-react/survey.css";
 
-import { survey_json } from "./survey_json.js";
+import { surveyJson } from "./survey_json.js";
 
 Survey.StylesManager.applyTheme("default");
 
@@ -17,7 +17,7 @@ function onComplete(result) {
 }
 
 export function SurveyPage() {
-    var model = new Survey.Model(survey_json);
+    var model = new Survey.Model(surveyJson);
     model.showProgressBar = 'bottom';
     model.showQuestionNumbers = 'off';
     return (

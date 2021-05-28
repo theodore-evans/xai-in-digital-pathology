@@ -1,34 +1,50 @@
-import {questions} from "./survey_questions.js"
+import { questions } from "./survey_questions.js"
 
-const questionsAreOnNewLine = false
-const answersAreRequired = false
+const REQUIRED_TEXT = "*"
+const QUESTIONS_ARE_ON_NEW_LINE = false
+const ANSWERS_ARE_REQUIRED = false
+const COMMENT_ROWS = 3
 
-const comment_rows = 2
+function createCommentsBox(questionId) {
+    return (
+        {
+            "type": "comment",
+            "name": questionId + "_comments",
+            "title": "Comments",
+            "rows": COMMENT_ROWS
+        }
+    )
+}
 
-function create_user_profiling_page() {
-    var user_profiling_page = {
-        "name": "user_profiling",
+function createUserProfilingPage() {
+
+    const USER_PROFILING_PAGE_ID = "user_profiling"
+
+    var userProfilingPage = {
+        "name": USER_PROFILING_PAGE_ID,
         "elements": []
     }
 
-    for (var user_profiling_question of questions.user_profiling_questions) {
-        user_profiling_page.elements.push({
+    for (var userProfilingQuestion of questions.userProfilingQuestions) {
+        userProfilingPage.elements.push({
             "type": "rating",
-            "name": user_profiling_question.id,
-            "title": user_profiling_question.text,
+            "name": userProfilingQuestion.id,
+            "title": userProfilingQuestion.text,
             "rateMax": questions.rateMax,
             "minRateDescription": questions.minRateDescription,
             "maxRateDescription": questions.maxRateDescription,
-            "isRequired": answersAreRequired
+            "isRequired": ANSWERS_ARE_REQUIRED
         })
     }
-    
-    return user_profiling_page
+
+    userProfilingPage.elements.push(createCommentsBox(USER_PROFILING_PAGE_ID))
+
+    return userProfilingPage
 }
 
-function create_example_page(example) {
-    
-    var example_page = {
+function createExamplePage(example) {
+
+    var examplePage = {
         "name": "example_" + example.id,
         "title": example.description,
         "elements": [
@@ -37,13 +53,13 @@ function create_example_page(example) {
                 "elements": [
                     {
                         "type": "image",
-                        "imageLink": example.output_image,
+                        "imageLink": example.outputImage,
                         "imageWidth": "256px",
                         "imageHeight": "256px",
                     },
                     {
                         "type": "html",
-                        "html": example.output_description
+                        "html": example.outputDescription
                     }
                 ],
                 "width": "300px"
@@ -53,13 +69,13 @@ function create_example_page(example) {
                 "elements": [
                     {
                         "type": "image",
-                        "imageLink": example.explanation_image,
+                        "imageLink": example.explanationImage,
                         "imageWidth": "256px",
                         "imageHeight": "256px",
                     },
                     {
                         "type": "html",
-                        "html": example.explanation_description
+                        "html": example.explanationDescription
                     }
                 ],
                 "width": "300px",
@@ -68,51 +84,44 @@ function create_example_page(example) {
         ]
     }
 
-    var rating_panel = {
+    var ratingPanel = {
         "type": "panel",
         "elements": [],
-        "startWithNewLine": questionsAreOnNewLine
+        "startWithNewLine": QUESTIONS_ARE_ON_NEW_LINE
     }
 
-    var comments_question = {
-        "type": "comment",
-        "name": "q" + example.id + "_comments",
-        "title": "Comments",
-        "rows": comment_rows
-    }
-
-    for (var rating_question of questions.rating_questions) {
-        rating_panel.elements.push(
+    for (var ratingQuestion of questions.ratingQuestions) {
+        ratingPanel.elements.push(
             {
                 "type": "rating",
-                "name": "q" + example.id + "_" + rating_question.id,
-                "title": rating_question.text,
+                "name": example.id + "_" + ratingQuestion.id,
+                "title": ratingQuestion.text,
                 "rateMax": questions.rateMax,
                 "minRateDescription": questions.minRateDescription,
                 "maxRateDescription": questions.maxRateDescription,
-                "isRequired": answersAreRequired
+                "isRequired": ANSWERS_ARE_REQUIRED
             }
         )
     }
 
-    rating_panel.elements.push(comments_question)
-    example_page.elements.push(rating_panel)
+    ratingPanel.elements.push(createCommentsBox(example.id))
+    examplePage.elements.push(ratingPanel)
 
-    return example_page
+    return examplePage
 }
 
-var survey_json = {
-    "requiredText": "*",
+var surveyJson = {
+    "requiredText": REQUIRED_TEXT,
     "pages": [
         {
         }
     ]
 }
 
-survey_json.pages.push(create_user_profiling_page())
+surveyJson.pages.push(createUserProfilingPage())
 
 for (var example of questions.examples) {
-    survey_json.pages.push(create_example_page(example))
+    surveyJson.pages.push(createExamplePage(example))
 }
 
-export {survey_json};
+export { surveyJson };
