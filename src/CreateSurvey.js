@@ -1,10 +1,14 @@
-import { questions, instructions } from "./SurveyContent.js"
+import { QUESTIONS, INSTRUCTIONS } from "./SurveyContent.js"
 
 const REQUIRED_TEXT = "*"
 const QUESTIONS_ARE_ON_NEW_LINE = false
 const ANSWERS_ARE_REQUIRED = false
 const COMMENT_ROWS = 3
 const SHUFFLE_EXAMPLES = true
+
+function randomize(a, b) {
+    return Math.random() - 0.5;
+}
 
 function createCommentsBox(questionId) {
     return (
@@ -26,14 +30,14 @@ function createUserProfilingPage() {
         "elements": []
     }
 
-    for (var userProfilingQuestion of questions.userProfilingQuestions) {
+    for (var userProfilingQuestion of QUESTIONS.userProfilingQuestions) {
         userProfilingPage.elements.push({
             "type": "rating",
             "name": userProfilingQuestion.id,
             "title": userProfilingQuestion.text,
-            "rateMax": questions.rateMax,
-            "minRateDescription": questions.minRateDescription,
-            "maxRateDescription": questions.maxRateDescription,
+            "rateMax": QUESTIONS.rateMax,
+            "minRateDescription": QUESTIONS.minRateDescription,
+            "maxRateDescription": QUESTIONS.maxRateDescription,
             "isRequired": ANSWERS_ARE_REQUIRED
         })
     }
@@ -60,7 +64,7 @@ function createExamplePage(example) {
                     },
                     {
                         "type": "html",
-                        "html": example.outputDescription
+                        "html": "<b>RESULT</b>" + example.outputDescription
                     }
                 ],
                 "width": "300px"
@@ -76,7 +80,7 @@ function createExamplePage(example) {
                     },
                     {
                         "type": "html",
-                        "html": example.explanationDescription
+                        "html": "<b>EXPLANATION</b>" + example.explanationDescription
                     }
                 ],
                 "width": "300px",
@@ -91,15 +95,15 @@ function createExamplePage(example) {
         "startWithNewLine": QUESTIONS_ARE_ON_NEW_LINE
     }
 
-    for (var ratingQuestion of questions.ratingQuestions) {
+    for (var ratingQuestion of QUESTIONS.ratingQuestions) {
         ratingPanel.elements.push(
             {
                 "type": "rating",
                 "name": example.id + "_" + ratingQuestion.id,
                 "title": ratingQuestion.text,
-                "rateMax": questions.rateMax,
-                "minRateDescription": questions.minRateDescription,
-                "maxRateDescription": questions.maxRateDescription,
+                "rateMax": QUESTIONS.rateMax,
+                "minRateDescription": QUESTIONS.minRateDescription,
+                "maxRateDescription": QUESTIONS.maxRateDescription,
                 "isRequired": ANSWERS_ARE_REQUIRED
             }
         )
@@ -111,6 +115,20 @@ function createExamplePage(example) {
     return examplePage
 }
 
+function createInstructionsPage() {
+    return (
+        {
+            "name": "info_page",
+            "elements": [
+                {
+                    "type": "html",
+                    "html": INSTRUCTIONS
+                }
+            ]
+        }
+    )
+}
+
 var surveyJson = {
     "requiredText": REQUIRED_TEXT,
     "pages": [
@@ -119,25 +137,11 @@ var surveyJson = {
     ]
 }
 
-surveyJson.pages.push(createUserProfilingPage())
+// surveyJson.pages.push(createUserProfilingPage())
 
-surveyJson.pages.push(
-    {
-        "name": "info_page",
-        "elements": [
-            {
-                "type": "html",
-                "html": instructions
-            }
-        ]
-    }
-);
+// surveyJson.pages.push(createInstructionsPage())
 
-function randomize(a, b) {
-    return Math.random() - 0.5;
-}
-
-for (var example of SHUFFLE_EXAMPLES ? questions.examples.sort(randomize) : questions.examples) {
+for (var example of SHUFFLE_EXAMPLES ? QUESTIONS.examples.sort(randomize) : QUESTIONS.examples) {
     surveyJson.pages.push(createExamplePage(example))
 }
 

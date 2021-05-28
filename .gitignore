@@ -22,3 +22,6 @@ yarn-error.log*
 
 # GIMP files
 *.xcf
+
+# local image assets
+/src/assets/local_files

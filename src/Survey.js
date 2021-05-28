@@ -4,7 +4,7 @@ import * as Survey from "survey-react";
 
 import "survey-react/survey.css";
 
-import { surveyJson } from "./survey_json.js";
+import { surveyJson } from "./CreateSurvey.js";
 
 Survey.StylesManager.applyTheme("default");
 

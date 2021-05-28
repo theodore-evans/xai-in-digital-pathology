@@ -1,8 +1,12 @@
 import Images from "./assets"
 
-const EXAMPLE_APP_DESCRIPTION = "<p>Sample app output ( <span style='color:red';>positive</span> / <span style='color:lightgreen';>negative</span> )</p>"
+const POSITIVE_COLOR = "color:red"
+const NEGATIVE_COLOR = "color:cyan"
+const EXAMPLE_APP_DESCRIPTION = `<p>Nuclei marked as Ki-67 <span style=${POSITIVE_COLOR};>positive</span> or <span style=${NEGATIVE_COLOR};>negative</span></p>`
 
-export var questions = {
+export const INSTRUCTIONS = "<h1>Instructions</h><p>placeholder instructions html here</p>"
+
+export const QUESTIONS = {
     "minRateDescription": "Strongly disagree",
     "maxRateDescription": "Strongly agree",
     "rateMax": 7,
@@ -23,15 +27,15 @@ export var questions = {
     "ratingQuestions": [
         {
             "id": "understandability",
-            "text": "The information presented is intuitively understandable"
+            "text": "The explanation is intuitively understandable"
         },
         {
             "id": "informativeness",
-            "text": "The information presented helps me to make an informed decision"
+            "text": "The explanation helps me to decide whether I can trust this result"
         },
         {
-            "id": "time_criticality",
-            "text": "The information presented is useful only if available in realtime"
+            "id": "usability",
+            "text": "The explanation helps me understand the factors affecting this result"
         }
     ],
     "examples": [
@@ -57,7 +61,7 @@ export var questions = {
             "outputImage": Images.example_app_output,
             "outputDescription": EXAMPLE_APP_DESCRIPTION,
             "explanationImage": Images.cross_validation_explanation,
-            "explanationDescription": "<p>Segmentation of other tissues by a separate app</p>"
+            "explanationDescription": "<p>Segmentation of other tissues by a separate app, with potential conflicts highlighted</p>"
         },
         {
             "id": "prototypes",
@@ -98,31 +102,38 @@ export var questions = {
             "outputDescription": EXAMPLE_APP_DESCRIPTION,
             "explanationImage": Images.color_coded_confidence,
             "explanationDescription": "<p>Classifications color coded according to <span style='color:blue';>high </span> / <span style='color:orange'>low</span> model confidence</p>"
-        }
+        },
+        {
+            "id": "model_ensemble_variance",
+            "description": "Display app performance on validation set relative to an ensemble of similar model",
+            "outputImage": Images.example_app_output,
+            "outputDescription": EXAMPLE_APP_DESCRIPTION,
+            "explanationImage": Images.model_ensemble_variance,
+            "explanationDescription": "<p>App performance on a validation dataset, relative to an ensemble of comparable models</p>"
+        },
     ]
 }
-
 // # EXAMPLES (X = done)
 
 // ## SALIENCY MAPS
-// Heatmap overlay on results X gradcam
+// Heatmap overlay on results                                               X gradcam
 
 // ## CONCEPT ATTRIBUTION
 // Visual representation of attributed concepts (feature visualisation)
-// Text-based representation of attributed concepts X text_attributes
+// Text-based representation of attributed concepts                         X text_attributes
 
 // ## PROTOTYPES
-// Display of prototypes of predicted classes X prototypes
-// Interpolation between prototypes with decision boundary X prototype_interpolation
+// Display of prototypes of predicted classes                               X prototypes
+// Interpolation between prototypes with decision boundary                  X prototype_interpolation
 // Multiple interpolations between random samples
 
 // ## COUNTERFACTUALS
-// Closest counterfactual with opposite classification X counterfactuals
-// Closest counterfactual with no classification X counterfactuals
+// Closest counterfactual with opposite classification                      X counterfactuals
+// Closest counterfactual with no classification                            X counterfactuals
 
 // ## TRUST SCORES
-// Color-coded confidence rating X color_coded_confidence
-// Flagging of edge cases for review X edge_cases
-// Variance of model ensemble, placing of this model within ensemble
+// Color-coded confidence rating                                            X color_coded_confidence
+// Flagging of edge cases for review                                        X edge_cases
+// Variance of model ensemble, placing of this model within ensemble        X model_ensemble_variance
 // Visualisation of training/validation data statistics/demographics
-// Cross-validation with other models (e.g. tissue/feature detection) X cross_validation
+// Cross-validation with other models (e.g. tissue/feature detection)       X cross_validation
