@@ -3,8 +3,9 @@ import { CONTENT } from "./SurveyContent.js";
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
-const COMMENT_ROWS = 3;
+const COMMENT_ROWS = 2;
 const SHUFFLE_EXAMPLES = true;
+const DISPLAY_EXAMPLE_DESCRIPTIONS = false;
 
 function randomize(a, b) {
 	return Math.random() - 0.5;
@@ -47,27 +48,35 @@ function createUserProfilingPage() {
 function createExamplePage(example) {
 	var examplePage = {
 		name: "example_" + example.id,
-		title: example.description,
+		title: DISPLAY_EXAMPLE_DESCRIPTIONS ? example.description : "",
 		elements: [
 			{
 				type: "panel",
 				elements: [
+					{
+						type: "html",
+						html: "<b>RESULT</b>",
+					},
 					{
 						type: "image",
 						imageLink: example.outputImage,
 						imageWidth: "256px",
 						imageHeight: "256px",
 					},
-					{
-						type: "html",
-						html: "<b>RESULT</b>" + example.outputDescription,
-					},
+					// {
+					// 	type: "html",
+					// 	html: example.outputDescription,
+					// },
 				],
 				width: "300px",
 			},
 			{
 				type: "panel",
 				elements: [
+					{
+						type: "html",
+						html: "<b>EXPLANATION</b>",
+					},
 					{
 						type: "image",
 						imageLink: example.explanationImage,
@@ -76,7 +85,7 @@ function createExamplePage(example) {
 					},
 					{
 						type: "html",
-						html: "<b>EXPLANATION</b>" + example.explanationDescription,
+						html: example.explanationDescription,
 					},
 				],
 				width: "300px",
@@ -87,7 +96,10 @@ function createExamplePage(example) {
 
 	var ratingPanel = {
 		type: "panel",
-		elements: [],
+		elements: [{
+			type: "html",
+			html: "<br>"
+		}],
 		startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
 	};
 

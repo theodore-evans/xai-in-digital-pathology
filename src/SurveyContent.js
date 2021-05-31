@@ -29,14 +29,15 @@ export const CONTENT = {
 			id: "understandability",
 			text: "The explanation is intuitively understandable",
 		},
+        {
+			id: "usability",
+			text: "The explanation helps me to understand the factors affecting this result",
+		},
 		{
 			id: "informativeness",
 			text: "The explanation helps me to decide whether I can trust this result",
 		},
-		{
-			id: "usability",
-			text: "The explanation helps me understand the factors affecting this result",
-		},
+		
 	],
 	examples: [
 		{
