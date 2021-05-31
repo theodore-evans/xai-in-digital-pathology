@@ -59,7 +59,8 @@ function createExamplePage(example) {
 					},
 					{
 						type: "image",
-						imageLink: example.outputImage,
+						name: "displayExample",
+						imageLink: example.explanationImage,
 						imageWidth: "256px",
 						imageHeight: "256px",
 					},
@@ -96,10 +97,12 @@ function createExamplePage(example) {
 
 	var ratingPanel = {
 		type: "panel",
-		elements: [{
-			type: "html",
-			html: "<br>"
-		}],
+		elements: [
+			{
+				type: "html",
+				html: "<br>",
+			},
+		],
 		startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
 	};
 
