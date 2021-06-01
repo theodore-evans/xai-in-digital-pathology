@@ -3,7 +3,7 @@ import { CONTENT } from "./SurveyContent.js";
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
-const COMMENT_ROWS = 2;
+const COMMENT_ROWS = 4;
 const SHUFFLE_EXAMPLES = true;
 const DISPLAY_EXAMPLE_DESCRIPTIONS = false;
 
@@ -54,55 +54,21 @@ function createExamplePage(example) {
 				type: "panel",
 				elements: [
 					{
-						type: "html",
-						html: "<b>RESULT</b>",
-					},
-					{
 						type: "image",
 						name: "displayExample",
 						imageLink: example.explanationImage,
-						imageWidth: "256px",
-						imageHeight: "256px",
-					},
-					// {
-					// 	type: "html",
-					// 	html: example.outputDescription,
-					// },
-				],
-				width: "300px",
-			},
-			{
-				type: "panel",
-				elements: [
-					{
-						type: "html",
-						html: "<b>EXPLANATION</b>",
-					},
-					{
-						type: "image",
-						imageLink: example.explanationImage,
-						imageWidth: "256px",
-						imageHeight: "256px",
-					},
-					{
-						type: "html",
-						html: example.explanationDescription,
+						imageWidth: "500px",
+						imageHeight: "500px",
 					},
 				],
-				width: "300px",
-				startWithNewLine: false,
+				// width: "600px",
 			},
 		],
 	};
 
 	var ratingPanel = {
 		type: "panel",
-		elements: [
-			{
-				type: "html",
-				html: "<br>",
-			},
-		],
+		elements: [],
 		startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
 	};
 
@@ -141,7 +107,7 @@ var surveyJson = {
 	pages: [{}],
 };
 
-// surveyJson.pages.push(createUserProfilingPage())
+surveyJson.pages.push(createUserProfilingPage())
 
 // surveyJson.pages.push(createInstructionsPage())
 

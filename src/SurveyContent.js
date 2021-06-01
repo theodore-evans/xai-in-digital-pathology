@@ -127,7 +127,7 @@ export const CONTENT = {
 	],
 };
 
-// # EXAMPLES (X = done)
+// # EXPLANATION CLASSES (X = done)
 
 // ## SALIENCY MAPS
 // Heatmap overlay on results                                               X gradcam
