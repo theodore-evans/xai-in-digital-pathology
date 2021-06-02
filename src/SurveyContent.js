@@ -45,7 +45,7 @@ export const CONTENT = {
 				{
 					id: "gradcam",
 					description: "Display most relevant pixels",
-					images: [Images.gradcam_explanation],
+					images: [Images.gradcam],
 					imageCaption:
 						"<p>Most relevant regions for Ki-67 positive classifications</p>",
 				},
@@ -103,14 +103,14 @@ export const CONTENT = {
 				{
 					id: "cross_validation",
 					description: "Cross-validation from other apps",
-					images: [Images.cross_validation_explanation],
+					images: [Images.cross_validation_adipose],
 					imageCaption:
 						"<p>Segmentation of other tissues by a separate app, with potential conflicts highlighted</p>",
 				},
 				{
 					id: "color_coded_confidence",
-					description: "Show positive cases color-coded by confidence class",
-					images: [Images.color_coded_confidence],
+					description: "Display low-confidence annotations for review",
+					images: [Images.color_coded_confidence, Images.edge_cases],
 					imageCaption:
 						"<p>Classifications color coded according to <span style='color:blue';>high </span> / <span style='color:orange'>low</span> model confidence</p>",
 				},
