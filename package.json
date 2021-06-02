@@ -4,19 +4,21 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "browserslist": "^4.16.6",
+    "joi": "^17.4.0",
     "jquery": "^3.3.1",
-    "jspdf": "1.5.3",
-    "jspdf-autotable": "3.0.5",
+    "jspdf": "^2.3.1",
+    "jspdf-autotable": "^3.5.14",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "1.1.4",
-    "react-surveyjs-vas-widget": "github:physera/react-surveyjs-vas-widget",
+    "react-scripts": "^4.0.3",
     "survey-analytics": "latest",
     "survey-creator": "latest",
     "survey-pdf": "latest",
     "survey-react": "latest",
     "surveyjs-widgets": "latest",
+    "webpack-dev-server": "^3.7.2",
     "xlsx": "^0.16.9"
   },
   "scripts": {
@@ -24,5 +26,17 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
