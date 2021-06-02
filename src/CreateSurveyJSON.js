@@ -64,7 +64,7 @@ function createPagesForExampleClass(example) {
 						{
 							type: "image",
 							name: "displayExample",
-							imageLink: instance.images[0],
+							imageLink: selectRandomElement(instance.images),
 							imageWidth: "500px",
 							imageHeight: "500px",
 						},

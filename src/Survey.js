@@ -1,10 +1,11 @@
 import React from "react";
 import * as Survey from "survey-react";
-// import * as widgets from "surveyjs-widgets";
 import "survey-react/survey.css";
 
 import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
+
+const EXAMPLE_OUTPUT_IMAGE = Images.example_app_output.default;
 
 Survey.StylesManager.applyTheme("default");
 
@@ -20,16 +21,16 @@ export function SurveyPage() {
 	var model = new Survey.Model(surveyJson);
 	model.showProgressBar = "bottom";
 	model.showQuestionNumbers = "off";
-    model.showPreviewBeforeComplete = "showAllQuestions";
+	// model.showPreviewBeforeComplete = "showAllQuestions";
 	model.onAfterRenderQuestion.add(function (sender, options) {
 		if (options.question.name === "displayExample") {
 			var img = options.htmlElement.getElementsByTagName("img")[0];
-			img.src = Images.example_app_output;
+			img.src = EXAMPLE_OUTPUT_IMAGE;
 			options.htmlElement.onmouseover = function () {
 				img.src = options.question.imageLink;
 			};
 			options.htmlElement.onmouseout = function () {
-				img.src = Images.example_app_output;
+				img.src = EXAMPLE_OUTPUT_IMAGE;
 			};
 		}
 	});
