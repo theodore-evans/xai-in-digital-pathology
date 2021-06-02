@@ -10,7 +10,6 @@ const EXAMPLE_OUTPUT_IMAGE = Images.example_app_output.default;
 Survey.StylesManager.applyTheme("default");
 
 function onValueChanged(sender, options) {
-  console.log(sender, options);
   let question_class = class_regex.exec(options.question.name)[0];
 
   if (Survey.data[question_class]) {
