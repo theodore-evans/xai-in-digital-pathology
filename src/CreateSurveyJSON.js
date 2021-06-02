@@ -45,49 +45,60 @@ function createUserProfilingPage() {
 	return userProfilingPage;
 }
 
-function createExamplePage(example) {
-	var examplePage = {
-		name: "example_" + example.id,
-		title: DISPLAY_EXAMPLE_DESCRIPTIONS ? example.description : "",
-		elements: [
-			{
-				type: "panel",
-				elements: [
-					{
-						type: "image",
-						name: "displayExample",
-						imageLink: example.explanationImage,
-						imageWidth: "500px",
-						imageHeight: "500px",
-					},
-				],
-				// width: "600px",
-			},
-		],
-	};
+function selectRandomElement(array) {
+	return array[Math.floor(Math.random() * array.length)]
+}
 
-	var ratingPanel = {
-		type: "panel",
-		elements: [],
-		startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
-	};
+function createPagesForExampleClass(example) {
+	
+	var instancePages = []
 
-	for (var ratingQuestion of CONTENT.ratingQuestions) {
-		ratingPanel.elements.push({
-			type: "rating",
-			name: example.id + "_" + ratingQuestion.id,
-			title: ratingQuestion.text,
-			rateMax: CONTENT.rateMax,
-			minRateDescription: CONTENT.minRateDescription,
-			maxRateDescription: CONTENT.maxRateDescription,
-			isRequired: ANSWERS_ARE_REQUIRED,
-		});
+	for (var instance of example.instances) {
+		var instancePage = {
+			name: `${example.class}_${instance.id}`,
+			title: DISPLAY_EXAMPLE_DESCRIPTIONS ? instance.description : "",
+			elements: [
+				{
+					type: "panel",
+					elements: [
+						{
+							type: "image",
+							name: "displayExample",
+							imageLink: instance.images[0],
+							imageWidth: "500px",
+							imageHeight: "500px",
+						},
+					],
+					// width: "600px",
+				},
+			],
+		};
+
+		var ratingPanel = {
+			type: "panel",
+			elements: [],
+			startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
+		};
+
+		for (var ratingQuestion of CONTENT.ratingQuestions) {
+			ratingPanel.elements.push({
+				type: "rating",
+				name: `${example.class}_${instance.id}_${ratingQuestion.id}`,
+				title: ratingQuestion.text,
+				rateMax: CONTENT.rateMax,
+				minRateDescription: CONTENT.minRateDescription,
+				maxRateDescription: CONTENT.maxRateDescription,
+				isRequired: ANSWERS_ARE_REQUIRED,
+			});
+		}
+
+		ratingPanel.elements.push(createCommentsBox(instance.id));
+		instancePage.elements.push(ratingPanel);
+
+		instancePages.push(instancePage)
 	}
 
-	ratingPanel.elements.push(createCommentsBox(example.id));
-	examplePage.elements.push(ratingPanel);
-
-	return examplePage;
+	return instancePages;
 }
 
 function createInstructionsPage() {
@@ -107,14 +118,14 @@ var surveyJson = {
 	pages: [{}],
 };
 
-surveyJson.pages.push(createUserProfilingPage())
+// surveyJson.pages.push(createUserProfilingPage())
 
 // surveyJson.pages.push(createInstructionsPage())
 
 for (var example of SHUFFLE_EXAMPLES
 	? CONTENT.examples.sort(randomize)
 	: CONTENT.examples) {
-	surveyJson.pages.push(createExamplePage(example));
+	surveyJson.pages.push(...createPagesForExampleClass(example));
 }
 
 export { surveyJson };
