@@ -12,15 +12,15 @@ export const CONTENT = {
 	rateMax: 7,
 	userProfilingQuestions: [
 		{
-			id: "ai_in_routine",
+			id: "aiInRoutine",
 			text: "I use AI solutions regularly in my routine work",
 		},
 		{
-			id: "ai_familiarity",
+			id: "aiFamiliarity",
 			text: "I am familiar with the use of AI applications in digital pathology",
 		},
 		{
-			id: "ml_familiarity",
+			id: "mlFamiliarity",
 			text: "I am familiar with technical details of machine learning",
 		},
 	],
@@ -55,7 +55,7 @@ export const CONTENT = {
 			class: "conceptAttribution",
 			instances: [
 				{
-					id: "text_attributes",
+					id: "textAttributes",
 					description: "Show most important features in text format",
 					images: [Images.text_attributes],
 					imageCaption:
@@ -80,7 +80,7 @@ export const CONTENT = {
 			class: "counterfactuals",
 			instances: [
 				{
-					id: "prototype_interpolation",
+					id: "prototypeInterpolation",
 					description:
 						"Show interpolation between positive and negative prototypes",
 					images: [Images.interpolation],
@@ -88,7 +88,7 @@ export const CONTENT = {
                         "<p>Interpolation between positive and negative prototypes, showing model decision boundary for positive and negative classification</p>",
 				},
                 {
-					id: "two_axis_counterfactuals",
+					id: "twoAxisCounterfactuals",
 					description:
 						"Show generated counterfactual examples with classifications",
 					images: [Images.counterfactuals],
@@ -101,14 +101,14 @@ export const CONTENT = {
 			class: "trustScores",
 			instances: [
 				{
-					id: "cross_validation",
+					id: "crossValidation",
 					description: "Cross-validation from other apps",
 					images: [Images.cross_validation_adipose],
 					imageCaption:
 						"<p>Segmentation of other tissues by a separate app, with potential conflicts highlighted</p>",
 				},
 				{
-					id: "color_coded_confidence",
+					id: "colorCodedConfidence",
 					description: "Display low-confidence annotations for review",
 					images: [Images.color_coded_confidence, Images.edge_cases],
 					imageCaption:
