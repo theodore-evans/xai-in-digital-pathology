@@ -1,13 +1,13 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+*/node_modules
 
 # testing
-/coverage
+*/coverage
 
 # production
-/build
+*/build
 
 # misc
 .DS_Store
@@ -24,4 +24,6 @@ yarn-error.log*
 *.xcf
 
 # local image assets
-/src/assets/local_files
+frontend/src/assets/local_files
+
+
