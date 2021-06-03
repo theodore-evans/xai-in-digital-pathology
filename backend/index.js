@@ -4,6 +4,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
+const filter = require("content-filter");
 
 const { models, connectDb } = require("./models");
 const survey = require("./database.js");
@@ -42,4 +43,12 @@ app.listen(PORT, () => {
 let apiRoutes = require("./routes");
 //Use API routes in the App
 app.use("/", apiRoutes);
-app.use(express.static(path.join(__dirname, "../fronted", "build")));
+app.use(express.static(path.join(__dirname, "../frontend", "build")));
+
+//filter input to prevent code injection for mongodb
+var blackList = ["$", "{", "&&", "||"];
+var options = {
+  urlBlackList: blackList,
+  bodyBlackList: blackList,
+};
+app.use(filter(options));
