@@ -3,9 +3,8 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 
 import { surveyJson } from "./CreateSurveyJSON.js";
-import Images from "./assets";
 
-const EXAMPLE_OUTPUT_IMAGE = Images.example_app_output.default;
+const EXAMPLE_OUTPUT_IMAGE = require("./assets/p2_0232_3.png").default;
 
 Survey.StylesManager.applyTheme("default");
 
@@ -48,7 +47,6 @@ export function SurveyPage() {
         img.src == options.question.imageLink
           ? EXAMPLE_OUTPUT_IMAGE
           : options.question.imageLink;
-        console.log(img.src);
       };
     }
   });
