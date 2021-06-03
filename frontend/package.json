@@ -1,42 +1,46 @@
 {
-  "name": "surveyjs_react_quickstart_new",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "browserslist": "^4.16.6",
-    "joi": "^17.4.0",
-    "jquery": "^3.3.1",
-    "jspdf": "^2.3.1",
-    "jspdf-autotable": "^3.5.14",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.3",
-    "survey-analytics": "latest",
-    "survey-creator": "latest",
-    "survey-pdf": "latest",
-    "survey-react": "latest",
-    "surveyjs-widgets": "latest",
-    "webpack-dev-server": "^3.7.2",
-    "xlsx": "^0.16.9"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "my-webpack-project",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"bootstrap": "^5.0.1",
+		"html-webpack-plugin": "^5.3.1",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"survey-react": "^1.8.49"
+	},
+	"scripts": {
+		"start": "node_modules/.bin/webpack serve --host 0.0.0.0 --port 3000 --mode development",
+		"build": "webpack --mode=production --node-env=production",
+		"build:dev": "webpack --mode=development",
+		"build:prod": "webpack --mode=production --node-env=production",
+		"watch": "webpack --watch",
+		"serve": "webpack serve"
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.14.3",
+		"@babel/preset-env": "^7.14.4",
+		"@babel/preset-react": "^7.13.13",
+		"babel-loader": "^8.2.2",
+		"css-loader": "^5.2.6",
+		"file-loader": "^6.2.0",
+		"prettier": "^2.3.0",
+		"style-loader": "^2.0.0",
+		"url-loader": "^4.1.1",
+		"webpack-cli": "^4.7.0",
+    "webpack-dev-server": "^3.11.0"
+	},
+	"description": "My webpack project"
 }
