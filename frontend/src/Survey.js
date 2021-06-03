@@ -34,13 +34,14 @@ Survey.data = {};
 let class_regex = /^(.*?)\_/;
 
 export function SurveyPage() {
-  var model = new Survey.Model(surveyJson);
+  let model = new Survey.Model(surveyJson);
   Survey.data["id"] = Date.now();
   model.showProgressBar = "bottom";
   model.showQuestionNumbers = "off";
   model.onAfterRenderQuestion.add(function (sender, options) {
     if (options.question.name === "displayExample") {
-      var img = options.htmlElement.getElementsByTagName("img")[0];
+      let img = options.htmlElement.getElementsByTagName("img")[0];
+
       img.src = EXAMPLE_OUTPUT_IMAGE;
       options.htmlElement.onclick = function () {
         img.src == options.question.imageLink
