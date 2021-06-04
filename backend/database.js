@@ -5,112 +5,136 @@ let surveySchema = mongoose.Schema({
     type: "Number",
   },
   ai_: {
-    ai_in_routine: {
+    ai_InRoutine: {
       type: "Number",
     },
-    ai_familiarity: {
+    ai_Familiarity: {
       type: "Number",
     },
   },
   ml_: {
-    ml_familiarity: {
+    ml_Familiarity: {
       type: "Number",
     },
   },
-  prototypes_: {
-    prototypes_usability: {
-      type: "Number",
-    },
-    prototypes_informativeness: {
-      type: "Number",
+  userProfiling_: {
+    userProfiling_comments: {
+      type: "String",
     },
   },
-  cross_: {
-    cross_validation_understandability: {
+  trustScores_: {
+    trustScores_borderlineCases_image1_understandability: {
       type: "Number",
     },
-    cross_validation_usability: {
+    trustScores_borderlineCases_image1_usability: {
       type: "Number",
     },
-    cross_validation_informativeness: {
+    trustScores_borderlineCases_image1_informativeness: {
       type: "Number",
     },
-  },
-  model_: {
-    model_ensemble_variance_understandability: {
+    trustScores_borderlineCases_image1_value: {
       type: "Number",
     },
-    model_ensemble_variance_usability: {
-      type: "Number",
-    },
-    model_ensemble_variance_informativeness: {
-      type: "Number",
-    },
-  },
-  edge_: {
-    edge_cases_informativeness: {
-      type: "Number",
-    },
-    edge_cases_understandability: {
-      type: "Number",
-    },
-    edge_cases_usability: {
-      type: "Number",
-    },
-  },
-  gradcam_: {
-    gradcam_understandability: {
-      type: "Number",
-    },
-    gradcam_informativeness: {
-      type: "Number",
-    },
-    gradcam_usability: {
-      type: "Number",
+    trustScores_borderlineCases_comments: {
+      type: "String",
     },
   },
   counterfactuals_: {
-    counterfactuals_informativeness: {
+    counterfactuals_prototypeInterpolation_image0_understandability: {
       type: "Number",
     },
-    counterfactuals_usability: {
+    counterfactuals_prototypeInterpolation_image0_usability: {
       type: "Number",
     },
-    counterfactuals_understandability: {
+    counterfactuals_prototypeInterpolation_image0_informativeness: {
       type: "Number",
+    },
+    counterfactuals_prototypeInterpolation_image0_value: {
+      type: "Number",
+    },
+    counterfactuals_prototypeInterpolation_comments: {
+      type: "String",
+    },
+    counterfactuals_twoAxisCounterfactuals_image0_understandability: {
+      type: "Number",
+    },
+    counterfactuals_twoAxisCounterfactuals_image0_usability: {
+      type: "Number",
+    },
+    counterfactuals_twoAxisCounterfactuals_image0_informativeness: {
+      type: "Number",
+    },
+    counterfactuals_twoAxisCounterfactuals_image0_value: {
+      type: "Number",
+    },
+    counterfactuals_twoAxisCounterfactuals_comments: {
+      type: "String",
     },
   },
-  prototype_: {
-    prototype_interpolation_informativeness: {
+  prototypes_: {
+    prototypes_prototypes_image0_understandability: {
       type: "Number",
     },
-    prototype_interpolation_usability: {
+    prototypes_prototypes_image0_usability: {
       type: "Number",
     },
-    prototype_interpolation_understandability: {
+    prototypes_prototypes_image0_informativeness: {
       type: "Number",
     },
-  },
-  color_: {
-    color_coded_confidence_informativeness: {
+    prototypes_prototypes_image0_value: {
       type: "Number",
     },
-    color_coded_confidence_usability: {
-      type: "Number",
-    },
-    color_coded_confidence_understandability: {
-      type: "Number",
+    prototypes_prototypes_comments: {
+      type: "String",
     },
   },
-  text_: {
-    text_attributes_informativeness: {
+  conceptAttribution_: {
+    conceptAttribution_textAttributes_image1_understandability: {
       type: "Number",
     },
-    text_attributes_usability: {
+    conceptAttribution_textAttributes_image1_usability: {
       type: "Number",
     },
-    text_attributes_understandability: {
+    conceptAttribution_textAttributes_image1_informativeness: {
       type: "Number",
+    },
+    conceptAttribution_textAttributes_image1_value: {
+      type: "Number",
+    },
+    conceptAttribution_textAttributes_comments: {
+      type: "String",
+    },
+  },
+  saliencyMaps_: {
+    saliencyMaps_globalSaliency_image0_usability: {
+      type: "Number",
+    },
+    saliencyMaps_globalSaliency_image0_understandability: {
+      type: "Number",
+    },
+    saliencyMaps_globalSaliency_image0_informativeness: {
+      type: "Number",
+    },
+    saliencyMaps_globalSaliency_image0_value: {
+      type: "Number",
+    },
+    saliencyMaps_globalSaliency_comments: {
+      type: "String",
+    },
+    saliencyMaps_localSaliency_image0_understandability: {
+      type: "Number",
+    },
+    saliencyMaps_localSaliency_image0_usability: {
+      type: "Number",
+    },
+    saliencyMaps_localSaliency_image0_informativeness: {
+      type: "Number",
+    },
+    saliencyMaps_localSaliency_image0_value: {
+      type: "Number",
+    },
+    saliencyMaps_localSaliency_comments: {
+      type: "String",
     },
   },
 });
