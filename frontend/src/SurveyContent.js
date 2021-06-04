@@ -43,9 +43,20 @@ export const CONTENT = {
       class: "saliencyMaps",
       instances: [
         {
-          id: "gradcam",
-          description: "Display most relevant pixels",
-          images: [Images.gradcam],
+          id: "globalSaliency",
+          description: "Display most relevant pixels for region",
+          images: [
+            Images.saliencyMaps.gradcam_0,
+            Images.saliencyMaps.gradcam_1,
+            Images.saliencyMaps.guidedbackprop_0,
+          ],
+          imageCaption:
+            "<p>Most relevant regions for Ki-67 positive classifications</p>",
+        },
+        {
+          id: "localSaliency",
+          description: "Display most relevant pixels for annotation",
+          images: [Images.saliencyMaps.gradcam_local_0, Images.saliencyMaps.gradcam_local_1],
           imageCaption:
             "<p>Most relevant regions for Ki-67 positive classifications</p>",
         },
@@ -57,7 +68,8 @@ export const CONTENT = {
         {
           id: "textAttributes",
           description: "Show most important features in text format",
-          images: [Images.text_attributes],
+          images: [Images.conceptAttribution.textAttributes_0,
+            Images.conceptAttribution.textAttributes_1],
           imageCaption:
             "<p>Most important features attributed to positive classifications</p>",
         },
@@ -70,7 +82,7 @@ export const CONTENT = {
           id: "prototypes",
           description:
             "Show prototypical positive and negative classifications",
-          images: [Images.prototypes],
+          images: [Images.prototypes.prototypes_0],
           imageCaption:
             "<p>Prototypical examples for positive and negative classifications</p>",
         },
@@ -83,7 +95,7 @@ export const CONTENT = {
           id: "prototypeInterpolation",
           description:
             "Show interpolation between positive and negative prototypes",
-          images: [Images.interpolation],
+          images: [Images.counterfactuals.oneAxis_0],
           imageCaption:
             "<p>Interpolation between positive and negative prototypes, showing model decision boundary for positive and negative classification</p>",
         },
@@ -91,7 +103,7 @@ export const CONTENT = {
           id: "twoAxisCounterfactuals",
           description:
             "Show generated counterfactual examples with classifications",
-          images: [Images.counterfactuals],
+          images: [Images.counterfactuals.twoAxis_0],
           imageCaption:
             "<p>Counterfactual examples generated in two axes of variation, showing decision boundaries</p>",
         },
@@ -103,16 +115,16 @@ export const CONTENT = {
         {
           id: "crossValidation",
           description: "Cross-validation from other apps",
-          images: [Images.cross_validation_adipose],
+          images: [Images.trustScores.tissueDetection_0],
           imageCaption:
             "<p>Segmentation of other tissues by a separate app, with potential conflicts highlighted</p>",
         },
         {
           id: "colorCodedConfidence",
           description: "Display low-confidence annotations for review",
-          images: [Images.color_coded_confidence, Images.edge_cases],
+          images: [Images.trustScores.colorCoded_0, Images.trustScores.edgeCases_0],
           imageCaption:
-            "<p>Classifications color coded according to <span style='color:blue';>high </span> / <span style='color:orange'>low</span> model confidence</p>",
+            "<p>Classifications marked according to model confidence</p>",
         },
       ],
     },

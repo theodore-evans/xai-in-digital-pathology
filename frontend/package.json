@@ -10,7 +10,7 @@
 		"survey-react": "^1.8.49"
 	},
 	"scripts": {
-		"start": "node_modules/.bin/webpack serve --host 0.0.0.0 --port 3000 --mode development",
+		"start": "node_modules/.bin/webpack serve --mode=development",
 		"build": "webpack --mode=production --node-env=production",
 		"build:dev": "webpack --mode=development",
 		"build:prod": "webpack --mode=production --node-env=production",
@@ -40,7 +40,7 @@
 		"style-loader": "^2.0.0",
 		"url-loader": "^4.1.1",
 		"webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^3.11.0"
+		"webpack-dev-server": "^3.11.0"
 	},
 	"description": "My webpack project"
 }
