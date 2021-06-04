@@ -33,8 +33,6 @@ function onComplete() {
 Survey.data = {};
 let class_regex = /^(.*?)\_/;
 
-console.log(surveyJson);
-
 export function SurveyPage() {
   let model = new Survey.Model(surveyJson);
   Survey.data["id"] = Date.now();
@@ -51,12 +49,23 @@ export function SurveyPage() {
             ? EXAMPLE_OUTPUT_IMAGE
             : options.question.imageLink;
       };
-      var btn = document.createElement("button");
-      btn.type = "button";
-      // console.log(htmlElement);
-      console.log(options);
-      // let imageContainer = options.htmlElement.querySelector("sv_q_image");
-      options.htmlElement.parentNode.appendChild(btn);
+
+      var btn = document.createElement("switch");
+      btn.type = "switch";
+      btn.className = "btn btn-info btn-xs";
+      let infotext = "Show explanation";
+      btn.innerHTML = infotext;
+      btn.onclick = function () {
+        btn.innerHTML =
+          btn.innerHTML == "Show explanation"
+            ? "Hide explanation"
+            : "Show explanation";
+      };
+      var header = options.htmlElement.firstChild;
+      var span = document.createElement("span");
+      span.innerHTML = "  ";
+      header.appendChild(span);
+      header.appendChild(btn);
     }
   });
   return (
