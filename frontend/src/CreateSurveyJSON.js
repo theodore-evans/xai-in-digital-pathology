@@ -45,14 +45,21 @@ function createUserProfilingPage() {
   return userProfilingPage;
 }
 
-function selectRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
+function selectRandomIndex(array) {
+  var randomIndex = Math.floor(Math.random() * array.length)
+  return randomIndex;
 }
 
 function createPagesForExampleClass(example) {
   var instancePages = [];
 
-  for (var instance of example.instances) {
+  for (var instance of SHUFFLE_EXAMPLES
+    ? example.instances.sort(randomize)
+    : example.instances) {    
+
+    var imageIndex = selectRandomIndex(instance.images);
+    var instanceId = `${example.class}_${instance.id}_variant${imageIndex}`;
+
     var instancePage = {
       name: `${example.class}_${instance.id}`,
       title: DISPLAY_EXAMPLE_DESCRIPTIONS ? instance.description : "",
@@ -63,12 +70,12 @@ function createPagesForExampleClass(example) {
             {
               type: "image",
               name: "displayExample",
-              imageLink: selectRandomElement(instance.images),
-              imageWidth: "500px",
-              imageHeight: "500px",
+              imageLink: instance.images[imageIndex],
+              imageWidth: "600px",
+              imageHeight: "600px",
             },
           ],
-          // width: "600px",
+          width: "650px",
         },
       ],
     };
@@ -82,7 +89,7 @@ function createPagesForExampleClass(example) {
     for (var ratingQuestion of CONTENT.ratingQuestions) {
       ratingPanel.elements.push({
         type: "rating",
-        name: `${example.class}_${instance.id}_${ratingQuestion.id}`,
+        name: `${instanceId}_${ratingQuestion.id}`,
         title: ratingQuestion.text,
         rateMax: CONTENT.rateMax,
         minRateDescription: CONTENT.minRateDescription,
@@ -91,7 +98,7 @@ function createPagesForExampleClass(example) {
       });
     }
 
-    ratingPanel.elements.push(createCommentsBox(instance.id));
+    ratingPanel.elements.push(createCommentsBox(instanceId));
     instancePage.elements.push(ratingPanel);
 
     instancePages.push(instancePage);
