@@ -33,6 +33,8 @@ function onComplete() {
 Survey.data = {};
 let class_regex = /^(.*?)\_/;
 
+console.log(surveyJson);
+
 export function SurveyPage() {
   let model = new Survey.Model(surveyJson);
   Survey.data["id"] = Date.now();
@@ -59,7 +61,6 @@ export function SurveyPage() {
   });
   return (
     <div className="container">
-      <h2>Explainable AI for Digital Pathology</h2>
       <Survey.Survey
         model={model}
         onComplete={onComplete}

@@ -5,6 +5,7 @@ const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
+const IDEAL_IMAGE_WIDTH = 600;
 
 function randomize(a, b) {
   return Math.random() - 0.5;
@@ -20,14 +21,12 @@ function createCommentsBox(questionId) {
 }
 
 function createUserProfilingPage() {
-  const USER_PROFILING_PAGE_ID = "user_profiling";
-
   var userProfilingPage = {
-    name: USER_PROFILING_PAGE_ID,
+    id: CONTENT.userProfiling.id,
     elements: [],
   };
 
-  for (var userProfilingQuestion of CONTENT.userProfilingQuestions) {
+  for (var userProfilingQuestion of CONTENT.userProfiling.questions) {
     userProfilingPage.elements.push({
       type: "rating",
       name: userProfilingQuestion.id,
@@ -39,7 +38,7 @@ function createUserProfilingPage() {
     });
   }
 
-  userProfilingPage.elements.push(createCommentsBox(USER_PROFILING_PAGE_ID));
+  userProfilingPage.elements.push(createCommentsBox(CONTENT.userProfiling.id));
 
   return userProfilingPage;
 }
@@ -47,6 +46,41 @@ function createUserProfilingPage() {
 function selectRandomIndex(array) {
   var randomIndex = Math.floor(Math.random() * array.length);
   return randomIndex;
+}
+
+function screenWidth() {
+  return (
+    window.innerWidth ||
+    document.documentElement.clientWidth ||
+    document.body.clientWidth
+  );
+}
+
+function createImagePanel(name, link, idealWidth) {
+  let minScreenWidth = 1200;
+  let padding = 50;
+  let imageWidth = idealWidth;
+
+  if (screenWidth() < minScreenWidth) {
+    imageWidth = screenWidth();
+  }
+
+  let panelWidth = idealWidth + padding;
+
+  return {
+    type: "panel",
+    elements: [
+      {
+        type: "image",
+        name: name,
+        imageLink: link,
+        imageWidth: `${imageWidth}px`,
+        imageHeight: `${imageWidth}px`,
+      },
+    ],
+    width: `${panelWidth}px`,
+    startWithNewLine: false,
+  };
 }
 
 function createPagesForExplanationClass(explanationClass) {
@@ -58,40 +92,18 @@ function createPagesForExplanationClass(explanationClass) {
     var pageId = `${explanationClass.id}_${instance.id}`;
     var imageIndex = selectRandomIndex(instance.images);
 
-    //get screen size
-    var width =
-      window.innerWidth ||
-      document.documentElement.clientWidth ||
-      document.body.clientWidth;
-    var height =
-      window.innerHeight ||
-      document.documentElement.clientHeight ||
-      document.body.clientHeight;
-
-    //set image width according to screen size
-    let computedWidth = "650px";
-    if (width < 1200) {
-      computedWidth = `${width - 50}px`;
-    }
-
     var page = {
       name: pageId,
-      elements: [
-        {
-          type: "panel",
-          elements: [
-            {
-              type: "image",
-              name: "displayExample",
-              imageLink: instance.images[imageIndex],
-              imageWidth: computedWidth,
-              imageHeight: computedWidth,
-            },
-          ],
-          width: computedWidth,
-        },
-      ],
+      elements: [],
     };
+
+    page.elements.push(
+      createImagePanel(
+        "displayExample",
+        instance.images[imageIndex],
+        IDEAL_IMAGE_WIDTH
+      )
+    );
 
     var ratingPanel = {
       type: "panel",
@@ -126,25 +138,30 @@ function createPagesForExplanationClass(explanationClass) {
 }
 
 function createInstructionsPage() {
-  return {
+  let page = {
     name: "info_page",
-    elements: [
-      {
-        type: "html",
-        html: CONTENT.instructionsHTML,
-      },
-    ],
+    elements: [],
   };
+
+  page.elements.push({
+    type: "html",
+    html: CONTENT.instructionsHTML,
+  });
+
+  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 600));
+
+  return page;
 }
 
 var surveyJson = {
+  title: CONTENT.title,
   requiredText: REQUIRED_TEXT,
-  pages: [{}],
+  pages: [],
 };
 
-surveyJson.pages.push(createUserProfilingPage());
+surveyJson.pages.push(createInstructionsPage());
 
-// surveyJson.pages.push(createInstructionsPage())
+surveyJson.pages.push(createUserProfilingPage());
 
 for (var explanationClass of SHUFFLE_EXPLANATION_CLASSES
   ? CONTENT.explanationClasses.sort(randomize)
