@@ -27,15 +27,19 @@ export const CONTENT = {
   ratingQuestions: [
     {
       id: "understandability",
-      text: "The explanation is intuitively understandable",
+      text: "I found the explanation intuitively understandable",
     },
     {
       id: "usability",
-      text: "The explanation helps me to understand the factors affecting this result",
+      text: "The explanation helps me to understand factors relevant to the algorithm",
     },
     {
       id: "informativeness",
-      text: "The explanation helps me to decide whether I can trust this result",
+      text: "The explanation helps me to decide whether I can trust the generated annotations",
+    },
+    {
+      id: "value",
+      text: "The explanation provides me with valuable information for my work",
     },
   ],
   explanationClasses: [
@@ -112,13 +116,16 @@ export const CONTENT = {
       ],
     },
     {
-      id : "trustScores",
+      id: "trustScores",
       instances: [
         {
           id: "borderlineCases",
-          name : "Borderline cases",
+          name: "Borderline cases",
           description: "Display low-confidence annotations for review",
-          images: [Images.trustScores.colorCoded_0, Images.trustScores.edgeCases_0],
+          images: [
+            Images.trustScores.colorCoded_0,
+            Images.trustScores.edgeCases_0,
+          ],
         },
       ],
     },
