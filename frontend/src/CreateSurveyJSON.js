@@ -4,8 +4,7 @@ const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 4;
-const SHUFFLE_EXAMPLES = true;
-const DISPLAY_EXAMPLE_DESCRIPTIONS = false;
+const SHUFFLE_EXPLANATION_CLASSES = true;
 
 function randomize(a, b) {
   return Math.random() - 0.5;
@@ -46,23 +45,21 @@ function createUserProfilingPage() {
 }
 
 function selectRandomIndex(array) {
-  var randomIndex = Math.floor(Math.random() * array.length)
+  var randomIndex = Math.floor(Math.random() * array.length);
   return randomIndex;
 }
 
-function createPagesForExampleClass(example) {
-  var instancePages = [];
+function createPagesForExplanationClass(explanationClass) {
+  var pages = [];
 
-  for (var instance of SHUFFLE_EXAMPLES
-    ? example.instances.sort(randomize)
-    : example.instances) {    
-
+  for (var instance of SHUFFLE_EXPLANATION_CLASSES
+    ? explanationClass.instances.sort(randomize)
+    : explanationClass.instances) {
+    var pageId = `${explanationClass.id}_${instance.id}`;
     var imageIndex = selectRandomIndex(instance.images);
-    var instanceId = `${example.class}_${instance.id}_variant${imageIndex}`;
 
-    var instancePage = {
-      name: `${example.class}_${instance.id}`,
-      title: DISPLAY_EXAMPLE_DESCRIPTIONS ? instance.description : "",
+    var page = {
+      name: pageId,
       elements: [
         {
           type: "panel",
@@ -82,14 +79,19 @@ function createPagesForExampleClass(example) {
 
     var ratingPanel = {
       type: "panel",
-      elements: [],
+      elements: [
+        {
+          type: "html",
+          html: `<h3>${instance.name}</h3>${instance.description}`,
+        },
+      ],
       startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
     };
 
     for (var ratingQuestion of CONTENT.ratingQuestions) {
       ratingPanel.elements.push({
         type: "rating",
-        name: `${instanceId}_${ratingQuestion.id}`,
+        name: `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
         title: ratingQuestion.text,
         rateMax: CONTENT.rateMax,
         minRateDescription: CONTENT.minRateDescription,
@@ -98,13 +100,13 @@ function createPagesForExampleClass(example) {
       });
     }
 
-    ratingPanel.elements.push(createCommentsBox(instanceId));
-    instancePage.elements.push(ratingPanel);
+    ratingPanel.elements.push(createCommentsBox(pageId));
+    page.elements.push(ratingPanel);
 
-    instancePages.push(instancePage);
+    pages.push(page);
   }
 
-  return instancePages;
+  return pages;
 }
 
 function createInstructionsPage() {
@@ -128,10 +130,10 @@ surveyJson.pages.push(createUserProfilingPage());
 
 // surveyJson.pages.push(createInstructionsPage())
 
-for (var example of SHUFFLE_EXAMPLES
-  ? CONTENT.examples.sort(randomize)
-  : CONTENT.examples) {
-  surveyJson.pages.push(...createPagesForExampleClass(example));
+for (var explanationClass of SHUFFLE_EXPLANATION_CLASSES
+  ? CONTENT.explanationClasses.sort(randomize)
+  : CONTENT.explanationClasses) {
+  surveyJson.pages.push(...createPagesForExplanationClass(explanationClass));
 }
 
 export { surveyJson };

@@ -38,120 +38,89 @@ export const CONTENT = {
       text: "The explanation helps me to decide whether I can trust this result",
     },
   ],
-  examples: [
+  explanationClasses: [
     {
-      class: "saliencyMaps",
+      id: "saliencyMaps",
       instances: [
         {
           id: "globalSaliency",
-          description: "Display most relevant pixels for region",
+          name: "Global saliency map",
+          description:
+            "Show the most relevant pixels for the positive classifications within this region of interest",
           images: [
             Images.saliencyMaps.gradcam_0,
             Images.saliencyMaps.gradcam_1,
             Images.saliencyMaps.guidedbackprop_0,
           ],
-          imageCaption:
-            "<p>Most relevant regions for Ki-67 positive classifications</p>",
         },
         {
           id: "localSaliency",
-          description: "Display most relevant pixels for annotation",
-          images: [Images.saliencyMaps.gradcam_local_0, Images.saliencyMaps.gradcam_local_1],
-          imageCaption:
-            "<p>Most relevant regions for Ki-67 positive classifications</p>",
+          name: "Local saliency map",
+          description:
+            "Show the most relevant pixels for the classification of a selected annotation",
+          images: [
+            Images.saliencyMaps.gradcam_local_0,
+            Images.saliencyMaps.gradcam_local_1,
+          ],
         },
       ],
     },
     {
-      class: "conceptAttribution",
+      id: "conceptAttribution",
       instances: [
         {
           id: "textAttributes",
-          description: "Show most important features in text format",
-          images: [Images.conceptAttribution.textAttributes_0,
-            Images.conceptAttribution.textAttributes_1],
-          imageCaption:
-            "<p>Most important features attributed to positive classifications</p>",
+          name: "Text attributes",
+          description:
+            "Show the most important features attributed to positive classifications",
+          images: [
+            Images.conceptAttribution.textAttributes_0,
+            Images.conceptAttribution.textAttributes_1,
+          ],
         },
       ],
     },
     {
-      class: "prototypes",
+      id: "prototypes",
       instances: [
         {
           id: "prototypes",
+          name: "Prototypical examples",
           description:
-            "Show prototypical positive and negative classifications",
+            "Show prototypical positively and negatively classified annotations within this region",
           images: [Images.prototypes.prototypes_0],
-          imageCaption:
-            "<p>Prototypical examples for positive and negative classifications</p>",
         },
       ],
     },
     {
-      class: "counterfactuals",
+      id: "counterfactuals",
       instances: [
         {
           id: "prototypeInterpolation",
+          name: "Counterfactuals in one axis",
           description:
-            "Show interpolation between positive and negative prototypes",
+            "Show counterfactual examples interpolating between positive and negative examples, showing model classifications for each",
           images: [Images.counterfactuals.oneAxis_0],
-          imageCaption:
-            "<p>Interpolation between positive and negative prototypes, showing model decision boundary for positive and negative classification</p>",
         },
         {
           id: "twoAxisCounterfactuals",
+          name: "Counterfactuals in two axes",
           description:
-            "Show generated counterfactual examples with classifications",
+            "Show counterfactual examples interpolating in two principal factors of variation, showing model classifications each",
           images: [Images.counterfactuals.twoAxis_0],
-          imageCaption:
-            "<p>Counterfactual examples generated in two axes of variation, showing decision boundaries</p>",
         },
       ],
     },
     {
-      class: "trustScores",
+      id : "trustScores",
       instances: [
         {
-          id: "crossValidation",
-          description: "Cross-validation from other apps",
-          images: [Images.trustScores.tissueDetection_0],
-          imageCaption:
-            "<p>Segmentation of other tissues by a separate app, with potential conflicts highlighted</p>",
-        },
-        {
-          id: "colorCodedConfidence",
+          id: "borderlineCases",
+          name : "Borderline cases",
           description: "Display low-confidence annotations for review",
           images: [Images.trustScores.colorCoded_0, Images.trustScores.edgeCases_0],
-          imageCaption:
-            "<p>Classifications marked according to model confidence</p>",
         },
       ],
     },
   ],
 };
-
-// # EXPLANATION CLASSES (X = done)
-
-// ## SALIENCY MAPS
-// Heatmap overlay on results                                               X gradcam
-
-// ## CONCEPT ATTRIBUTION
-// Visual representation of attributed concepts (feature visualisation)
-// Text-based representation of attributed concepts                         X text_attributes
-
-// ## PROTOTYPES
-// Display of prototypes of predicted classes                               X prototypes
-// Interpolation between prototypes with decision boundary                  X prototype_interpolation
-// Multiple interpolations between random samples
-
-// ## COUNTERFACTUALS
-// Closest counterfactual with opposite classification                      X counterfactuals
-// Closest counterfactual with no classification                            X counterfactuals
-
-// ## TRUST SCORES
-// Color-coded confidence rating                                            X color_coded_confidence
-// Flagging of edge cases for review                                        X edge_cases
-// Variance of model ensemble, placing of this model within ensemble        X model_ensemble_variance
-// Visualisation of training/validation data statistics/demographics
-// Cross-validation with other models (e.g. tissue/feature detection)       X cross_validation
