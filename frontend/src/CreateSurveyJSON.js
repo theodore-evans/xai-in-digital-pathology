@@ -58,6 +58,22 @@ function createPagesForExplanationClass(explanationClass) {
     var pageId = `${explanationClass.id}_${instance.id}`;
     var imageIndex = selectRandomIndex(instance.images);
 
+    //get screen size
+    var width =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+
+    var height =
+      window.innerHeight ||
+      document.documentElement.clientHeight ||
+      document.body.clientHeight;
+    let computedWidth = "650px";
+    if (width < 1200) {
+      computedWidth = `${width - 50}px`;
+    }
+    console.log(`height ${height} width ${width}`);
+
     var page = {
       name: pageId,
       elements: [
@@ -68,10 +84,11 @@ function createPagesForExplanationClass(explanationClass) {
               type: "image",
               name: "displayExample",
               imageLink: instance.images[imageIndex],
-              imageWidth: "600px",
-              imageHeight: "600px",
+              imageWidth: computedWidth,
+              imageHeight: computedWidth,
             },
           ],
+          width: computedWidth,
         },
       ],
     };
