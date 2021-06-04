@@ -7,7 +7,8 @@
 		"html-webpack-plugin": "^5.3.1",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
-		"survey-react": "^1.8.49"
+		"survey-react": "^1.8.49",
+		"webpack": "^5.38.1"
 	},
 	"scripts": {
 		"start": "node_modules/.bin/webpack serve --mode=development",

@@ -43,7 +43,7 @@ app.listen(PORT, () => {
 let apiRoutes = require("./routes");
 //Use API routes in the App
 app.use("/", apiRoutes);
-app.use(express.static(path.join(__dirname, "../frontend", "build")));
+app.use(express.static(path.join(__dirname, "../frontend", "dist")));
 
 //filter input to prevent code injection for mongodb
 var blackList = ["$", "{", "&&", "||"];

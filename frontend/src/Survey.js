@@ -44,9 +44,10 @@ export function SurveyPage() {
 
       img.src = EXAMPLE_OUTPUT_IMAGE;
       options.htmlElement.onclick = function () {
-        img.src == options.question.imageLink
-          ? EXAMPLE_OUTPUT_IMAGE
-          : options.question.imageLink;
+        img.src =
+          img.src == options.question.imageLink
+            ? EXAMPLE_OUTPUT_IMAGE
+            : options.question.imageLink;
       };
     }
   });
