@@ -1,10 +1,10 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-
 import { surveyJson } from "./CreateSurveyJSON.js";
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
+const api_url = "http://130.149.232.161:5000/result";
 
 Survey.StylesManager.applyTheme("default");
 
@@ -20,7 +20,7 @@ function onValueChanged(sender, options) {
 }
 
 function onComplete() {
-  fetch("http://localhost:5000/result", {
+  fetch(api_url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,11 +49,17 @@ export function SurveyPage() {
             ? EXAMPLE_OUTPUT_IMAGE
             : options.question.imageLink;
       };
+      var btn = document.createElement("button");
+      btn.type = "button";
+      // console.log(htmlElement);
+      console.log(options);
+      // let imageContainer = options.htmlElement.querySelector("sv_q_image");
+      options.htmlElement.parentNode.appendChild(btn);
     }
   });
   return (
     <div className="container">
-      <h2>Explainable AI for digital pathology</h2>
+      <h2>Explainable AI for Digital Pathology</h2>
       <Survey.Survey
         model={model}
         onComplete={onComplete}

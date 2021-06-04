@@ -63,16 +63,16 @@ function createPagesForExplanationClass(explanationClass) {
       window.innerWidth ||
       document.documentElement.clientWidth ||
       document.body.clientWidth;
-
     var height =
       window.innerHeight ||
       document.documentElement.clientHeight ||
       document.body.clientHeight;
+
+    //set image width according to screen size
     let computedWidth = "650px";
     if (width < 1200) {
       computedWidth = `${width - 50}px`;
     }
-    console.log(`height ${height} width ${width}`);
 
     var page = {
       name: pageId,

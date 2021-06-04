@@ -1,4 +1,9 @@
 :root {
-    padding: 0px;
-    margin-bottom: -6px;
+  padding: 0px;
+  margin-bottom: -6px;
+}
+
+:imagebutton {
+  padding: 0px;
+  margin-bottom: -6px;
 }
