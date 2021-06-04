@@ -1,5 +1,5 @@
 export default {
-  example_app_output: require("./base_image.png"),
+  base_image: require("./base_image.png"),
   saliencyMaps: {
     gradcam_0: require("./SM/gradcam_0.png"),
     gradcam_1: require("./SM/gradcam_1.png"),
