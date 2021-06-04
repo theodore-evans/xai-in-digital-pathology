@@ -5,7 +5,7 @@ const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
-const IDEAL_IMAGE_WIDTH = 600;
+const IDEAL_IMAGE_WIDTH = 650;
 
 function randomize(a, b) {
   return Math.random() - 0.5;
@@ -59,13 +59,13 @@ function screenWidth() {
 function createImagePanel(name, link, idealWidth) {
   let minScreenWidth = 1200;
   let padding = 50;
-  let imageWidth = idealWidth ;
-  
-  if (screenWidth() < minScreenWidth) {
-    imageWidth = screenWidth();
-  }
+  let imageWidth = idealWidth - padding;
+  let panelWidth = idealWidth;
 
-  let panelWidth = idealWidth + padding;
+  if (screenWidth() < minScreenWidth) {
+    imageWidth = screenWidth() - padding;
+    panelWidth = screenWidth();
+  }
 
   return {
     type: "panel",
@@ -148,7 +148,7 @@ function createInstructionsPage() {
     html: CONTENT.instructionsHTML,
   });
 
-  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 600));
+  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 500));
 
   return page;
 }
