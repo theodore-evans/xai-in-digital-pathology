@@ -3,7 +3,7 @@ import { CONTENT } from "./SurveyContent.js";
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
-const COMMENT_ROWS = 4;
+const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 
 function randomize(a, b) {
@@ -72,7 +72,6 @@ function createPagesForExplanationClass(explanationClass) {
               imageHeight: "600px",
             },
           ],
-          width: "650px",
         },
       ],
     };
