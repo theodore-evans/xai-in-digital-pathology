@@ -4,7 +4,7 @@ import "survey-react/survey.css";
 
 import { surveyJson } from "./CreateSurveyJSON.js";
 
-const EXAMPLE_OUTPUT_IMAGE = require("./assets/p2_0232_3.png").default;
+const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
 
 Survey.StylesManager.applyTheme("default");
 
