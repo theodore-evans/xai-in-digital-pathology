@@ -84,15 +84,15 @@ function createImagePanel(name, link, idealWidth) {
 }
 
 function createPagesForExplanationClass(explanationClass) {
-  var pages = [];
+  let pages = [];
 
-  for (var instance of SHUFFLE_EXPLANATION_CLASSES
+  for (let instance of SHUFFLE_EXPLANATION_CLASSES
     ? explanationClass.instances.sort(randomize)
     : explanationClass.instances) {
-    var pageId = `${explanationClass.id}_${instance.id}`;
-    var imageIndex = selectRandomIndex(instance.images);
+    let pageId = `${explanationClass.id}_${instance.id}`;
+    let imageIndex = selectRandomIndex(instance.images);
 
-    var page = {
+    let page = {
       name: pageId,
       elements: [],
     };
@@ -105,7 +105,7 @@ function createPagesForExplanationClass(explanationClass) {
       )
     );
 
-    var ratingPanel = {
+    let ratingPanel = {
       type: "panel",
       elements: [
         {
@@ -116,7 +116,7 @@ function createPagesForExplanationClass(explanationClass) {
       startWithNewLine: QUESTIONS_ARE_ON_NEW_LINE,
     };
 
-    for (var ratingQuestion of CONTENT.ratingQuestions) {
+    for (let ratingQuestion of CONTENT.ratingQuestions) {
       ratingPanel.elements.push({
         type: "rating",
         name: `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
@@ -153,7 +153,7 @@ function createInstructionsPage() {
   return page;
 }
 
-var surveyJson = {
+let surveyJson = {
   title: CONTENT.title,
   requiredText: REQUIRED_TEXT,
   pages: [],
