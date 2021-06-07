@@ -136,7 +136,7 @@ export const CONTENT = {
         {
           id: "borderlineCases",
           name: "Borderline cases",
-          description: "Display low-confidence annotations for review",
+          description: "Display low-confidence positive annotations for review",
           images: [
             Images.trustScores.colorCoded_0,
             Images.trustScores.edgeCases_0,
