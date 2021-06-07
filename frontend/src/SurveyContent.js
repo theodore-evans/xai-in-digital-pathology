@@ -24,15 +24,15 @@ export const CONTENT = {
     title: "Some questions about you",
     questions: [
       {
-        id: "ai_InRoutine",
+        id: "userProfiling_aiInRoutine",
         text: "I use AI solutions regularly in my routine work",
       },
       {
-        id: "ai_Familiarity",
+        id: "userProfiling_aiFamiliarity",
         text: "I am familiar with the use of AI applications in digital pathology",
       },
       {
-        id: "ml_Familiarity",
+        id: "userProfiling_mlFamiliarity",
         text: "I am familiar with technical details of machine learning",
       },
     ],

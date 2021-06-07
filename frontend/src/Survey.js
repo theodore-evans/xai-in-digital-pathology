@@ -4,7 +4,7 @@ import "survey-react/survey.css";
 import { surveyJson } from "./CreateSurveyJSON.js";
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
-const api_url = "http://130.149.232.161:5000/result";
+const API_URL = "http://130.149.232.161:5000/result";
 
 Survey.StylesManager.applyTheme("default");
 
@@ -20,7 +20,7 @@ function onValueChanged(sender, options) {
 }
 
 function onComplete() {
-  fetch(api_url, {
+  fetch(API_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
