@@ -16,7 +16,7 @@ Object.keys(Images).forEach((key) => {
 });
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
-const API_URL = "http://130.149.232.161:5000/result";
+const API_URL = "http://localhost:3000/result";
 
 Survey.StylesManager.applyTheme("default");
 

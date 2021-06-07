@@ -9,8 +9,7 @@ const filter = require("content-filter");
 const { models, connectDb } = require("./models");
 const survey = require("./database.js");
 
-require("dotenv").config();
-let source = process.env.ATLAS_CONNECTION;
+let source = process.env.REACT_APP_ATLAS_CONNECTION;
 
 app.use(cors());
 app.use(express.json());
@@ -34,7 +33,7 @@ const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("DB connected.");
 });
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.REACT_APP_PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Successfully served on port: ${PORT}.`);
 });
