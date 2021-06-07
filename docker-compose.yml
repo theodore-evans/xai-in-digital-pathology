@@ -4,6 +4,9 @@ services:
     container_name: xai-survey
     restart: always
     build: .
+    environment:
+      - REACT_APP_ATLAS_CONNECTION=mongodb://mongo:27017/xai_surveys
+      - REACT_APP_PORT=3000
     ports:
       - "3000:3000"
     links:
