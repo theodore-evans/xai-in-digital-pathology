@@ -28,5 +28,5 @@ yarn-error.log*
 frontend/src/assets/local_files
 
 # mongodb directories
-data/
-backups/
+/data/*
+!/data/backupscript.sh
