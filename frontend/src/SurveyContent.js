@@ -16,6 +16,10 @@ export const CONTENT = {
     <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
     <p>All input is treated anonymously and no additional data is collected.</p>
     <p>Thank you for participating in our study!</p>`,
+  completedHtml: ` <p style='font-size:24px;'>Thank you for completing the survey!<p>
+  <p>Your answers have been saved. You can now safely close this page.</p>
+  <p>If you would like to know more about the empaia project, please feel free to visit <a href="https://www.empaia.org">our website</a>.</p>
+  <p>If you want to stay informed about any news regarding empaia, please follow <a href="https://www.empaia.org/news">this link</a> and register yourself for the newsletter. </p>`,
   minRateDescription: "Strongly disagree",
   maxRateDescription: "Strongly agree",
   rateMax: 7,

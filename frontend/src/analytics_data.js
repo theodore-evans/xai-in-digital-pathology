@@ -1,6 +1,8 @@
 export const json = {
-  completedHtml:
-    "<p style='font-size:24px;'>Thank you for completing the survey! (please wait for analytics to load ...)<p>",
+  completedHtml: `<p style='font-size:24px;'>Thanks you for completing the survey!<p>
+  <p>Your answers have been saved. You can now safely close this page.</p>
+  <p>If you would like to know more about the empaia project, please feel free to visit <a href="https://www.empaia.org">our website</a>.</p>
+  <p>If you want to stay informed about any news regarding empaia, please follow <a href="https://www.empaia.org/news">this link</a> and register yourself for the newsletter. </p>`,
   pages: [
     {
       name: "page_info",
@@ -18,8 +20,7 @@ export const json = {
             },
             {
               value: "Consulting",
-              text:
-                "Software consulting firm (provide development services to other organizations)",
+              text: "Software consulting firm (provide development services to other organizations)",
             },
             {
               value: "Custom",

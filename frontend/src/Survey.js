@@ -3,7 +3,7 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
-import { create } from "../../backend/database.js";
+import { CONTENT } from "./SurveyContent.js";
 
 //preload images on page load to prevent flickering later - global array to keep them in memory
 let ImageArray = [];
@@ -19,6 +19,9 @@ const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
 const API_URL = "http://localhost:3000/result";
 
 Survey.StylesManager.applyTheme("default");
+Survey.surveyLocalization.locales[
+  Survey.surveyLocalization.defaultLocale
+].requiredError = "This answer is required.";
 
 function onValueChanged(sender, options) {
   let question_class = class_regex.exec(options.question.name)[0];
@@ -78,6 +81,7 @@ export function SurveyPage() {
         model={model}
         onComplete={onComplete}
         onValueChanged={onValueChanged}
+        completedHtml={CONTENT.completedHtml}
       />
     </div>
   );
