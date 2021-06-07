@@ -9,9 +9,7 @@ const filter = require("content-filter");
 const { models, connectDb } = require("./models");
 const survey = require("./database.js");
 
-// require("dotenv").config();
 let source = process.env.REACT_APP_ATLAS_CONNECTION;
-console.log(process.env);
 
 app.use(cors());
 app.use(express.json());
