@@ -29,3 +29,6 @@ frontend/src/assets/local_files
 
 # mongodb directories
 /data/*
+
+# config
+.env
