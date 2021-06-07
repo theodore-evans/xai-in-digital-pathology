@@ -3,6 +3,7 @@ import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
+import { create } from "../../backend/database.js";
 
 //preload images on page load to prevent flickering later - global array to keep them in memory
 let ImageArray = [];
@@ -53,30 +54,22 @@ export function SurveyPage() {
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
 
+      //toggle both the image and the button text onclick
       img.src = EXAMPLE_OUTPUT_IMAGE;
       options.htmlElement.onclick = function () {
         img.src =
           img.src == options.question.imageLink
             ? EXAMPLE_OUTPUT_IMAGE
             : options.question.imageLink;
-      };
 
-      var btn = document.createElement("switch");
-      btn.type = "switch";
-      btn.className = "btn btn-info btn-xs";
-      let infotext = "Show explanation";
-      btn.innerHTML = infotext;
-      btn.onclick = function () {
-        btn.innerHTML =
-          btn.innerHTML == "Show explanation"
+        let button = options.htmlElement.getElementsByTagName("button")[0];
+        button.innerHTML =
+          button.innerHTML == "Show explanation"
             ? "Hide explanation"
             : "Show explanation";
       };
-      var header = options.htmlElement.firstChild;
-      var span = document.createElement("span");
-      span.innerHTML = "  ";
-      header.appendChild(span);
-      header.appendChild(btn);
+
+      createPrettyButton(options);
     }
   });
   return (
@@ -88,4 +81,25 @@ export function SurveyPage() {
       />
     </div>
   );
+}
+
+function createPrettyButton(options) {
+  var btn = document.createElement("button");
+
+  let infotext = "Show explanation";
+  btn.innerHTML = infotext;
+  btn.onclick = function () {
+    btn.innerHTML =
+      btn.innerHTML == "Show explanation"
+        ? "Hide explanation"
+        : "Show explanation";
+  };
+
+  btn.style.setProperty("margin-top", "10px");
+
+  var header = options.htmlElement.firstChild;
+  var span = document.createElement("span");
+  span.innerHTML = "  ";
+  header.appendChild(span);
+  header.appendChild(btn);
 }
