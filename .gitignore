@@ -29,4 +29,3 @@ frontend/src/assets/local_files
 
 # mongodb directories
 /data/*
-!data/backupscript.sh
