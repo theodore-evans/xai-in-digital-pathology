@@ -2,6 +2,17 @@ import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import { surveyJson } from "./CreateSurveyJSON.js";
+import Images from "./assets";
+
+//preload images on page load to prevent flickering later - global array to keep them in memory
+let ImageArray = [];
+Object.keys(Images).forEach((key) => {
+  Object.keys(Images[key]).forEach((subkey) => {
+    const img = new Image();
+    img.src = Images[key][subkey].default;
+    ImageArray.push(img);
+  });
+});
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
 const API_URL = "http://localhost:3000/result";
