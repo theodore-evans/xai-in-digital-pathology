@@ -85,15 +85,7 @@ export function SurveyPage() {
 
 function createPrettyButton(options) {
   var btn = document.createElement("button");
-
-  let infotext = "Show explanation";
-  btn.innerHTML = infotext;
-  btn.onclick = function () {
-    btn.innerHTML =
-      btn.innerHTML == "Show explanation"
-        ? "Hide explanation"
-        : "Show explanation";
-  };
+  btn.innerHTML = "Show explanation";
 
   btn.style.setProperty("margin-top", "10px");
 
