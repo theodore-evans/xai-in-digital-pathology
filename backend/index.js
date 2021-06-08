@@ -6,6 +6,8 @@ const bodyParser = require("body-parser");
 const path = require("path");
 const filter = require("content-filter");
 
+const BASE_URL = "/xai-usability-survey/";
+
 const { models, connectDb } = require("./models");
 const survey = require("./database.js");
 
@@ -41,7 +43,7 @@ app.listen(PORT, () => {
 //Import routes
 let apiRoutes = require("./routes");
 //Use API routes in the App
-app.use("/", apiRoutes);
+app.use(BASE_URL, apiRoutes);
 app.use(express.static(path.join(__dirname, "../frontend", "dist")));
 
 //filter input to prevent code injection for mongodb
