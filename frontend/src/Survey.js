@@ -16,7 +16,7 @@ Object.keys(Images).forEach((key) => {
 });
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
-const RESULT_URL = process.env.PUBLIC_URL + "/result";
+const RESULT_URL = process.env.SERVER_URL + "/result";
 
 Survey.StylesManager.applyTheme("default");
 Survey.surveyLocalization.locales[
