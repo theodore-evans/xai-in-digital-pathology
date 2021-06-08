@@ -3,18 +3,20 @@ services:
   app:
     container_name: xai-survey
     restart: always
-    build: .
+    build:
+      context: .
+      network: ${COMPOSE_NETWORK}
     environment:
       - REACT_APP_ATLAS_CONNECTION=mongodb://mongo:27017/xai_surveys
       - REACT_APP_PORT=3000
     ports:
-      - "3000:3000"
+      - ${COMPOSE_APP_HOST}:${COMPOSE_APP_PORT}:3000
     links:
       - mongo
   mongo:
     container_name: mongo
     image: mongo
     volumes:
-      - ./data:/data/db
+      - ${COMPOSE_DB_VOL}:/data/db
     ports:
-      - "27017:27017"
+      - ${COMPOSE_DB_HOST}:${COMPOSE_DB_PORT}:27017
