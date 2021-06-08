@@ -11,7 +11,7 @@ app.options("*", cors());
 const { models, connectDb } = require("./models");
 
 require("dotenv").config();
-let source = "mongodb://mongo:27017/xai_surveys";
+let source = process.env.REACT_APP_ATLAS_CONNECTION;
 
 app.use(express.json());
 app.use(
