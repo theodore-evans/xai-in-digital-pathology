@@ -5,13 +5,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const path = require("path");
 const filter = require("content-filter");
-
+const favicon = require("serve-favicon");
+app.use(cors());
+app.options("*", cors());
 const { models, connectDb } = require("./models");
-const survey = require("./database.js");
 
+require("dotenv").config();
 let source = process.env.REACT_APP_ATLAS_CONNECTION;
 
-app.use(cors());
 app.use(express.json());
 app.use(
   bodyParser.urlencoded({
@@ -19,6 +20,7 @@ app.use(
   })
 );
 app.use(bodyParser.json());
+app.use(favicon(path.join(__dirname, "public", "favicon.png")));
 
 mongoose.connect(source, {
   useNewUrlParser: true,
