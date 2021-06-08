@@ -36,7 +36,7 @@ connection.once("open", () => {
   console.log("DB connected.");
 });
 const PORT = process.env.REACT_APP_PORT || 3000;
-app.listen(PORT, () => {
+app.listen("0.0.0.0:" + PORT, () => {
   console.log(`Successfully served on port: ${PORT}.`);
 });
 
