@@ -5,7 +5,8 @@ services:
     restart: always
     build:
       context: .
-      network: ${COMPOSE_NETWORK}
+    networks: 
+      - ${COMPOSE_NETWORK}
     environment:
       - REACT_APP_ATLAS_CONNECTION=mongodb://mongo:27017/xai_surveys
       - REACT_APP_PORT=3000
