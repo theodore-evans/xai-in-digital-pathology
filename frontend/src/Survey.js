@@ -40,7 +40,7 @@ function onComplete() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(Survey.data),
-  }).then(function(response) {
+  }).then(function (response) {
     console.log(response.status);
   });
 }
@@ -59,18 +59,18 @@ export function SurveyPage() {
       let img = options.htmlElement.getElementsByTagName("img")[0];
 
       //toggle both the image and the button text onclick
-      img.src = EXAMPLE_OUTPUT_IMAGE;
+      img.src = options.question.imageLink;
       options.htmlElement.onclick = function () {
         img.src =
-          img.src == options.question.imageLink
-            ? EXAMPLE_OUTPUT_IMAGE
-            : options.question.imageLink;
+          img.src == EXAMPLE_OUTPUT_IMAGE
+            ? options.question.imageLink
+            : EXAMPLE_OUTPUT_IMAGE;
 
         let button = options.htmlElement.getElementsByTagName("button")[0];
         button.innerHTML =
-          button.innerHTML == "Show explanation"
-            ? "Hide explanation"
-            : "Show explanation";
+          button.innerHTML == "Hide explanation"
+            ? "Show explanation"
+            : "Hide explanation";
       };
 
       createPrettyButton(options);
@@ -90,7 +90,7 @@ export function SurveyPage() {
 
 function createPrettyButton(options) {
   var btn = document.createElement("button");
-  btn.innerHTML = "Show explanation";
+  btn.innerHTML = "Hide explanation";
 
   btn.style.setProperty("margin-top", "10px");
 
