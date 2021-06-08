@@ -9,7 +9,7 @@ services:
     environment:
       - REACT_APP_ATLAS_CONNECTION=mongodb://mongo:27017/xai_surveys
       - REACT_APP_PORT=3000
-      - SURVER_URL=${SERVER_URL}
+      - PUBLIC_URL=${PUBLIC_URL}
     ports:
       - ${COMPOSE_APP_HOST}:${COMPOSE_APP_PORT}:3000
     links:

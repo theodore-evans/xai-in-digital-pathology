@@ -3,7 +3,7 @@
 Create `.env` file with the following settings:
 
 ```bash
-SERVER_URL=https://empaia-dev.charite.de/xai-usability-survey
+PUBLIC_URL=https://empaia-dev.charite.de/xai-usability-survey
 COMPOSE_APP_HOST=127.0.0.1
 COMPOSE_APP_PORT=3000
 COMPOSE_DB_HOST=127.0.0.1

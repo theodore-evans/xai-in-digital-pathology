@@ -2,7 +2,7 @@ import { CONTENT } from "./SurveyContent.js";
 
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
-const ANSWERS_ARE_REQUIRED = true;
+const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 const IDEAL_IMAGE_WIDTH = 650;

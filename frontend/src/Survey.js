@@ -16,6 +16,7 @@ Object.keys(Images).forEach((key) => {
 });
 
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
+const RESULT_URL = process.env.PUBLIC_URL + "/result";
 
 Survey.StylesManager.applyTheme("default");
 Survey.surveyLocalization.locales[
@@ -34,15 +35,20 @@ function onValueChanged(sender, options) {
 }
 
 function onComplete() {
-  fetch(`${process.env.SERVER_URL}/result`, {
+  fetch(RESULT_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(Survey.data),
-  }).then(function(response) {
-    console.log(response.status);
-  });
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
 }
 
 //setup the survey data
