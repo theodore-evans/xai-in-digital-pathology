@@ -8,7 +8,8 @@ export const CONTENT = {
   baseImage: Images.base_image,
   instructionsHTML: `<p>Dear participant,</p>
     <p>Within the scope of the EMPAIA project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in Pathology. 
-    We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions.</p>
+    We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
+    The answers will be collected and evaluated for scientific publications focusing on future directions for xAI approaches.</p>
     <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
     Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
     <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b></p>
@@ -27,17 +28,11 @@ export const CONTENT = {
   userProfiling: {
     id: "userProfiling",
     title: "Some questions about you",
-    dropdownQuestions : [
+    dropdownQuestions: [
       {
         id: "age",
         text: "My age:",
-        choices: [
-          "under 30",
-          "30-40",
-          "41-50",
-          "51-60",
-          "over 60"
-        ]
+        choices: ["under 30", "30-40", "41-50", "51-60", "over 60"],
       },
       {
         id: "position",
@@ -45,30 +40,22 @@ export const CONTENT = {
         choices: [
           "Specialist physician (Facharzt) for pathology/neuropathology",
           "Assisting physician (Assistenzarzt) for pathology/neuropathology",
-          "Researcher in pathology/neuropathology"
+          "Researcher in pathology/neuropathology",
         ],
         hasOther: true,
-        startWithNewLine: false
+        startWithNewLine: false,
       },
       {
         id: "useOfDP",
         text: "I currently use digitial pathology/telepathology:",
-        choices: [
-          "in routine diagnostics",
-          "in research",
-          "not at all"
-        ],
+        choices: ["in routine diagnostics", "in research", "not at all"],
       },
       {
         id: "useOfAI",
         text: "I currently use of AI-solutions:",
-        choices: [
-          "in routine diagnostics",
-          "in research",
-          "not at all"
-        ],
-        startWithNewLine: false
-      }
+        choices: ["in routine diagnostics", "in research", "not at all"],
+        startWithNewLine: false,
+      },
     ],
     ratingQuestions: [
       {
@@ -78,7 +65,7 @@ export const CONTENT = {
       {
         id: "mlFamiliarity",
         text: "I am familiar with technical details of machine learning",
-        startWithNewLine: true
+        startWithNewLine: true,
       },
     ],
   },
