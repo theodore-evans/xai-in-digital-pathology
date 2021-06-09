@@ -42,12 +42,12 @@ function onComplete() {
     },
     body: JSON.stringify(Survey.data),
   })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
     })
     .catch((error) => {
-      console.error('Error:', error);
+      console.error("Error:", error);
     });
 }
 
@@ -82,6 +82,7 @@ export function SurveyPage() {
       createPrettyButton(options);
     }
   });
+
   return (
     <div className="container">
       <Survey.Survey
@@ -89,6 +90,7 @@ export function SurveyPage() {
         onComplete={onComplete}
         onValueChanged={onValueChanged}
         completedHtml={CONTENT.completedHtml}
+        completeText={"Save & Complete"}
       />
     </div>
   );
