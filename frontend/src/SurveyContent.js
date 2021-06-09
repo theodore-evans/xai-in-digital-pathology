@@ -33,7 +33,7 @@ export const CONTENT = {
     dropdownQuestions: [
       {
         id: "age",
-        text: "My age:",
+        title: "My age:",
         choices: ["under 30", "30-40", "41-50", "51-60", "over 60"],
       },
       {
@@ -49,46 +49,21 @@ export const CONTENT = {
       },
       {
         id: "useOfDP",
-<<<<<<< HEAD
         title: "I currently use digitial pathology/telepathology:",
-        choices: [
-          "in routine diagnostics",
-          "in research",
-          "not at all"
-        ],
+        choices: ["in routine diagnostics", "in research", "not at all"],
       },
       {
         id: "useOfAI",
         title: "I currently use of AI-solutions:",
-        choices: [
-          "in routine diagnostics",
-          "in research",
-          "not at all"
-        ],
-        startWithNewLine: false
-      }
-=======
-        text: "I currently use digitial pathology/telepathology:",
-        choices: ["in routine diagnostics", "in research", "not at all"],
-      },
-      {
-        id: "useOfAI",
-        text: "I currently use of AI-solutions:",
         choices: ["in routine diagnostics", "in research", "not at all"],
         startWithNewLine: false,
       },
->>>>>>> 3827f0ca613089da781d99bda46feaccb4773b84
     ],
     ratingQuestions: [
       {
         id: "mlFamiliarity",
-<<<<<<< HEAD
         title: "I am familiar with technical details of machine learning",
         startWithNewLine: true
-=======
-        text: "I am familiar with technical details of machine learning",
-        startWithNewLine: true,
->>>>>>> 3827f0ca613089da781d99bda46feaccb4773b84
       },
     ],
   },
