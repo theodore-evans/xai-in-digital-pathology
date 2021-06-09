@@ -20,22 +20,52 @@ function createCommentsBox(questionId) {
   };
 }
 
+function createDropdownQuestion(questionId, question) {
+  let dropdownQuestion = 
+  {
+    type: "dropdown",
+    name: questionId,
+    title: question.text,
+    choices: [],
+    hasOther: question.hasOther,
+    isRequired: ANSWERS_ARE_REQUIRED,
+    startWithNewLine: question.startWithNewLine
+  };
+  for (let choice of question.choices) {
+    dropdownQuestion.choices.push(choice);
+  };
+  return dropdownQuestion;
+}
+
+function createRatingQuestion(questionId, question) {
+  return {
+    type: "rating",
+    name: questionId,
+    title: question.text,
+    rateMax: CONTENT.rateMax,
+    minRateDescription: CONTENT.minRateDescription,
+    maxRateDescription: CONTENT.maxRateDescription,
+    isRequired: ANSWERS_ARE_REQUIRED,
+    startWithNewLine: question.startWithNewLine
+  };
+}
+
 function createUserProfilingPage() {
   var userProfilingPage = {
     id: CONTENT.userProfiling.id,
     elements: [],
   };
 
-  for (var userProfilingQuestion of CONTENT.userProfiling.questions) {
-    userProfilingPage.elements.push({
-      type: "rating",
-      name: userProfilingQuestion.id,
-      title: userProfilingQuestion.text,
-      rateMax: CONTENT.rateMax,
-      minRateDescription: CONTENT.minRateDescription,
-      maxRateDescription: CONTENT.maxRateDescription,
-      isRequired: ANSWERS_ARE_REQUIRED,
-    });
+  for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
+    userProfilingPage.elements.push(
+      createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
+    )
+  }
+
+  for (let ratingQuestion of CONTENT.userProfiling.ratingQuestions) {
+    userProfilingPage.elements.push(
+      createRatingQuestion(`user_profiling_${ratingQuestion.id}`, ratingQuestion)
+    );
   }
 
   userProfilingPage.elements.push(createCommentsBox(CONTENT.userProfiling.id));
@@ -117,15 +147,12 @@ function createPagesForExplanationClass(explanationClass) {
     };
 
     for (let ratingQuestion of CONTENT.ratingQuestions) {
-      ratingPanel.elements.push({
-        type: "rating",
-        name: `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
-        title: ratingQuestion.text,
-        rateMax: CONTENT.rateMax,
-        minRateDescription: CONTENT.minRateDescription,
-        maxRateDescription: CONTENT.maxRateDescription,
-        isRequired: ANSWERS_ARE_REQUIRED,
-      });
+      ratingPanel.elements.push(
+        createRatingQuestion(
+          `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
+          ratingQuestion.text
+        )
+      );
     }
 
     ratingPanel.elements.push(createCommentsBox(pageId));

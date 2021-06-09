@@ -63,15 +63,15 @@ export function SurveyPage() {
   model.onAfterRenderQuestion.add(function (sender, options) {
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
-
       //toggle both the image and the button text onclick
       img.src = options.question.imageLink;
+      let explanation_img_src = img.src
       options.htmlElement.onclick = function () {
         img.src =
-          img.src == EXAMPLE_OUTPUT_IMAGE
-            ? options.question.imageLink
-            : EXAMPLE_OUTPUT_IMAGE;
-
+          img.src == explanation_img_src
+          ? EXAMPLE_OUTPUT_IMAGE
+          : options.question.imageLink;
+        
         let button = options.htmlElement.getElementsByTagName("button")[0];
         button.innerHTML =
           button.innerHTML == "Hide explanation"

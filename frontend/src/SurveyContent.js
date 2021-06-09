@@ -27,18 +27,58 @@ export const CONTENT = {
   userProfiling: {
     id: "userProfiling",
     title: "Some questions about you",
-    questions: [
+    dropdownQuestions : [
       {
-        id: "userProfiling_aiInRoutine",
-        text: "I use AI solutions regularly in my routine work",
+        id: "age",
+        text: "My age:",
+        choices: [
+          "under 30",
+          "30-40",
+          "41-50",
+          "51-60",
+          "over 60"
+        ]
       },
       {
-        id: "userProfiling_aiFamiliarity",
+        id: "position",
+        text: "My professional position is best described as:",
+        choices: [
+          "Specialist physician (Facharzt) for pathology/neuropathology",
+          "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+          "Researcher in pathology/neuropathology"
+        ],
+        hasOther: true,
+        startWithNewLine: false
+      },
+      {
+        id: "useOfDP",
+        text: "I currently use digitial pathology/telepathology:",
+        choices: [
+          "in routine diagnostics",
+          "in research",
+          "not at all"
+        ],
+      },
+      {
+        id: "useOfAI",
+        text: "I currently use of AI-solutions:",
+        choices: [
+          "in routine diagnostics",
+          "in research",
+          "not at all"
+        ],
+        startWithNewLine: false
+      }
+    ],
+    ratingQuestions: [
+      {
+        id: "aiFamiliarity",
         text: "I am familiar with the use of AI applications in digital pathology",
       },
       {
-        id: "userProfiling_mlFamiliarity",
+        id: "mlFamiliarity",
         text: "I am familiar with technical details of machine learning",
+        startWithNewLine: true
       },
     ],
   },
