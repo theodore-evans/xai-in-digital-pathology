@@ -21,19 +21,18 @@ function createCommentsBox(questionId) {
 }
 
 function createDropdownQuestion(questionId, question) {
-  let dropdownQuestion = 
-  {
+  let dropdownQuestion = {
     type: "dropdown",
     name: questionId,
     title: question.text,
     choices: [],
     hasOther: question.hasOther,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: question.startWithNewLine
+    startWithNewLine: question.startWithNewLine,
   };
   for (let choice of question.choices) {
     dropdownQuestion.choices.push(choice);
-  };
+  }
   return dropdownQuestion;
 }
 
@@ -46,7 +45,7 @@ function createRatingQuestion(questionId, question) {
     minRateDescription: CONTENT.minRateDescription,
     maxRateDescription: CONTENT.maxRateDescription,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: question.startWithNewLine
+    startWithNewLine: question.startWithNewLine,
   };
 }
 
@@ -58,13 +57,19 @@ function createUserProfilingPage() {
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
     userProfilingPage.elements.push(
-      createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
-    )
+      createDropdownQuestion(
+        `user_profiling_${dropdownQuestion.id}`,
+        dropdownQuestion
+      )
+    );
   }
 
   for (let ratingQuestion of CONTENT.userProfiling.ratingQuestions) {
     userProfilingPage.elements.push(
-      createRatingQuestion(`user_profiling_${ratingQuestion.id}`, ratingQuestion)
+      createRatingQuestion(
+        `user_profiling_${ratingQuestion.id}`,
+        ratingQuestion
+      )
     );
   }
 
@@ -184,6 +189,7 @@ let surveyJson = {
   title: CONTENT.title,
   requiredText: REQUIRED_TEXT,
   pages: [],
+  logo: CONTENT.logoImage,
 };
 
 surveyJson.pages.push(createInstructionsPage());
