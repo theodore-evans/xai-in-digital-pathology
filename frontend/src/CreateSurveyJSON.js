@@ -47,7 +47,7 @@ function createDropdownQuestion(questionId, questionContent) {
     });
     console.log(dropdownQuestionElements[1].visibleIf);
   }
-
+  console.log(dropdownQuestionElements)
   return dropdownQuestionElements;
 }
 
@@ -60,7 +60,7 @@ function createRatingQuestion(questionId, questionContent) {
     minRateDescription: CONTENT.minRateDescription,
     maxRateDescription: CONTENT.maxRateDescription,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: question.startWithNewLine,
+    startWithNewLine: questionContent.startWithNewLine,
   };
 }
 
@@ -71,8 +71,9 @@ function createUserProfilingPage() {
   };
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
+    console.log(dropdownQuestion)
     userProfilingPage.elements.push(
-      createDropdownQuestion(
+      ...createDropdownQuestion(
         `user_profiling_${dropdownQuestion.id}`,
         dropdownQuestion
       )
