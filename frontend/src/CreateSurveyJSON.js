@@ -5,7 +5,7 @@ const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
-const IDEAL_IMAGE_WIDTH = 650;
+const IDEAL_IMAGE_WIDTH = 600;
 
 function randomize(a, b) {
   return Math.random() - 0.5;
@@ -20,33 +20,47 @@ function createCommentsBox(questionId) {
   };
 }
 
-function createDropdownQuestion(questionId, question) {
-  let dropdownQuestion = 
-  {
+function createDropdownQuestion(questionId, questionContent) {
+  let dropdownQuestionElements = [];
+  dropdownQuestionElements.push ({
     type: "dropdown",
     name: questionId,
-    title: question.text,
+    title: questionContent.title,
     choices: [],
-    hasOther: question.hasOther,
+    hasOther: questionContent.hasOther,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: question.startWithNewLine
+    startWithNewLine: questionContent.startWithNewLine
+  });
+
+  for (let choice of questionContent.choices) {
+    dropdownQuestionElements[0].choices.push(choice);
   };
-  for (let choice of question.choices) {
-    dropdownQuestion.choices.push(choice);
-  };
-  return dropdownQuestion;
+
+  if (questionContent.additionalDetails) {
+    let details = questionContent.additionalDetails;
+    dropdownQuestionElements.push({
+      type: details.type,
+      name: `${questionId}_details`,
+      title: details.title,
+      visibleIf: `[${details.visibleIfValues}] contains({${questionId}})`,
+      isRequired: false,
+    });
+    console.log(dropdownQuestionElements[1].visibleIf)
+  }
+
+  return dropdownQuestionElements;
 }
 
-function createRatingQuestion(questionId, question) {
+function createRatingQuestion(questionId, questionContent) {
   return {
     type: "rating",
     name: questionId,
-    title: question.text,
+    title: questionContent.title,
     rateMax: CONTENT.rateMax,
     minRateDescription: CONTENT.minRateDescription,
     maxRateDescription: CONTENT.maxRateDescription,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: question.startWithNewLine
+    startWithNewLine: questionContent.startWithNewLine
   };
 }
 
@@ -58,7 +72,7 @@ function createUserProfilingPage() {
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
     userProfilingPage.elements.push(
-      createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
+      ...createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
     )
   }
 
@@ -150,7 +164,7 @@ function createPagesForExplanationClass(explanationClass) {
       ratingPanel.elements.push(
         createRatingQuestion(
           `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
-          ratingQuestion.text
+          ratingQuestion
         )
       );
     }
@@ -175,7 +189,7 @@ function createInstructionsPage() {
     html: CONTENT.instructionsHTML,
   });
 
-  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 500));
+  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 550));
 
   return page;
 }
@@ -183,6 +197,7 @@ function createInstructionsPage() {
 let surveyJson = {
   title: CONTENT.title,
   requiredText: REQUIRED_TEXT,
+  clearInvisibleValues: "onHidden",
   pages: [],
 };
 
