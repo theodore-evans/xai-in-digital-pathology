@@ -56,7 +56,12 @@ export const CONTENT = {
         id: "useOfAI",
         title: "I currently use of AI-solutions:",
         choices: ["in routine diagnostics", "in research", "not at all"],
-        startWithNewLine: false,
+        startWithNewLine: true,
+        additionalDetails: {
+          type: "text",
+          title: "Which AI solutions?",
+          visibleIfValues: ["'in routine diagnostics'", "'in research'"]
+        }
       },
     ],
     ratingQuestions: [

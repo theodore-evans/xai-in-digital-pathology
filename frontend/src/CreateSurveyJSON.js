@@ -2,7 +2,7 @@ import { CONTENT } from "./SurveyContent.js";
 
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
-const ANSWERS_ARE_REQUIRED = false;
+const ANSWERS_ARE_REQUIRED = true;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 const IDEAL_IMAGE_WIDTH = 600;
@@ -45,9 +45,7 @@ function createDropdownQuestion(questionId, questionContent) {
       visibleIf: `[${details.visibleIfValues}] contains({${questionId}})`,
       isRequired: false,
     });
-    console.log(dropdownQuestionElements[1].visibleIf);
   }
-  console.log(dropdownQuestionElements)
   return dropdownQuestionElements;
 }
 
@@ -71,7 +69,6 @@ function createUserProfilingPage() {
   };
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
-    console.log(dropdownQuestion)
     userProfilingPage.elements.push(
       ...createDropdownQuestion(
         `user_profiling_${dropdownQuestion.id}`,
