@@ -1,5 +1,6 @@
 export default {
   base_image: require("./base_image.png"),
+  logo_image: require("./empaia_logo.png"),
   saliencyMaps: {
     gradcam_0: require("./SM/gradcam_0.png"),
     gradcam_1: require("./SM/gradcam_1.png"),

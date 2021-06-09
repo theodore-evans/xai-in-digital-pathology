@@ -22,19 +22,19 @@ function createCommentsBox(questionId) {
 
 function createDropdownQuestion(questionId, questionContent) {
   let dropdownQuestionElements = [];
-  dropdownQuestionElements.push ({
+  dropdownQuestionElements.push({
     type: "dropdown",
     name: questionId,
     title: questionContent.title,
     choices: [],
     hasOther: questionContent.hasOther,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: questionContent.startWithNewLine
+    startWithNewLine: questionContent.startWithNewLine,
   });
 
   for (let choice of questionContent.choices) {
     dropdownQuestionElements[0].choices.push(choice);
-  };
+  }
 
   if (questionContent.additionalDetails) {
     let details = questionContent.additionalDetails;
@@ -45,9 +45,9 @@ function createDropdownQuestion(questionId, questionContent) {
       visibleIf: `[${details.visibleIfValues}] contains({${questionId}})`,
       isRequired: false,
     });
-    console.log(dropdownQuestionElements[1].visibleIf)
+    console.log(dropdownQuestionElements[1].visibleIf);
   }
-
+  console.log(dropdownQuestionElements)
   return dropdownQuestionElements;
 }
 
@@ -60,7 +60,7 @@ function createRatingQuestion(questionId, questionContent) {
     minRateDescription: CONTENT.minRateDescription,
     maxRateDescription: CONTENT.maxRateDescription,
     isRequired: ANSWERS_ARE_REQUIRED,
-    startWithNewLine: questionContent.startWithNewLine
+    startWithNewLine: questionContent.startWithNewLine,
   };
 }
 
@@ -71,14 +71,21 @@ function createUserProfilingPage() {
   };
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
+    console.log(dropdownQuestion)
     userProfilingPage.elements.push(
-      ...createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
-    )
+      ...createDropdownQuestion(
+        `user_profiling_${dropdownQuestion.id}`,
+        dropdownQuestion
+      )
+    );
   }
 
   for (let ratingQuestion of CONTENT.userProfiling.ratingQuestions) {
     userProfilingPage.elements.push(
-      createRatingQuestion(`user_profiling_${ratingQuestion.id}`, ratingQuestion)
+      createRatingQuestion(
+        `user_profiling_${ratingQuestion.id}`,
+        ratingQuestion
+      )
     );
   }
 
@@ -199,6 +206,7 @@ let surveyJson = {
   requiredText: REQUIRED_TEXT,
   clearInvisibleValues: "onHidden",
   pages: [],
+  logo: CONTENT.logoImage,
 };
 
 surveyJson.pages.push(createInstructionsPage());

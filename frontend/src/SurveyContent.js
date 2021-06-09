@@ -4,8 +4,8 @@ const POSITIVE_COLOR = "color:red";
 const NEGATIVE_COLOR = "color:lightblue";
 
 export const CONTENT = {
-  title: "Explainable AI for Digital Pathology",
   baseImage: Images.base_image,
+  logoImage: Images.logo_image,
   instructionsHTML: `<p>Dear participant,</p>
     <p>Within the scope of the EMPAIA project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in Pathology. 
     We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
