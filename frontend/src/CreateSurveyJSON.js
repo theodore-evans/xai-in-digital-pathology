@@ -5,7 +5,7 @@ const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = false;
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
-const IDEAL_IMAGE_WIDTH = 650;
+const IDEAL_IMAGE_WIDTH = 600;
 
 function randomize(a, b) {
   return Math.random() - 0.5;
@@ -20,22 +20,66 @@ function createCommentsBox(questionId) {
   };
 }
 
+function createDropdownQuestion(questionId, questionContent) {
+  let dropdownQuestionElements = [];
+  dropdownQuestionElements.push ({
+    type: "dropdown",
+    name: questionId,
+    title: questionContent.title,
+    choices: [],
+    hasOther: questionContent.hasOther,
+    isRequired: ANSWERS_ARE_REQUIRED,
+    startWithNewLine: questionContent.startWithNewLine
+  });
+
+  for (let choice of questionContent.choices) {
+    dropdownQuestionElements[0].choices.push(choice);
+  };
+
+  if (questionContent.additionalDetails) {
+    let details = questionContent.additionalDetails;
+    dropdownQuestionElements.push({
+      type: details.type,
+      name: `${questionId}_details`,
+      title: details.title,
+      visibleIf: `[${details.visibleIfValues}] contains({${questionId}})`,
+      isRequired: false,
+    });
+    console.log(dropdownQuestionElements[1].visibleIf)
+  }
+
+  return dropdownQuestionElements;
+}
+
+function createRatingQuestion(questionId, questionContent) {
+  return {
+    type: "rating",
+    name: questionId,
+    title: questionContent.title,
+    rateMax: CONTENT.rateMax,
+    minRateDescription: CONTENT.minRateDescription,
+    maxRateDescription: CONTENT.maxRateDescription,
+    isRequired: ANSWERS_ARE_REQUIRED,
+    startWithNewLine: questionContent.startWithNewLine
+  };
+}
+
 function createUserProfilingPage() {
   var userProfilingPage = {
     id: CONTENT.userProfiling.id,
     elements: [],
   };
 
-  for (var userProfilingQuestion of CONTENT.userProfiling.questions) {
-    userProfilingPage.elements.push({
-      type: "rating",
-      name: userProfilingQuestion.id,
-      title: userProfilingQuestion.text,
-      rateMax: CONTENT.rateMax,
-      minRateDescription: CONTENT.minRateDescription,
-      maxRateDescription: CONTENT.maxRateDescription,
-      isRequired: ANSWERS_ARE_REQUIRED,
-    });
+  for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
+    userProfilingPage.elements.push(
+      ...createDropdownQuestion(`user_profiling_${dropdownQuestion.id}`, dropdownQuestion)
+    )
+  }
+
+  for (let ratingQuestion of CONTENT.userProfiling.ratingQuestions) {
+    userProfilingPage.elements.push(
+      createRatingQuestion(`user_profiling_${ratingQuestion.id}`, ratingQuestion)
+    );
   }
 
   userProfilingPage.elements.push(createCommentsBox(CONTENT.userProfiling.id));
@@ -117,15 +161,12 @@ function createPagesForExplanationClass(explanationClass) {
     };
 
     for (let ratingQuestion of CONTENT.ratingQuestions) {
-      ratingPanel.elements.push({
-        type: "rating",
-        name: `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
-        title: ratingQuestion.text,
-        rateMax: CONTENT.rateMax,
-        minRateDescription: CONTENT.minRateDescription,
-        maxRateDescription: CONTENT.maxRateDescription,
-        isRequired: ANSWERS_ARE_REQUIRED,
-      });
+      ratingPanel.elements.push(
+        createRatingQuestion(
+          `${pageId}_image${imageIndex}_${ratingQuestion.id}`,
+          ratingQuestion
+        )
+      );
     }
 
     ratingPanel.elements.push(createCommentsBox(pageId));
@@ -148,7 +189,7 @@ function createInstructionsPage() {
     html: CONTENT.instructionsHTML,
   });
 
-  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 500));
+  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 550));
 
   return page;
 }
@@ -156,6 +197,7 @@ function createInstructionsPage() {
 let surveyJson = {
   title: CONTENT.title,
   requiredText: REQUIRED_TEXT,
+  clearInvisibleValues: "onHidden",
   pages: [],
 };
 

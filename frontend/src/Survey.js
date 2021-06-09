@@ -42,12 +42,12 @@ function onComplete() {
     },
     body: JSON.stringify(Survey.data),
   })
-    .then(response => response.json())
-    .then(data => {
-      console.log('Success:', data);
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Success:", data);
     })
     .catch((error) => {
-      console.error('Error:', error);
+      console.error("Error:", error);
     });
 }
 
@@ -63,15 +63,15 @@ export function SurveyPage() {
   model.onAfterRenderQuestion.add(function (sender, options) {
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
-
       //toggle both the image and the button text onclick
       img.src = options.question.imageLink;
+      let explanation_img_src = img.src
       options.htmlElement.onclick = function () {
         img.src =
-          img.src == EXAMPLE_OUTPUT_IMAGE
-            ? options.question.imageLink
-            : EXAMPLE_OUTPUT_IMAGE;
-
+          img.src == explanation_img_src
+          ? EXAMPLE_OUTPUT_IMAGE
+          : options.question.imageLink;
+        
         let button = options.htmlElement.getElementsByTagName("button")[0];
         button.innerHTML =
           button.innerHTML == "Hide explanation"
@@ -82,6 +82,7 @@ export function SurveyPage() {
       createPrettyButton(options);
     }
   });
+
   return (
     <div className="container">
       <Survey.Survey
@@ -89,6 +90,7 @@ export function SurveyPage() {
         onComplete={onComplete}
         onValueChanged={onValueChanged}
         completedHtml={CONTENT.completedHtml}
+        completeText={"Save & Complete"}
       />
     </div>
   );

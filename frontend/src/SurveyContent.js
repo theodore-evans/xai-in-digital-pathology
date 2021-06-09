@@ -8,13 +8,16 @@ export const CONTENT = {
   baseImage: Images.base_image,
   instructionsHTML: `<p>Dear participant,</p>
     <p>Within the scope of the EMPAIA project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in Pathology. 
-    We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions.</p>
-    <p>The image here shows a small region of interest annotated by an AI solution with the Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei detected. 
-    Also shown is the overall Ki-67 nuclear positivity for the whole slide.</p>
-    <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b></p>
-    <p>We estimate a time of five to ten minutes for fully answering the study.</p>
+    We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
+    The answers will be collected and evaluated for scientific publications focusing on future directions for xAI approaches.</p>
+    <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
+    Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
+    <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b>
+    We estimate a time of ten to fifteen minutes for fully answering the study.</p>
     <p>Your additional comments are greatly valued, and can be provided in the comments box below the questions. Once you have answered the final question, press the complete button to submit your results.</p>
-    <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated. By clicking 'Complete', you agree to your survey results being used for research and development purposes within the scope of the EMPAIA project.</p>
+    <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
+    <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for the identification of xAI requirements for the EMPAIA platform. 
+    By clicking 'complete', you agree to the use of your submitted answers for these purposes.</p>
     <p>All input is treated anonymously and no additional data is collected.</p>
     <p>Thank you for participating in our study!</p>`,
   completedHtml: ` <p style='font-size:24px;'>Thank you for completing the survey!<p>
@@ -27,37 +30,59 @@ export const CONTENT = {
   userProfiling: {
     id: "userProfiling",
     title: "Some questions about you",
-    questions: [
+    dropdownQuestions: [
       {
-        id: "userProfiling_aiInRoutine",
-        text: "I use AI solutions regularly in my routine work",
+        id: "age",
+        title: "My age:",
+        choices: ["under 30", "30-40", "41-50", "51-60", "over 60"],
       },
       {
-        id: "userProfiling_aiFamiliarity",
-        text: "I am familiar with the use of AI applications in digital pathology",
+        id: "position",
+        title: "My professional position is best described as:",
+        choices: [
+          "Specialist physician (Facharzt) for pathology/neuropathology",
+          "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+          "Researcher in pathology/neuropathology",
+        ],
+        hasOther: true,
+        startWithNewLine: false,
       },
       {
-        id: "userProfiling_mlFamiliarity",
-        text: "I am familiar with technical details of machine learning",
+        id: "useOfDP",
+        title: "I currently use digitial pathology/telepathology:",
+        choices: ["in routine diagnostics", "in research", "not at all"],
+      },
+      {
+        id: "useOfAI",
+        title: "I currently use of AI-solutions:",
+        choices: ["in routine diagnostics", "in research", "not at all"],
+        startWithNewLine: false,
+      },
+    ],
+    ratingQuestions: [
+      {
+        id: "mlFamiliarity",
+        title: "I am familiar with technical details of machine learning",
+        startWithNewLine: true
       },
     ],
   },
   ratingQuestions: [
     {
       id: "understandability",
-      text: "I found the explanation intuitively understandable",
+      title: "I found the explanation intuitively understandable",
     },
     {
       id: "usability",
-      text: "The explanation helps me to understand factors relevant to the algorithm",
+      title: "The explanation helps me to understand factors relevant to the algorithm",
     },
     {
       id: "informativeness",
-      text: "The explanation helps me to decide whether I can trust the generated annotations",
+      title: "The explanation helps me to decide whether I can trust the generated annotations",
     },
     {
       id: "value",
-      text: "The explanation provides me with valuable information for my work",
+      title: "The explanation provides me with valuable information for my work",
     },
   ],
   explanationClasses: [
