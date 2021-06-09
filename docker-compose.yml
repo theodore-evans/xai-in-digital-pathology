@@ -9,15 +9,18 @@ services:
     environment:
       - REACT_APP_ATLAS_CONNECTION=mongodb://mongo:27017/xai_surveys
       - REACT_APP_PORT=3000
-      - SERVER_URL=${SERVER_URL}
+      - PUBLIC_URL=${PUBLIC_URL}
+      - DEBUG=true
     ports:
-      - ${COMPOSE_APP_HOST}:${COMPOSE_APP_PORT}:3000
+      - 3000:3000
     links:
       - mongo
+    entrypoint: npm start
   mongo:
     container_name: mongo
     image: mongo
     volumes:
       - ${COMPOSE_DB_VOL}:/data/db
     ports:
-      - ${COMPOSE_DB_HOST}:${COMPOSE_DB_PORT}:27017
+      - 27017:27017
+  
