@@ -22,4 +22,3 @@ RUN npm run-script build
 COPY backend /src/app/backend
 WORKDIR /src/app/backend
 EXPOSE 3000
-CMD ["npm", "start"]
