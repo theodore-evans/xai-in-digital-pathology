@@ -7,3 +7,23 @@
   padding: 0px;
   margin-bottom: -6px;
 }
+
+
+div.min-max-text {
+  display:inline-block;    
+}
+
+@media only screen and (max-width: 520px) {
+  div.min-max-text {
+    width: 18%;
+    font-size: min(14px, 2.75vw);
+    text-align: center;
+    line-height: min(15px, 2.75vw);
+    margin: -10px -5px;
+  }
+}
+
+sv_image_image {
+  width:540px;
+  height: auto;
+}

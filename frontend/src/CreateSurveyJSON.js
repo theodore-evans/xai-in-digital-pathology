@@ -2,7 +2,7 @@ import { CONTENT } from "./SurveyContent.js";
 
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
-const ANSWERS_ARE_REQUIRED = true;
+const ANSWERS_ARE_REQUIRED = !process.env.NODE_ENV == 'development';
 const COMMENT_ROWS = 3;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 const IDEAL_IMAGE_WIDTH = 600;
@@ -15,7 +15,7 @@ function createCommentsBox(questionId) {
   return {
     type: "comment",
     name: questionId + "_comments",
-    title: "Comments",
+    title: "Additional comments",
     rows: COMMENT_ROWS,
   };
 }
@@ -96,7 +96,7 @@ function selectRandomIndex(array) {
   return randomIndex;
 }
 
-function screenWidth() {
+export function screenWidth() {
   return (
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -111,8 +111,8 @@ function createImagePanel(name, link, idealWidth) {
   let panelWidth = idealWidth;
 
   if (screenWidth() < minScreenWidth) {
-    imageWidth = screenWidth() - padding;
-    panelWidth = screenWidth();
+    imageWidth = screenWidth() - 1.5*padding;
+    panelWidth = screenWidth() - padding;
   }
 
   return {

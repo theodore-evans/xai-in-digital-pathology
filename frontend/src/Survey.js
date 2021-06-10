@@ -1,7 +1,8 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import { surveyJson } from "./CreateSurveyJSON.js";
+import "./survey.css";
+import { surveyJson, screenWidth } from "./CreateSurveyJSON.js";
 import Images from "./assets";
 import { CONTENT } from "./SurveyContent.js";
 
@@ -10,7 +11,7 @@ let ImageArray = [];
 Object.keys(Images).forEach((key) => {
   Object.keys(Images[key]).forEach((subkey) => {
     const img = new Image();
-    img.src = Images[key][subkey].default;
+    img.src = typeof Images[key][subkey].default == "undefined" ? Images[key][subkey] : Images[key][subkey].default;
     ImageArray.push(img);
   });
 });
@@ -35,20 +36,14 @@ function onValueChanged(sender, options) {
 }
 
 function onComplete() {
+  window.scrollTo(0, 0);
   fetch(RESULT_URL, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(Survey.data),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  });
 }
 
 //setup the survey data
@@ -60,8 +55,17 @@ export function SurveyPage() {
   Survey.data["id"] = Date.now();
   model.showProgressBar = "bottom";
   model.showQuestionNumbers = "off";
-  // console.log(document.getElementsByClassName("sv_header_text")[0].height);
   model.onAfterRenderQuestion.add(function (sender, options) {
+    let minText = options.htmlElement.getElementsByClassName("sv_q_rating_min_text")[0];
+    let maxText = options.htmlElement.getElementsByClassName("sv_q_rating_max_text")[0];
+
+    if (minText) {
+      minText.innerHTML = `<div class="min-max-text">${CONTENT.minRateDescription}</div>`;
+    }
+    if (maxText) {
+      maxText.innerHTML= `<div class="min-max-text">${CONTENT.maxRateDescription}</div>`;
+    }
+
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
       //toggle both the image and the button text onclick
