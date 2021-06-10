@@ -207,11 +207,11 @@ let surveyJson = {
 };
 
 surveyJson.pages.push(createInstructionsPage());
-// surveyJson.pages.push(createUserProfilingPage());
-// for (var explanationClass of SHUFFLE_EXPLANATION_CLASSES
-//   ? CONTENT.explanationClasses.sort(randomize)
-//   : CONTENT.explanationClasses) {
-//   surveyJson.pages.push(...createPagesForExplanationClass(explanationClass));
-// }
+surveyJson.pages.push(createUserProfilingPage());
+for (var explanationClass of SHUFFLE_EXPLANATION_CLASSES
+  ? CONTENT.explanationClasses.sort(randomize)
+  : CONTENT.explanationClasses) {
+  surveyJson.pages.push(...createPagesForExplanationClass(explanationClass));
+}
 
 export { surveyJson };
