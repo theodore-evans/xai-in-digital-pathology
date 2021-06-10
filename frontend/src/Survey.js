@@ -1,7 +1,9 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import { surveyJson, screenWidth } from "./CreateSurveyJSON.js";
+import "./survey.css";
+
+import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
 import { CONTENT } from "./SurveyContent.js";
 
@@ -18,14 +20,13 @@ Object.keys(Images).forEach((key) => {
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
 const RESULT_URL = "/result";
 
-Survey.StylesManager.applyTheme("default");
 Survey.surveyLocalization.locales[
   Survey.surveyLocalization.defaultLocale
 ].requiredError = "This answer is required.";
 
 function onValueChanged(sender, options) {
   let question_class = class_regex.exec(options.question.name)[0];
-
+  console.log(options.value);
   if (Survey.data[question_class]) {
     Survey.data[question_class][options.name] = options.value;
   } else {
@@ -55,13 +56,16 @@ export function SurveyPage() {
   model.showProgressBar = "bottom";
   model.showQuestionNumbers = "off";
   model.onAfterRenderQuestion.add(function (sender, options) {
-    if (screenWidth() < 600) {
-      let minText = options.htmlElement.getElementsByClassName("sv_q_rating_min_text")[0];
-      let maxText = options.htmlElement.getElementsByClassName("sv_q_rating_max_text")[0];
-      if (minText) minText.innerHTML = `<div style='max-width:18%;display:inline-block;'>${CONTENT.minRateDescription}</div>`;
-      if (maxText) maxText.innerHTML= `<div style='max-width:18%;display:inline-block;'>${CONTENT.maxRateDescription}</div>`;
+    let minText = options.htmlElement.getElementsByClassName("sv_q_rating_min_text")[0];
+    let maxText = options.htmlElement.getElementsByClassName("sv_q_rating_max_text")[0];
+
+    if (minText) {
+      minText.innerHTML = `<div class="min-max-text">${CONTENT.minRateDescription}</div>`;
     }
-      
+    if (maxText) {
+      maxText.innerHTML= `<div class="min-max-text">${CONTENT.maxRateDescription}</div>`;
+    }
+
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
       //toggle both the image and the button text onclick
