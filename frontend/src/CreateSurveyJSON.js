@@ -96,7 +96,7 @@ function selectRandomIndex(array) {
   return randomIndex;
 }
 
-function screenWidth() {
+export function screenWidth() {
   return (
     window.innerWidth ||
     document.documentElement.clientWidth ||
@@ -105,14 +105,14 @@ function screenWidth() {
 }
 
 function createImagePanel(name, link, idealWidth) {
-  let minScreenWidth = 1200;
+  let minScreenWidth = 600;
   let padding = 50;
   let imageWidth = idealWidth - padding;
   let panelWidth = idealWidth;
 
   if (screenWidth() < minScreenWidth) {
-    imageWidth = screenWidth() - padding;
-    panelWidth = screenWidth();
+    imageWidth = screenWidth() - 1.5*padding;
+    panelWidth = screenWidth() - padding;
   }
 
   return {

@@ -219,19 +219,19 @@ export const CONTENT = {
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.bmwi.de/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.bmwi}" alt="BMWi">
+        <img src="${Images.partnerLogos.bmwi.default}" alt="BMWi">
       </a>
     </div>
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.charite.de/en/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.charite}" alt="Charite">
+        <img src="${Images.partnerLogos.charite.default}" alt="Charite">
       </a>
     </div>
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.mevis.fraunhofer.de/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.fraunhofer}" alt="Fraunhofer MEVIS">
+        <img src="${Images.partnerLogos.fraunhofer.default}" alt="Fraunhofer MEVIS">
       </a>
     </div>
   </div>
@@ -239,19 +239,19 @@ export const CONTENT = {
     <div class="column">
       <span class="helper"></span>
       <a href="https://dai-labor.de/en/home/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.dai}" alt="DAI-Labor">
+        <img src="${Images.partnerLogos.dai.default}" alt="DAI-Labor">
       </a>
     </div>
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.qualityinpathology.com/en_GB/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.quip}" alt="QuIP">
+        <img src="${Images.partnerLogos.quip.default}" alt="QuIP">
       </a>
     </div>
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.vitagroup.ag/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.vitagroup}" alt="Vitagroup">
+        <img src="${Images.partnerLogos.vitagroup.default}" alt="Vitagroup">
       </a>
     </div>
   </div>`,

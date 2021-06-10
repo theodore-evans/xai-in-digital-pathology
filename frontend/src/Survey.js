@@ -1,7 +1,7 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
-import { surveyJson } from "./CreateSurveyJSON.js";
+import { surveyJson, screenWidth } from "./CreateSurveyJSON.js";
 import Images from "./assets";
 import { CONTENT } from "./SurveyContent.js";
 
@@ -35,6 +35,7 @@ function onValueChanged(sender, options) {
 }
 
 function onComplete() {
+  window.scrollTo(0, 0);
   fetch(RESULT_URL, {
     method: "POST",
     headers: {
@@ -60,8 +61,15 @@ export function SurveyPage() {
   Survey.data["id"] = Date.now();
   model.showProgressBar = "bottom";
   model.showQuestionNumbers = "off";
-  // console.log(document.getElementsByClassName("sv_header_text")[0].height);
   model.onAfterRenderQuestion.add(function (sender, options) {
+    if (screenWidth() < 600) {
+      let minText = options.htmlElement.getElementsByClassName("sv_q_rating_min_text")[0];
+      let maxText = options.htmlElement.getElementsByClassName("sv_q_rating_max_text")[0];
+      console.log(minText);
+      if (minText) minText.innerHTML = `<div style='max-width:18%;display:inline-block;'>${CONTENT.minRateDescription}</div>`;
+      if (maxText) maxText.innerHTML= `<div style='max-width:18%;display:inline-block;'>${CONTENT.maxRateDescription}</div>`;
+    }
+      
     if (options.question.name === "displayExample") {
       let img = options.htmlElement.getElementsByTagName("img")[0];
       //toggle both the image and the button text onclick

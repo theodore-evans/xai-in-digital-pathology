@@ -26,11 +26,11 @@ export default {
     colorCoded_0: require("./TS/color_coded_0.png"),
   },
   partnerLogos: {
-    bmwi: require("./logos/BMWi.png").default,
-    charite: require("./logos/Charite.png").default,
-    fraunhofer: require("./logos/Fraunhofer.png").default,
-    dai: require("./logos/DAI.png").default,
-    quip: require("./logos/Quip.png").default,
-    vitagroup: require("./logos/vitagroup.png").default
+    bmwi: require("./logos/BMWi.png"),
+    charite: require("./logos/Charite.png"),
+    fraunhofer: require("./logos/Fraunhofer.png"),
+    dai: require("./logos/DAI.png"),
+    quip: require("./logos/Quip.png"),
+    vitagroup: require("./logos/vitagroup.png")
   }
 };
