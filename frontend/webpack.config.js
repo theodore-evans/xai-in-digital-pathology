@@ -12,18 +12,19 @@ const config = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/'
+    publicPath: 'auto'
   },
   devServer: {
     open: true,
     host: "0.0.0.0",
-    port: 3000,
+    port: 5000,
     hot: true,
     inline: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      favicon: "./public/favicon.ico"
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -33,9 +34,12 @@ const config = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'public/assets/*', to: '/assets/[name][ext]' },
-      ],
-    }),
+        {
+          from: "./public/manifest.json",
+          to: "./manifest.json"
+        }
+      ]
+    })
     // Add your plugins here
     // Learn more about plugins from https://webpack.js.org/configuration/plugins/
   ],

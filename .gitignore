@@ -24,9 +24,6 @@ yarn-error.log*
 # GIMP files
 *.xcf
 
-# local image assets
-frontend/src/assets/local_files
-
 # mongodb directories
 /data/*
 .env
