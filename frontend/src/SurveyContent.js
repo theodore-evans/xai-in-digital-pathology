@@ -111,6 +111,7 @@ export const CONTENT = {
           images: [
             Images.saliencyMaps.gradcam_0,
             Images.saliencyMaps.gradcam_1,
+            Images.saliencyMaps.gradcam_2,
             Images.saliencyMaps.guidedbackprop_0,
           ],
         },
