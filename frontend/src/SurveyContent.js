@@ -218,12 +218,6 @@ export const CONTENT = {
   <div class="row">
     <div class="column">
       <span class="helper"></span>
-      <a href="https://www.bmwi.de/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.bmwi.default}" alt="BMWi">
-      </a>
-    </div>
-    <div class="column">
-      <span class="helper"></span>
       <a href="https://www.charite.de/en/" target="_blank" rel="noopener noreferrer">
         <img src="${Images.partnerLogos.charite.default}" alt="Charite">
       </a>
@@ -234,14 +228,15 @@ export const CONTENT = {
         <img src="${Images.partnerLogos.fraunhofer.default}" alt="Fraunhofer MEVIS">
       </a>
     </div>
-  </div>
-  <div class="row">
     <div class="column">
       <span class="helper"></span>
       <a href="https://dai-labor.de/en/home/" target="_blank" rel="noopener noreferrer">
         <img src="${Images.partnerLogos.dai.default}" alt="DAI-Labor">
       </a>
     </div>
+  </div>
+  <div class="row">
+    
     <div class="column">
       <span class="helper"></span>
       <a href="https://www.qualityinpathology.com/en_GB/" target="_blank" rel="noopener noreferrer">
@@ -252,6 +247,12 @@ export const CONTENT = {
       <span class="helper"></span>
       <a href="https://www.vitagroup.ag/" target="_blank" rel="noopener noreferrer">
         <img src="${Images.partnerLogos.vitagroup.default}" alt="Vitagroup">
+      </a>
+    </div>
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.bmwi.de/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.bmwi.default}" alt="BMWi">
       </a>
     </div>
   </div>`,
