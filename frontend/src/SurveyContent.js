@@ -9,14 +9,13 @@ export const CONTENT = {
   instructionsHTML: `<p>Dear participant,</p>
     <p>Within the scope of the EMPAIA project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in Pathology. 
     We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
-    The answers will be collected and evaluated for scientific publications focusing on future directions for xAI approaches.</p>
     <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
     Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
     <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b>
     We estimate a time of ten to fifteen minutes for fully answering the study.</p>
     <p>Your additional comments are greatly valued, and can be provided in the comments box below the questions. Once you have answered the final question, press the complete button to submit your results.</p>
     <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
-    <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for the identification of xAI requirements for the EMPAIA platform. 
+    <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for identification of xAI requirements for the EMPAIA platform. 
     By clicking 'complete', you agree to the use of your submitted answers for these purposes.</p>
     <p>All input is treated anonymously and no additional data is collected.</p>
     <p>Thank you for participating in our study!</p>`,
@@ -54,7 +53,7 @@ export const CONTENT = {
       },
       {
         id: "useOfAI",
-        title: "I currently use of AI-solutions:",
+        title: "I currently use AI-solutions:",
         choices: ["in routine diagnostics", "in research", "not at all"],
         startWithNewLine: false,
       },
