@@ -13,7 +13,7 @@ export const CONTENT = {
     <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
     Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
     <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b>
-    We estimate a time of ten to fifteen minutes for fully answering the study.</p>
+    We estimate a time of five to ten minutes for fully answering the study.</p>
     <p>Your additional comments are greatly valued, and can be provided in the comments box below the questions. Once you have answered the final question, press the complete button to submit your results.</p>
     <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
     <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for the identification of xAI requirements for the EMPAIA platform. 
@@ -60,15 +60,15 @@ export const CONTENT = {
         additionalDetails: {
           type: "text",
           title: "Which AI solutions?",
-          visibleIfValues: ["'in routine diagnostics'", "'in research'"]
-        }
+          visibleIfValues: ["'in routine diagnostics'", "'in research'"],
+        },
       },
     ],
     ratingQuestions: [
       {
         id: "mlFamiliarity",
         title: "I am familiar with technical details of machine learning",
-        startWithNewLine: true
+        startWithNewLine: true,
       },
     ],
   },
@@ -79,15 +79,18 @@ export const CONTENT = {
     },
     {
       id: "usability",
-      title: "The explanation helps me to understand factors relevant to the algorithm",
+      title:
+        "The explanation helps me to understand factors relevant to the algorithm",
     },
     {
       id: "informativeness",
-      title: "The explanation helps me to decide whether I can trust the generated annotations",
+      title:
+        "The explanation helps me to decide whether I can trust the generated annotations",
     },
     {
       id: "value",
-      title: "The explanation provides me with valuable information for my work",
+      title:
+        "The explanation provides me with valuable information for my work",
     },
   ],
   explanationClasses: [
@@ -158,7 +161,7 @@ export const CONTENT = {
           id: "twoAxisCounterfactuals",
           name: "Counterfactuals in two axes",
           description:
-            "Show counterfactual examples interpolating in two principal factors of variation, showing model classifications each",
+            "Show counterfactual examples interpolating in two principal factors of variation, showing model classifications for each",
           images: [Images.counterfactuals.twoAxis_0],
         },
       ],
