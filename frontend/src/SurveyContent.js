@@ -6,19 +6,23 @@ const NEGATIVE_COLOR = "color:lightblue";
 export const CONTENT = {
   baseImage: Images.base_image,
   logoImage: Images.logo_image,
-  instructionsHTML: `<p>Dear participant,</p>
-    <p>Within the scope of the empaia project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in digital pathology. 
-    We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
-    <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
-    Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
-    <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b>
-    We estimate a time of five to ten minutes for fully answering the study.</p>
-    <p>Your additional comments are greatly valued, and can be provided in the comments box below the questions. Once you have answered the final question, press the complete button to submit your results.</p>
-    <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
-    <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for identification of xAI requirements for the EMPAIA platform. 
-    By clicking 'complete', you agree to the use of your submitted answers for these purposes.</p>
-    <p>All input is treated anonymously and no additional data is collected.</p>
-    <p>Thank you for participating in our study!</p>`,
+  instructionsHTML: `
+    <div class='instructions-column'>
+      <p>Dear participant,</p>
+      <p>Within the scope of the empaia project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in digital pathology. 
+      We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
+      <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei.
+      Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.<sup>[1]</sup></p>
+      <p>For each question, we show a different explanation that aims to help you with evaluating these generated annotations. <b>Please rate each proposed explanation with regard to its comprehensibility, informativeness and value to you as a user.</b>
+      Your additional comments are greatly valued, and can be provided in the comments box below the questions on each page.</p>
+      <p>We estimate a time of five to ten minutes for fully answering the study.</p>
+      <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
+      <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for identification of xAI requirements for the EMPAIA platform. 
+      By clicking 'complete', you agree to the use of your submitted answers for these purposes.</p>
+      <p>All input is treated anonymously and no additional data is collected.</p>
+      <p>Thank you for participating in our study!</p>
+    </div>`,
+  instructionsFootnoteHTML: `<div class="footnote">[1] F. Negahbani, R. Sabzi, B. P. Jahromi, D. Firouzabadi, F. Movahedi, M. K. Shirazi, S. Majidi, A. Dehghanian, Pathonet introduced as a deep neural network backend for evaluation of Ki-67 and tumor-infiltrating lymphocytes in breast cancer, Scientific reports 11 (1) (2021) 1–13.<div>`,
   minRateDescription: "Strongly disagree",
   maxRateDescription: "Strongly agree",
   rateMax: 7,
@@ -42,15 +46,15 @@ export const CONTENT = {
         ],
         hasOther: true,
         startWithNewLine: false,
-      }
+      },
     ],
-    checkboxQuestions : [
+    checkboxQuestions: [
       {
         id: "useOfDP",
         title: "I currently use digitial pathology/telepathology:",
         choices: ["in routine diagnostics", "in research"],
         hasNone: true,
-        noneText: "not at all"
+        noneText: "not at all",
       },
       {
         id: "useOfAI",
@@ -63,7 +67,7 @@ export const CONTENT = {
           visibleIfValues: ["'in routine diagnostics'", "'in research'"],
         },
         hasNone: true,
-        noneText: "not at all"
+        noneText: "not at all",
       },
     ],
     ratingQuestions: [
@@ -236,14 +240,14 @@ export const CONTENT = {
     </div>
     <div class="column">
       <span class="helper"></span>
-      <a href="https://www.mevis.fraunhofer.de/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.fraunhofer.default}" alt="Fraunhofer MEVIS">
+      <a href="https://dai-labor.de/en/home/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.dai.default}" alt="DAI-Labor">
       </a>
     </div>
     <div class="column">
       <span class="helper"></span>
-      <a href="https://dai-labor.de/en/home/" target="_blank" rel="noopener noreferrer">
-        <img src="${Images.partnerLogos.dai.default}" alt="DAI-Labor">
+      <a href="https://www.mevis.fraunhofer.de/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.fraunhofer.default}" alt="Fraunhofer MEVIS">
       </a>
     </div>
   </div>

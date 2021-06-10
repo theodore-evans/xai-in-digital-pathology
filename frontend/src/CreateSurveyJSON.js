@@ -3,7 +3,7 @@ import { CONTENT } from "./SurveyContent.js";
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
 const ANSWERS_ARE_REQUIRED = !process.env.NODE_ENV == "development";
-const COMMENT_ROWS = 3;
+const COMMENT_ROWS = 2;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 const IDEAL_IMAGE_WIDTH = 600;
 
@@ -216,16 +216,27 @@ function createPagesForExplanationClass(explanationClass) {
 function createInstructionsPage() {
   let page = {
     name: "info_page",
-    elements: [],
+    elements: [
+      {
+        type: "panel",
+        elements: []
+      }
+    ],
   };
 
-  page.elements.push({
+  let panel = page.elements[0];
+
+  panel.elements.push({
     type: "html",
     html: CONTENT.instructionsHTML,
   });
 
-  page.elements.push(createImagePanel("baseImage", CONTENT.baseImage, 550));
+  panel.elements.push(createImagePanel("baseImage", CONTENT.baseImage, IDEAL_IMAGE_WIDTH));
 
+  panel.elements.push({
+    type: "html",
+    html: CONTENT.instructionsFootnoteHTML,
+  })
   return page;
 }
 
@@ -240,7 +251,6 @@ let surveyJson = {
 
 surveyJson.pages.push(createInstructionsPage());
 surveyJson.pages.push(createUserProfilingPage());
-console.log(surveyJson);
 for (var explanationClass of SHUFFLE_EXPLANATION_CLASSES
   ? CONTENT.explanationClasses.sort(randomize)
   : CONTENT.explanationClasses) {
