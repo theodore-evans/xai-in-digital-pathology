@@ -10,7 +10,7 @@ let ImageArray = [];
 Object.keys(Images).forEach((key) => {
   Object.keys(Images[key]).forEach((subkey) => {
     const img = new Image();
-    img.src = Images[key][subkey].default;
+    img.src = typeof Images[key][subkey].default == "undefined" ? Images[key][subkey] : Images[key][subkey].default;
     ImageArray.push(img);
   });
 });
@@ -65,7 +65,6 @@ export function SurveyPage() {
     if (screenWidth() < 600) {
       let minText = options.htmlElement.getElementsByClassName("sv_q_rating_min_text")[0];
       let maxText = options.htmlElement.getElementsByClassName("sv_q_rating_max_text")[0];
-      console.log(minText);
       if (minText) minText.innerHTML = `<div style='max-width:18%;display:inline-block;'>${CONTENT.minRateDescription}</div>`;
       if (maxText) maxText.innerHTML= `<div style='max-width:18%;display:inline-block;'>${CONTENT.maxRateDescription}</div>`;
     }
