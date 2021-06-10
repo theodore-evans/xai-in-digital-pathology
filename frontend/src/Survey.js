@@ -1,10 +1,12 @@
 import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
+
 import "./survey.css";
-import { surveyJson, screenWidth } from "./CreateSurveyJSON.js";
+import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
 import { CONTENT } from "./SurveyContent.js";
+
 
 //preload images on page load to prevent flickering later - global array to keep them in memory
 let ImageArray = [];
@@ -26,7 +28,7 @@ Survey.surveyLocalization.locales[
 
 function onValueChanged(sender, options) {
   let question_class = class_regex.exec(options.question.name)[0];
-
+  console.log(options.value);
   if (Survey.data[question_class]) {
     Survey.data[question_class][options.name] = options.value;
   } else {

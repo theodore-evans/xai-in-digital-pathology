@@ -42,28 +42,34 @@ export const CONTENT = {
         ],
         hasOther: true,
         startWithNewLine: false,
-      },
+      }
+    ],
+    checkboxQuestions : [
       {
         id: "useOfDP",
         title: "I currently use digitial pathology/telepathology:",
-        choices: ["in routine diagnostics", "in research", "not at all"],
+        choices: ["in routine diagnostics", "in research"],
+        hasNone: true,
+        noneText: "not at all"
       },
       {
         id: "useOfAI",
         title: "I currently use AI-solutions:",
-        choices: ["in routine diagnostics", "in research", "not at all"],
+        choices: ["in routine diagnostics", "in research"],
         startWithNewLine: true,
         additionalDetails: {
           type: "text",
           title: "Which AI solutions?",
           visibleIfValues: ["'in routine diagnostics'", "'in research'"],
         },
+        hasNone: true,
+        noneText: "not at all"
       },
     ],
     ratingQuestions: [
       {
         id: "aiFamiliarity",
-        title: "I am familiar with the use of AI applications in digital pathology",
+        title: "I am familiar with applications of AI in digital pathology",
       },
       {
         id: "mlFamiliarity",
