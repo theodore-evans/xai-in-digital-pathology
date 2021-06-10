@@ -81,7 +81,7 @@ export const CONTENT = {
   ratingQuestions: [
     {
       id: "understandability",
-      title: "I found the explanation intuitively understandable",
+      title: "I find the explanation intuitively understandable",
     },
     {
       id: "usability",
