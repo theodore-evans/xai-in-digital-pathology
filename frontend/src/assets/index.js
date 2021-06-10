@@ -25,4 +25,12 @@ export default {
     tissueDetection_0: require("./TS/tissue_detection_0.png"),
     colorCoded_0: require("./TS/color_coded_0.png"),
   },
+  partnerLogos: {
+    bmwi: require("./logos/BMWi.png").default,
+    charite: require("./logos/Charite.png").default,
+    fraunhofer: require("./logos/Fraunhofer.png").default,
+    dai: require("./logos/DAI.png").default,
+    quip: require("./logos/Quip.png").default,
+    vitagroup: require("./logos/vitagroup.png").default
+  }
 };

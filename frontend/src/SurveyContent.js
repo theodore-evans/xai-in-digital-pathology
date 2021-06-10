@@ -19,10 +19,6 @@ export const CONTENT = {
     By clicking 'complete', you agree to the use of your submitted answers for these purposes.</p>
     <p>All input is treated anonymously and no additional data is collected.</p>
     <p>Thank you for participating in our study!</p>`,
-  completedHtml: ` <p style='font-size:24px;'>Thank you for completing the survey!<p>
-  <p>Your answers have been saved. You can now safely close this page.</p>
-  <p>If you would like to know more about the empaia project, please feel free to visit <a href="https://www.empaia.org">our website</a>.</p>
-  <p>If you want to stay informed about any news regarding empaia, please follow <a href="https://www.empaia.org/news">this link</a> and register yourself for the newsletter. </p>`,
   minRateDescription: "Strongly disagree",
   maxRateDescription: "Strongly agree",
   rateMax: 7,
@@ -59,15 +55,15 @@ export const CONTENT = {
         additionalDetails: {
           type: "text",
           title: "Which AI solutions?",
-          visibleIfValues: ["'in routine diagnostics'", "'in research'"]
-        }
+          visibleIfValues: ["'in routine diagnostics'", "'in research'"],
+        },
       },
     ],
     ratingQuestions: [
       {
         id: "mlFamiliarity",
         title: "I am familiar with technical details of machine learning",
-        startWithNewLine: true
+        startWithNewLine: true,
       },
     ],
   },
@@ -78,15 +74,18 @@ export const CONTENT = {
     },
     {
       id: "usability",
-      title: "The explanation helps me to understand factors relevant to the algorithm",
+      title:
+        "The explanation helps me to understand factors relevant to the algorithm",
     },
     {
       id: "informativeness",
-      title: "The explanation helps me to decide whether I can trust the generated annotations",
+      title:
+        "The explanation helps me to decide whether I can trust the generated annotations",
     },
     {
       id: "value",
-      title: "The explanation provides me with valuable information for my work",
+      title:
+        "The explanation provides me with valuable information for my work",
     },
   ],
   explanationClasses: [
@@ -177,4 +176,83 @@ export const CONTENT = {
       ],
     },
   ],
+  completedHtml: ` 
+  <style>
+  .column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      min-height: 100px;
+    }
+  }
+
+  .helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+  
+  img {
+    width: 50%;
+    vertical-align: middle;
+  }
+
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    margin-top: 10px;
+  }
+
+  </style>
+  <p style='font-size:24px;'>Thank you for completing the survey!<p>
+  <p>Your answers have been saved. You can now safely close this page.</p>
+  <p>If you would like to know more about the empaia project, please feel free to visit <a href="https://www.empaia.org">our website</a>.</p>
+  <p>If you want to stay informed about any news regarding empaia, please follow <a href="https://www.empaia.org/news">this link</a> and register yourself for the newsletter. </p>
+  <br>
+  <div class="row">
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.bmwi.de/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.bmwi}" alt="BMWi">
+      </a>
+    </div>
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.charite.de/en/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.charite}" alt="Charite">
+      </a>
+    </div>
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.mevis.fraunhofer.de/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.fraunhofer}" alt="Fraunhofer MEVIS">
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://dai-labor.de/en/home/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.dai}" alt="DAI-Labor">
+      </a>
+    </div>
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.qualityinpathology.com/en_GB/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.quip}" alt="QuIP">
+      </a>
+    </div>
+    <div class="column">
+      <span class="helper"></span>
+      <a href="https://www.vitagroup.ag/" target="_blank" rel="noopener noreferrer">
+        <img src="${Images.partnerLogos.vitagroup}" alt="Vitagroup">
+      </a>
+    </div>
+  </div>`,
 };
