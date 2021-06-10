@@ -7,7 +7,7 @@ export const CONTENT = {
   baseImage: Images.base_image,
   logoImage: Images.logo_image,
   instructionsHTML: `<p>Dear participant,</p>
-    <p>Within the scope of the EMPAIA project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in Pathology. 
+    <p>Within the scope of the empaia project, we aim to evaluate the usability of different Explainable AI ("xAI") approaches in digital pathology. 
     We would like to hear your opinion towards different techniques for presenting explanations to pathologists working with AI solutions. 
     <p>The image here shows a small region of interest annotated by an AI solution with detected Ki-67 <span style="${POSITIVE_COLOR}">positive</span> and <span style="${NEGATIVE_COLOR}">negative</span> nuclei. 
     Also shown is the percentage of Ki-67 positive nuclei for the region and the whole slide.</p>
@@ -35,8 +35,9 @@ export const CONTENT = {
         id: "position",
         title: "My professional position is best described as:",
         choices: [
-          "Specialist physician (Facharzt) for pathology/neuropathology",
-          "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+          "Consultant (Facharzt) for pathology/neuropathology",
+          "Trainee (Assistenzarzt) in pathology/neuropathology",
+          "Technician (MTA) for pathology/neuropathology",
           "Researcher in pathology/neuropathology",
         ],
         hasOther: true,
@@ -60,6 +61,10 @@ export const CONTENT = {
       },
     ],
     ratingQuestions: [
+      {
+        id: "aiFamiliarity",
+        title: "I am familiar with the use of AI applications in digital pathology",
+      },
       {
         id: "mlFamiliarity",
         title: "I am familiar with technical details of machine learning",
@@ -212,7 +217,7 @@ export const CONTENT = {
   </style>
   <p style='font-size:24px;'>Thank you for completing the survey!<p>
   <p>Your answers have been saved. You can now safely close this page.</p>
-  <p>If you would like to know more about the empaia project, please feel free to visit <a href="https://www.empaia.org">our website</a>.</p>
+  <p>If you would like to know more about the empaia project, please feel visit <a href="https://www.empaia.org">our website</a>.</p>
   <p>If you want to stay informed about any news regarding empaia, please follow <a href="https://www.empaia.org/news">this link</a> and register yourself for the newsletter. </p>
   <br>
   <div class="row">
