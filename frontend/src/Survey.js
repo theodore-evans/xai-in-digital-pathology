@@ -96,7 +96,7 @@ export function SurveyPage() {
         onValueChanged={onValueChanged}
         completedHtml={CONTENT.completedHtml}
         completeText={"Save & Complete"}
-        logoHeight={"75"}
+        logoHeight={"80px"}
         logoWidth={"150px"}
       />
     </div>
