@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1623330321488,
+    "user_": {
+      "user_profiling_age": "41-50",
+      "user_profiling_position": "Researcher in pathology/neuropathology",
+      "user_profiling_useOfDP": "in research",
+      "user_profiling_useOfAI": "in research",
+      "user_profiling_useOfAI_details": "from MindPeak (BreastIHC), from VMscope (Cognition Master)",
+      "user_profiling_mlFamiliarity": 3
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 7,
+      "saliencyMaps_globalSaliency_image2_usability": 7,
+      "saliencyMaps_globalSaliency_image2_informativeness": 7,
+      "saliencyMaps_globalSaliency_image2_value": 7,
+      "saliencyMaps_globalSaliency_comments": "There is one cell slightly to the right of the center that is labeled as positive and is quite darkly stained by IHC, but does not show up on the saliency map, which is a bit surprising. It looks like an endothelial cell. ",
+      "saliencyMaps_localSaliency_comments": "Per-cell saliency is probably too much detail. ",
+      "saliencyMaps_localSaliency_image0_understandability": 6,
+      "saliencyMaps_localSaliency_image0_usability": 6,
+      "saliencyMaps_localSaliency_image0_informativeness": 4,
+      "saliencyMaps_localSaliency_image0_value": 4
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_understandability": 7,
+      "conceptAttribution_textAttributes_image0_usability": 7,
+      "conceptAttribution_textAttributes_image0_informativeness": 7,
+      "conceptAttribution_textAttributes_image0_value": 7,
+      "conceptAttribution_textAttributes_comments": "This is excellent but I think there could be quite a lot of additional factors, so this would need some supervision. "
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 7,
+      "prototypes_prototypes_image0_usability": 7,
+      "prototypes_prototypes_image0_informativeness": 7,
+      "prototypes_prototypes_image0_value": 7
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 4,
+      "trustScores_borderlineCases_image0_usability": 4,
+      "trustScores_borderlineCases_image0_value": 3,
+      "trustScores_borderlineCases_image0_informativeness": 3,
+      "trustScores_borderlineCases_comments": "High confidence should provide examples of both classes (pos. and neg.), no? "
+    },
+    "counterfactuals_": {
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 6,
+      "counterfactuals_prototypeInterpolation_image0_understandability": 7,
+      "counterfactuals_prototypeInterpolation_image0_usability": 7,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 7
+    },
+    "__v": 0
+  },
+  {
+    "id": 1623330321488,
+    "user_": {
+      "user_profiling_age": "41-50",
+      "user_profiling_position": "Researcher in pathology/neuropathology",
+      "user_profiling_useOfDP": "in research",
+      "user_profiling_useOfAI": "in research",
+      "user_profiling_useOfAI_details": "from MindPeak (BreastIHC), from VMscope (Cognition Master)",
+      "user_profiling_mlFamiliarity": 3
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 7,
+      "saliencyMaps_globalSaliency_image2_usability": 7,
+      "saliencyMaps_globalSaliency_image2_informativeness": 7,
+      "saliencyMaps_globalSaliency_image2_value": 7,
+      "saliencyMaps_globalSaliency_comments": "There is one cell slightly to the right of the center that is labeled as positive and is quite darkly stained by IHC, but does not show up on the saliency map, which is a bit surprising. It looks like an endothelial cell. ",
+      "saliencyMaps_localSaliency_comments": "Per-cell saliency is probably too much detail. ",
+      "saliencyMaps_localSaliency_image0_understandability": 6,
+      "saliencyMaps_localSaliency_image0_usability": 6,
+      "saliencyMaps_localSaliency_image0_informativeness": 4,
+      "saliencyMaps_localSaliency_image0_value": 4
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_understandability": 7,
+      "conceptAttribution_textAttributes_image0_usability": 7,
+      "conceptAttribution_textAttributes_image0_informativeness": 7,
+      "conceptAttribution_textAttributes_image0_value": 7,
+      "conceptAttribution_textAttributes_comments": "This is excellent but I think there could be quite a lot of additional factors, so this would need some supervision. "
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 7,
+      "prototypes_prototypes_image0_usability": 7,
+      "prototypes_prototypes_image0_informativeness": 7,
+      "prototypes_prototypes_image0_value": 7
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 4,
+      "trustScores_borderlineCases_image0_usability": 4,
+      "trustScores_borderlineCases_image0_value": 3,
+      "trustScores_borderlineCases_image0_informativeness": 3,
+      "trustScores_borderlineCases_comments": "High confidence should provide examples of both classes (pos. and neg.), no? "
+    },
+    "counterfactuals_": {
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 6,
+      "counterfactuals_prototypeInterpolation_image0_understandability": 7,
+      "counterfactuals_prototypeInterpolation_image0_usability": 7,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 7
+    },
+    "__v": 0
+  }
+]
