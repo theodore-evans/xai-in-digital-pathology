@@ -75,8 +75,6 @@ function createCheckboxQuestion(questionId, questionContent) {
     }
   }
 
-  console.log(checkboxQuestionElement)
-
   return checkboxQuestionElement;
 }
 
