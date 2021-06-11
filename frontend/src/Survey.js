@@ -26,7 +26,6 @@ Survey.surveyLocalization.locales[
 
 function onValueChanged(sender, options) {
   let question_class = class_regex.exec(options.question.name)[0];
-  console.log(options.value);
   if (Survey.data[question_class]) {
     Survey.data[question_class][options.name] = options.value;
   } else {
