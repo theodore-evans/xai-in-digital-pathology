@@ -170,16 +170,16 @@ export const CONTENT = {
       instances: [
         {
           id: "prototypeInterpolation",
-          name: "Counterfactuals in one axis",
+          name: "Counterfactual examples in one axis",
           description:
-            "Show counterfactual examples interpolating between positive and negative examples, showing model classifications for each",
+            "Show generated examples interpolating between positive and negative examples, showing model classifications for each",
           images: [Images.counterfactuals.oneAxis_0],
         },
         {
           id: "twoAxisCounterfactuals",
-          name: "Counterfactuals in two axes",
+          name: "Counterfactual examples in two axes",
           description:
-            "Show counterfactual examples interpolating in two principal factors of variation, showing model classifications for each",
+            "Show generated examples changing in two principal factors of variation, showing model classifications for each",
           images: [Images.counterfactuals.twoAxis_0],
         },
       ],
@@ -191,7 +191,7 @@ export const CONTENT = {
           id: "borderlineCases",
           name: "Borderline cases",
           description:
-            "Display low-confidence <b>positive</b> annotations for review",
+            "Display low-confidence annotations for review",
           images: [
             Images.trustScores.colorCoded_0,
             Images.trustScores.edgeCases_0,
