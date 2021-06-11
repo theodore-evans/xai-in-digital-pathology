@@ -2,7 +2,7 @@ import { CONTENT } from "./SurveyContent.js";
 
 const REQUIRED_TEXT = "*";
 const QUESTIONS_ARE_ON_NEW_LINE = false;
-const ANSWERS_ARE_REQUIRED = !process.env.NODE_ENV == "development" || true;
+const ANSWERS_ARE_REQUIRED = true;
 const COMMENT_ROWS = 2;
 const SHUFFLE_EXPLANATION_CLASSES = true;
 const IDEAL_IMAGE_WIDTH = 600;
@@ -41,8 +41,8 @@ function createDropdownQuestion(questionId, questionContent) {
 }
 
 function createCheckboxQuestion(questionId, questionContent) {
-  let checkboxQuestionElements = [];
-  checkboxQuestionElements.push({
+  let checkboxQuestionElement = 
+  {
     type: "checkbox",
     name: questionId,
     title: questionContent.title,
@@ -51,24 +51,31 @@ function createCheckboxQuestion(questionId, questionContent) {
     noneText: questionContent.noneText,
     isRequired: ANSWERS_ARE_REQUIRED,
     startWithNewLine: questionContent.startWithNewLine,
-  });
+  };
 
   for (let choice of questionContent.choices) {
-    checkboxQuestionElements[0].choices.push(choice);
+    checkboxQuestionElement.choices.push(choice);
   }
 
   if (questionContent.additionalDetails) {
-    let details = questionContent.additionalDetails;
-    checkboxQuestionElements.push({
-      type: details.type,
-      name: `${questionId}_details`,
-      title: details.title,
-      visibleIf: `[${details.visibleIfValues}] contains({${questionId}})`,
-      isRequired: false,
-    });
+    checkboxQuestionElement = {
+      type: "panel",
+      elements: [
+        checkboxQuestionElement,
+        {
+          type: questionContent.additionalDetails.type,
+          name: `${questionId}_details`,
+          title: questionContent.additionalDetails.title,
+          visibleIf: `[${questionContent.additionalDetails.visibleIfValues}] contains({${questionId}})`,
+          isRequired: false,
+          startWithNewLine: questionContent.additionalDetails.startWithNewLine
+        }
+      ],
+      startWithNewLine: questionContent.startWithNewLine
+    }
   }
 
-  return checkboxQuestionElements;
+  return checkboxQuestionElement;
 }
 
 function createRatingQuestion(questionId, questionContent) {
@@ -85,15 +92,17 @@ function createRatingQuestion(questionId, questionContent) {
 }
 
 function createUserProfilingPage() {
-  var userProfilingPage = {
-    id: CONTENT.userProfiling.id,
+  let pageId = CONTENT.userProfiling.id;
+  
+  let userProfilingPage = {
+    id: pageId,
     elements: [],
   };
 
   for (let dropdownQuestion of CONTENT.userProfiling.dropdownQuestions) {
     userProfilingPage.elements.push(
       createDropdownQuestion(
-        `user_profiling_${dropdownQuestion.id}`,
+        `${pageId}_${dropdownQuestion.id}`,
         dropdownQuestion
       )
     );
@@ -101,8 +110,8 @@ function createUserProfilingPage() {
 
   for (let checkboxQuestion of CONTENT.userProfiling.checkboxQuestions) {
     userProfilingPage.elements.push(
-      ...createCheckboxQuestion(
-        `user_profiling_${checkboxQuestion.id}`,
+      createCheckboxQuestion(
+        `${pageId}_${checkboxQuestion.id}`,
         checkboxQuestion
       )
     );
@@ -111,7 +120,7 @@ function createUserProfilingPage() {
   for (let ratingQuestion of CONTENT.userProfiling.ratingQuestions) {
     userProfilingPage.elements.push(
       createRatingQuestion(
-        `user_profiling_${ratingQuestion.id}`,
+        `${pageId}_${ratingQuestion.id}`,
         ratingQuestion
       )
     );
@@ -218,25 +227,31 @@ function createInstructionsPage() {
     name: "info_page",
     elements: [
       {
+        type: "html",
+        html: CONTENT.instructions.header
+      },
+      {
         type: "panel",
-        elements: []
-      }
+        elements: [
+          {
+            type: "html",
+            html: CONTENT.instructions.image,
+            width: "40%"
+          },
+          {
+            type: "html",
+            html: CONTENT.instructions.body,
+            startWithNewLine: false
+          },
+        ]
+      },
+      {
+        type: "html",
+        html: CONTENT.instructions.footer
+      },
     ],
   };
 
-  let panel = page.elements[0];
-
-  panel.elements.push({
-    type: "html",
-    html: CONTENT.instructionsHTML,
-  });
-
-  panel.elements.push(createImagePanel("baseImage", CONTENT.baseImage, IDEAL_IMAGE_WIDTH));
-
-  panel.elements.push({
-    type: "html",
-    html: CONTENT.instructionsFootnoteHTML,
-  })
   return page;
 }
 
