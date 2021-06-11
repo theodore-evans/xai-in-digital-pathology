@@ -22,7 +22,7 @@ export const CONTENT = {
       We estimate a time of five minutes for fully answering the survey.</p>
       <p>It is important to answer all of the questions honestly and to press the complete button at the end, so that the results of the survey are collected and can be evaluated.</p>
       <p>The results of this survey will be used towards a submission to the <a href="https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare" target="_blank" rel="noopener noreferrer">Special Issue on Explainable AI in Healthcare</a> of Future Generation Computer Systems, as well as for identification of xAI requirements for the EMPAIA platform. 
-  This survey does not raise any ethical issues. By clicking 'Save & Complete', you agree to the use of your submitted answers for these purposes. All input is treated anonymously and no additional data is collected.</p>
+  This survey does not raise any ethical issues. By clicking <em>Save & Complete</em>, you agree to the use of your submitted answers for these purposes. All input is treated anonymously and no additional data is collected.</p>
       <p>Thank you for participating in our study!</p>`,
     footer: `<div class="footnote">[1] F. Negahbani, R. Sabzi, B. P. Jahromi, D. Firouzabadi, F. Movahedi, M. K. Shirazi, S. Majidi, A. Dehghanian, Pathonet introduced as a deep neural network backend for evaluation of Ki-67 and tumor-infiltrating lymphocytes in breast cancer, Scientific reports 11 (1) (2021) 1–13.<div>`,
   },

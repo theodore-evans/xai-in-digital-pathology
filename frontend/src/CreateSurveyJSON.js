@@ -235,7 +235,6 @@ function createInstructionsPage() {
       {
         type: "panel",
         elements: [
-          // createImagePanel("baseImage", CONTENT.baseImage, 450),
           {
             type: "html",
             html: CONTENT.instructions.image,
