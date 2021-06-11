@@ -2,7 +2,8 @@ import React from "react";
 import * as Survey from "survey-react";
 import "survey-react/survey.css";
 import "./survey.css";
-import { surveyJson, screenWidth } from "./CreateSurveyJSON.js";
+
+import { surveyJson } from "./CreateSurveyJSON.js";
 import Images from "./assets";
 import { CONTENT } from "./SurveyContent.js";
 
@@ -19,14 +20,13 @@ Object.keys(Images).forEach((key) => {
 const EXAMPLE_OUTPUT_IMAGE = require("./assets/base_image.png").default;
 const RESULT_URL = "/result";
 
-Survey.StylesManager.applyTheme("default");
 Survey.surveyLocalization.locales[
   Survey.surveyLocalization.defaultLocale
 ].requiredError = "This answer is required.";
 
 function onValueChanged(sender, options) {
   let question_class = class_regex.exec(options.question.name)[0];
-
+  console.log(options.value);
   if (Survey.data[question_class]) {
     Survey.data[question_class][options.name] = options.value;
   } else {
