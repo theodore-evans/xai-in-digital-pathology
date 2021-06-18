@@ -55,7 +55,7 @@ export const CONTENT = {
     checkboxQuestions: [
       {
         id: "useOfDP",
-        title: "I currently use digitial pathology/telepathology:",
+        title: "I currently use digital pathology/telepathology:",
         choices: ["in routine diagnostics", "in research"],
         hasNone: true,
         noneText: "not at all",
