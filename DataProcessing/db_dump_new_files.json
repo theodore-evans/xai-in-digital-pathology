@@ -154,5 +154,255 @@
       "trustScores_borderlineCases_image0_value": 6
     },
     "__v": 0
+  },
+  {
+    "_id": { "$oid": "60c1ebc5207719001f651cc2" },
+    "id": 1.623319499818e12,
+    "user_": {
+      "user_profiling_age": "30-40",
+      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "user_profiling_useOfAI": "in routine diagnostics",
+      "user_profiling_useOfDP": "in routine diagnostics",
+      "user_profiling_mlFamiliarity": 1
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 2,
+      "saliencyMaps_globalSaliency_image2_usability": 5,
+      "saliencyMaps_globalSaliency_image2_informativeness": 6,
+      "saliencyMaps_globalSaliency_image2_value": 6,
+      "saliencyMaps_localSaliency_image0_understandability": 4,
+      "saliencyMaps_localSaliency_image0_usability": 4,
+      "saliencyMaps_localSaliency_image0_informativeness": 5,
+      "saliencyMaps_localSaliency_image0_value": 5
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 6,
+      "prototypes_prototypes_image0_usability": 6,
+      "prototypes_prototypes_image0_informativeness": 6,
+      "prototypes_prototypes_image0_value": 6
+    },
+    "counterfactuals_": {
+      "counterfactuals_prototypeInterpolation_image0_understandability": 6,
+      "counterfactuals_prototypeInterpolation_image0_usability": 6,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 5
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_value": 6,
+      "conceptAttribution_textAttributes_image0_informativeness": 6,
+      "conceptAttribution_textAttributes_image0_usability": 6,
+      "conceptAttribution_textAttributes_image0_understandability": 6
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 1,
+      "trustScores_borderlineCases_image0_usability": 3,
+      "trustScores_borderlineCases_image0_informativeness": 3,
+      "trustScores_borderlineCases_image0_value": 2
+    },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "60c1ebc5207719001f651cc2" },
+    "id": 1.623319499818e12,
+    "user_": {
+      "user_profiling_age": "30-40",
+      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "user_profiling_useOfAI": "in routine diagnostics",
+      "user_profiling_useOfDP": "in routine diagnostics",
+      "user_profiling_mlFamiliarity": 1
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 2,
+      "saliencyMaps_globalSaliency_image2_usability": 5,
+      "saliencyMaps_globalSaliency_image2_informativeness": 6,
+      "saliencyMaps_globalSaliency_image2_value": 6,
+      "saliencyMaps_localSaliency_image0_understandability": 4,
+      "saliencyMaps_localSaliency_image0_usability": 4,
+      "saliencyMaps_localSaliency_image0_informativeness": 5,
+      "saliencyMaps_localSaliency_image0_value": 5
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 6,
+      "prototypes_prototypes_image0_usability": 6,
+      "prototypes_prototypes_image0_informativeness": 6,
+      "prototypes_prototypes_image0_value": 6
+    },
+    "counterfactuals_": {
+      "counterfactuals_prototypeInterpolation_image0_understandability": 6,
+      "counterfactuals_prototypeInterpolation_image0_usability": 6,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 5
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_value": 6,
+      "conceptAttribution_textAttributes_image0_informativeness": 6,
+      "conceptAttribution_textAttributes_image0_usability": 6,
+      "conceptAttribution_textAttributes_image0_understandability": 6
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 1,
+      "trustScores_borderlineCases_image0_usability": 3,
+      "trustScores_borderlineCases_image0_informativeness": 3,
+      "trustScores_borderlineCases_image0_value": 2
+    },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "60c1ebc5207719001f651cc2" },
+    "id": 1.623319499818e12,
+    "user_": {
+      "user_profiling_age": "30-40",
+      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "user_profiling_useOfAI": "in routine diagnostics",
+      "user_profiling_useOfDP": "in routine diagnostics",
+      "user_profiling_mlFamiliarity": 1
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 2,
+      "saliencyMaps_globalSaliency_image2_usability": 5,
+      "saliencyMaps_globalSaliency_image2_informativeness": 6,
+      "saliencyMaps_globalSaliency_image2_value": 6,
+      "saliencyMaps_localSaliency_image0_understandability": 4,
+      "saliencyMaps_localSaliency_image0_usability": 4,
+      "saliencyMaps_localSaliency_image0_informativeness": 5,
+      "saliencyMaps_localSaliency_image0_value": 5
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 6,
+      "prototypes_prototypes_image0_usability": 6,
+      "prototypes_prototypes_image0_informativeness": 6,
+      "prototypes_prototypes_image0_value": 6
+    },
+    "counterfactuals_": {
+      "counterfactuals_prototypeInterpolation_image0_understandability": 6,
+      "counterfactuals_prototypeInterpolation_image0_usability": 6,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 5
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_value": 6,
+      "conceptAttribution_textAttributes_image0_informativeness": 6,
+      "conceptAttribution_textAttributes_image0_usability": 6,
+      "conceptAttribution_textAttributes_image0_understandability": 6
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 6,
+      "trustScores_borderlineCases_image0_usability": 4,
+      "trustScores_borderlineCases_image0_informativeness": 3,
+      "trustScores_borderlineCases_image0_value": 3
+    },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "60c1ebc5207719001f651cc2" },
+    "id": 1.623319499818e12,
+    "user_": {
+      "user_profiling_age": "30-40",
+      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "user_profiling_useOfAI": "in routine diagnostics",
+      "user_profiling_useOfDP": "in routine diagnostics",
+      "user_profiling_mlFamiliarity": 1
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 2,
+      "saliencyMaps_globalSaliency_image2_usability": 5,
+      "saliencyMaps_globalSaliency_image2_informativeness": 6,
+      "saliencyMaps_globalSaliency_image2_value": 6,
+      "saliencyMaps_localSaliency_image0_understandability": 4,
+      "saliencyMaps_localSaliency_image0_usability": 4,
+      "saliencyMaps_localSaliency_image0_informativeness": 5,
+      "saliencyMaps_localSaliency_image0_value": 5
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 6,
+      "prototypes_prototypes_image0_usability": 6,
+      "prototypes_prototypes_image0_informativeness": 6,
+      "prototypes_prototypes_image0_value": 6
+    },
+    "counterfactuals_": {
+      "counterfactuals_prototypeInterpolation_image0_understandability": 6,
+      "counterfactuals_prototypeInterpolation_image0_usability": 6,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 5
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_value": 6,
+      "conceptAttribution_textAttributes_image0_informativeness": 6,
+      "conceptAttribution_textAttributes_image0_usability": 6,
+      "conceptAttribution_textAttributes_image0_understandability": 6
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 4,
+      "trustScores_borderlineCases_image0_usability": 2,
+      "trustScores_borderlineCases_image0_informativeness": 5,
+      "trustScores_borderlineCases_image0_value": 2
+    },
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "60c1ebc5207719001f651cc2" },
+    "id": 1.623319499818e12,
+    "user_": {
+      "user_profiling_age": "30-40",
+      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "user_profiling_useOfAI": "in routine diagnostics",
+      "user_profiling_useOfDP": "in routine diagnostics",
+      "user_profiling_mlFamiliarity": 1
+    },
+    "saliencyMaps_": {
+      "saliencyMaps_globalSaliency_image2_understandability": 2,
+      "saliencyMaps_globalSaliency_image2_usability": 5,
+      "saliencyMaps_globalSaliency_image2_informativeness": 6,
+      "saliencyMaps_globalSaliency_image2_value": 6,
+      "saliencyMaps_localSaliency_image0_understandability": 4,
+      "saliencyMaps_localSaliency_image0_usability": 4,
+      "saliencyMaps_localSaliency_image0_informativeness": 5,
+      "saliencyMaps_localSaliency_image0_value": 5
+    },
+    "prototypes_": {
+      "prototypes_prototypes_image0_understandability": 6,
+      "prototypes_prototypes_image0_usability": 6,
+      "prototypes_prototypes_image0_informativeness": 6,
+      "prototypes_prototypes_image0_value": 6
+    },
+    "counterfactuals_": {
+      "counterfactuals_prototypeInterpolation_image0_understandability": 6,
+      "counterfactuals_prototypeInterpolation_image0_usability": 6,
+      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
+      "counterfactuals_prototypeInterpolation_image0_value": 6,
+      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_usability": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
+      "counterfactuals_twoAxisCounterfactuals_image0_value": 5
+    },
+    "conceptAttribution_": {
+      "conceptAttribution_textAttributes_image0_value": 6,
+      "conceptAttribution_textAttributes_image0_informativeness": 6,
+      "conceptAttribution_textAttributes_image0_usability": 6,
+      "conceptAttribution_textAttributes_image0_understandability": 6
+    },
+    "trustScores_": {
+      "trustScores_borderlineCases_image0_understandability": 7,
+      "trustScores_borderlineCases_image0_usability": 1,
+      "trustScores_borderlineCases_image0_informativeness": 2,
+      "trustScores_borderlineCases_image0_value": 4
+    },
+    "__v": 0
   }
 ]
