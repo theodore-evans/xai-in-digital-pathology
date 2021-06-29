@@ -1,0 +1,26 @@
+{"userProfiling_comments":"I was in a US based practice that was nearly 100% digital for ~ 2 years (2018-2020). 
+We did not use any AI tools but our non-cytology / non-bone marrow specimens were 100% digitized for clinical sign out 
+(Philips system). Based on clinical expectations for turn around time AND the significant decrease in 
+reimbursement for pathology in the US—digital pathology IS NOT finically viable in the US. 
+Profit margins are not there for ROI based on the cost of scanners and even the process of having
+ histology slides put on the scanner in our histology lab led to significant problems with our process. 
+ Until the steps of going from tissue to an imaging are automated and streamlined there will be significant barriers to digital pathology
+ (first step necessary for AI to even be in the conversation) and AI in clinical practice on the US. Just FYI. ",
+
+"trustScores_borderlineCases_comments":"Confidence for what? positive or negative or both?",
+"trustScores_borderlineCases_comments":"I felt I needed the pos or neg labels in addition to the confidence",
+"trustScores_borderlineCases_comments":"High confidence should provide examples of both classes (pos. and neg.), no? ",
+
+"counterfactuals_twoAxisCounterfactuals_comments":"It seems there may be many counterfactual examples that are more closely
+related to the positive example which could be useful for understanding the nuances and building trust",,
+"counterfactuals_prototypeInterpolation_comments":"Like previous, initial reaction is that interpolation is useful but doesn't give the full picture of possible negatives. 
+Perhaps clicking around each cell and seeing the interpolation for each would feel more useful",
+"counterfactuals_prototypeInterpolation_comments":"What is a counterfactual? ",
+
+"saliencyMaps_localSaliency_comments":"Cool",
+"saliencyMaps_globalSaliency_comments":"There is one cell slightly to the right of the center that is labeled as positive and is 
+quite darkly stained by IHC, but does not show up on the saliency map, which is a bit surprising. It looks like an endothelial cell. ",
+"saliencyMaps_localSaliency_comments":"Per-cell saliency is probably too much detail. ",
+
+"conceptAttribution_textAttributes_comments":"This is excellent but I think there could be quite a
+ lot of additional factors, so this would need some supervision. "}
