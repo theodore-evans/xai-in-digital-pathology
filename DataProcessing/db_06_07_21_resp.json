@@ -2,12 +2,12 @@
   {
     "_id": { "$oid": "60c1ebc5207719001f651cc2" },
     "id": 1.623319499818e12,
-    "user_": {
-      "user_profiling_age": "30-40",
-      "user_profiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
-      "user_profiling_useOfAI": "in routine diagnostics",
-      "user_profiling_useOfDP": "in routine diagnostics",
-      "user_profiling_mlFamiliarity": 1
+    "userProfiling_": {
+      "userProfiling_age": "30-40",
+      "userProfiling_position": "Assisting physician (Assistenzarzt) for pathology/neuropathology",
+      "userProfiling_useOfAI": "in routine diagnostics",
+      "userProfiling_useOfDP": "in routine diagnostics",
+      "userProfiling_mlFamiliarity": 1
     },
     "saliencyMaps_": {
       "saliencyMaps_globalSaliency_image2_understandability": 5,
@@ -52,13 +52,13 @@
   {
     "_id": { "$oid": "60c21932207719001f651cc4" },
     "id": 1.623330321488e12,
-    "user_": {
-      "user_profiling_age": "41-50",
-      "user_profiling_position": "Researcher in pathology/neuropathology",
-      "user_profiling_useOfDP": "in research",
-      "user_profiling_useOfAI": "in research",
-      "user_profiling_useOfAI_details": "from MindPeak (BreastIHC), from VMscope (Cognition Master)",
-      "user_profiling_mlFamiliarity": 3
+    "userProfiling_": {
+      "userProfiling_age": "41-50",
+      "userProfiling_position": "Researcher in pathology/neuropathology",
+      "userProfiling_useOfDP": "in research",
+      "userProfiling_useOfAI": "in research",
+      "userProfiling_useOfAI_details": "from MindPeak (BreastIHC), from VMscope (Cognition Master)",
+      "userProfiling_mlFamiliarity": 3
     },
     "saliencyMaps_": {
       "saliencyMaps_globalSaliency_image2_understandability": 7,
@@ -107,13 +107,13 @@
   {
     "_id": { "$oid": "60c2fe95cd29f6001f63a6d3" },
     "id": 1.623391402856e12,
-    "user_": {
-      "user_profiling_useOfDP": ["in research"],
-      "user_profiling_age": "30-40",
-      "user_profiling_position": "Researcher in pathology/neuropathology",
-      "user_profiling_useOfAI": ["in research"],
-      "user_profiling_aiFamiliarity": 5,
-      "user_profiling_mlFamiliarity": 7
+    "userProfiling_": {
+      "userProfiling_useOfDP": ["in research"],
+      "userProfiling_age": "30-40",
+      "userProfiling_position": "Researcher in pathology/neuropathology",
+      "userProfiling_useOfAI": ["in research"],
+      "userProfiling_aiFamiliarity": 5,
+      "userProfiling_mlFamiliarity": 7
     },
     "saliencyMaps_": {
       "saliencyMaps_localSaliency_image1_understandability": 3,
@@ -158,13 +158,13 @@
   {
     "_id": { "$oid": "60c30152cd29f6001f63a6d4" },
     "id": 1.623391916479e12,
-    "user_": {
-      "user_profiling_age": "41-50",
-      "user_profiling_position": "Technician (MTA) for pathology/neuropathology",
-      "user_profiling_useOfDP": ["in research"],
-      "user_profiling_useOfAI": ["in routine diagnostics"],
-      "user_profiling_aiFamiliarity": 4,
-      "user_profiling_mlFamiliarity": 7
+    "userProfiling_": {
+      "userProfiling_age": "41-50",
+      "userProfiling_position": "Technician (MTA) for pathology/neuropathology",
+      "userProfiling_useOfDP": ["in research"],
+      "userProfiling_useOfAI": ["in routine diagnostics"],
+      "userProfiling_aiFamiliarity": 4,
+      "userProfiling_mlFamiliarity": 7
     },
     "saliencyMaps_": {
       "saliencyMaps_globalSaliency_image2_understandability": 5,
