@@ -1,3 +1,4 @@
 {
-    "python.pythonPath": "/home/evans/.cache/pypoetry/virtualenvs/dataprocessing-A3_Gmt8X-py3.8/bin/python"
+    "python.pythonPath": "/home/evans/.cache/pypoetry/virtualenvs/dataprocessing-A3_Gmt8X-py3.8/bin/python",
+    "python.formatting.provider": "black"
 }
