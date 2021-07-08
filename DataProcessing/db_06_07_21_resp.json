@@ -621,57 +621,6 @@
     "__v": 0
   },
   {
-    "_id": { "$oid": "60c787d736e09b001f951129" },
-    "id": 1.623688924533e12,
-    "userProfiling_": {
-      "userProfiling_age": "41-50",
-      "userProfiling_position": "Consultant (Facharzt) for pathology/neuropathology",
-      "userProfiling_useOfDP": ["in research", "in routine diagnostics"],
-      "userProfiling_useOfAI": ["none"],
-      "userProfiling_mlFamiliarity": 2,
-      "userProfiling_aiFamiliarity": 2
-    },
-    "saliencyMaps_": {
-      "saliencyMaps_localSaliency_image1_understandability": 1,
-      "saliencyMaps_localSaliency_image1_usability": 1,
-      "saliencyMaps_localSaliency_image1_informativeness": 1,
-      "saliencyMaps_localSaliency_image1_value": 1,
-      "saliencyMaps_globalSaliency_image2_understandability": 1,
-      "saliencyMaps_globalSaliency_image2_usability": 1,
-      "saliencyMaps_globalSaliency_image2_informativeness": 1,
-      "saliencyMaps_globalSaliency_image2_value": 1
-    },
-    "conceptAttribution_": {
-      "conceptAttribution_textAttributes_image0_understandability": 1,
-      "conceptAttribution_textAttributes_image0_usability": 1,
-      "conceptAttribution_textAttributes_image0_informativeness": 1,
-      "conceptAttribution_textAttributes_image0_value": 1
-    },
-    "prototypes_": {
-      "prototypes_prototypes_image0_understandability": 7,
-      "prototypes_prototypes_image0_usability": 7,
-      "prototypes_prototypes_image0_informativeness": 7,
-      "prototypes_prototypes_image0_value": 7
-    },
-    "counterfactuals_": {
-      "counterfactuals_prototypeInterpolation_image0_understandability": 7,
-      "counterfactuals_prototypeInterpolation_image0_usability": 7,
-      "counterfactuals_prototypeInterpolation_image0_informativeness": 7,
-      "counterfactuals_prototypeInterpolation_image0_value": 7,
-      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 1,
-      "counterfactuals_twoAxisCounterfactuals_image0_usability": 1,
-      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 1,
-      "counterfactuals_twoAxisCounterfactuals_image0_value": 1
-    },
-    "trustScores_": {
-      "trustScores_borderlineCases_image0_understandability": 1,
-      "trustScores_borderlineCases_image0_usability": 1,
-      "trustScores_borderlineCases_image0_informativeness": 1,
-      "trustScores_borderlineCases_image0_value": 1
-    },
-    "__v": 0
-  },
-  {
     "_id": { "$oid": "60c808ff36e09b001f95112a" },
     "id": 1.623721801858e12,
     "userProfiling_": {
@@ -988,59 +937,6 @@
     "__v": 0
   },
   {
-    "_id": { "$oid": "60cc7aba14c2d8001fc556e4" },
-    "id": 1.624013360083e12,
-    "userProfiling_": {
-      "userProfiling_age": "under 30",
-      "userProfiling_position": "Researcher in pathology/neuropathology",
-      "userProfiling_useOfDP": ["in research"],
-      "userProfiling_useOfAI": ["in research"],
-      "userProfiling_useOfAI_details": "Various diverse",
-      "userProfiling_mlFamiliarity": 7,
-      "userProfiling_aiFamiliarity": 7
-    },
-    "counterfactuals_": {
-      "counterfactuals_prototypeInterpolation_image0_understandability": 5,
-      "counterfactuals_prototypeInterpolation_image0_usability": 6,
-      "counterfactuals_prototypeInterpolation_image0_informativeness": 6,
-      "counterfactuals_prototypeInterpolation_image0_value": 5,
-      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 6,
-      "counterfactuals_twoAxisCounterfactuals_image0_usability": 6,
-      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 4,
-      "counterfactuals_twoAxisCounterfactuals_image0_value": 6
-    },
-    "prototypes_": {
-      "prototypes_prototypes_image0_understandability": 5,
-      "prototypes_prototypes_image0_usability": 5,
-      "prototypes_prototypes_image0_informativeness": 7,
-      "prototypes_prototypes_image0_value": 7
-    },
-    "trustScores_": {
-      "trustScores_borderlineCases_image1_understandability": 7,
-      "trustScores_borderlineCases_image1_usability": 7,
-      "trustScores_borderlineCases_image1_informativeness": 7,
-      "trustScores_borderlineCases_image1_value": 7
-    },
-    "conceptAttribution_": {
-      "conceptAttribution_textAttributes_image1_understandability": 7,
-      "conceptAttribution_textAttributes_image1_usability": 7,
-      "conceptAttribution_textAttributes_image1_informativeness": 6,
-      "conceptAttribution_textAttributes_image1_value": 7
-    },
-    "saliencyMaps_": {
-      "saliencyMaps_localSaliency_image0_understandability": 5,
-      "saliencyMaps_localSaliency_image0_usability": 7,
-      "saliencyMaps_localSaliency_image0_informativeness": 6,
-      "saliencyMaps_localSaliency_image0_value": 6,
-      "saliencyMaps_localSaliency_comments": "Cool",
-      "saliencyMaps_globalSaliency_image3_understandability": 7,
-      "saliencyMaps_globalSaliency_image3_usability": 7,
-      "saliencyMaps_globalSaliency_image3_informativeness": 7,
-      "saliencyMaps_globalSaliency_image3_value": 7
-    },
-    "__v": 0
-  },
-  {
     "_id": { "$oid": "60d9bd73a69b96001f33d99c" },
     "id": 1.62488203131e12,
     "userProfiling_": {
@@ -1089,59 +985,6 @@
       "conceptAttribution_textAttributes_image1_usability": 6,
       "conceptAttribution_textAttributes_image1_informativeness": 6,
       "conceptAttribution_textAttributes_image1_value": 2
-    },
-    "__v": 0
-  },
-  {
-    "_id": { "$oid": "60decd59a69b96001f33d99d" },
-    "id": 1.625214171236e12,
-    "userProfiling_": {
-      "userProfiling_age": "under 30",
-      "userProfiling_useOfDP": ["none"],
-      "userProfiling_position": "other",
-      "userProfiling_position-Comment": "Consultant",
-      "userProfiling_useOfAI": ["in research"],
-      "userProfiling_useOfAI_details": "XAI ",
-      "userProfiling_aiFamiliarity": 5,
-      "userProfiling_mlFamiliarity": 7
-    },
-    "saliencyMaps_": {
-      "saliencyMaps_localSaliency_image1_understandability": 7,
-      "saliencyMaps_localSaliency_image1_usability": 6,
-      "saliencyMaps_localSaliency_image1_informativeness": 6,
-      "saliencyMaps_localSaliency_image1_value": 4,
-      "saliencyMaps_globalSaliency_image3_understandability": 4,
-      "saliencyMaps_globalSaliency_image3_usability": 3,
-      "saliencyMaps_globalSaliency_image3_informativeness": 3,
-      "saliencyMaps_globalSaliency_image3_value": 2
-    },
-    "conceptAttribution_": {
-      "conceptAttribution_textAttributes_image0_understandability": 6,
-      "conceptAttribution_textAttributes_image0_usability": 6,
-      "conceptAttribution_textAttributes_image0_informativeness": 7,
-      "conceptAttribution_textAttributes_image0_value": 6
-    },
-    "prototypes_": {
-      "prototypes_prototypes_image0_understandability": 4,
-      "prototypes_prototypes_image0_usability": 3,
-      "prototypes_prototypes_image0_informativeness": 3,
-      "prototypes_prototypes_image0_value": 3
-    },
-    "trustScores_": {
-      "trustScores_borderlineCases_image0_understandability": 2,
-      "trustScores_borderlineCases_image0_usability": 2,
-      "trustScores_borderlineCases_image0_informativeness": 4,
-      "trustScores_borderlineCases_image0_value": 3
-    },
-    "counterfactuals_": {
-      "counterfactuals_prototypeInterpolation_image0_understandability": 3,
-      "counterfactuals_prototypeInterpolation_image0_usability": 4,
-      "counterfactuals_prototypeInterpolation_image0_informativeness": 4,
-      "counterfactuals_prototypeInterpolation_image0_value": 5,
-      "counterfactuals_twoAxisCounterfactuals_image0_understandability": 2,
-      "counterfactuals_twoAxisCounterfactuals_image0_usability": 2,
-      "counterfactuals_twoAxisCounterfactuals_image0_informativeness": 2,
-      "counterfactuals_twoAxisCounterfactuals_image0_value": 3
     },
     "__v": 0
   }
