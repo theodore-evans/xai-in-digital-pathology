@@ -27,3 +27,6 @@ yarn-error.log*
 # mongodb directories
 /data/*
 .env
+
+# VScode
+*/.vscode
