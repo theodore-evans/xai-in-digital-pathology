@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use these results, please cite it accordingly."
+authors:
+- family-names: "Evans"
+  given-names: "Theodore Evans"
+  orcid: "https://orcid.org/0000-0003-0548-0421"
+- family-names: "Retzlaff"
+  given-names: "Carl Orge"
+  orcid: "https://orcid.org/0000-0002-0139-2590"
+title: "xAI in Digital Pathology"
+version: 1.0.0
+doi: 10.5281/zenodo.6205286
+date-released: 2022-02-21
+url: "https://github.com/theodore-evans/xai-in-digital-pathology"
