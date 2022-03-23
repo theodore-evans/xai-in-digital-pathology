@@ -21,7 +21,7 @@ npm start
 ```
 Open http://localhost:3000/ in your web browser
 
-![](frontend/project_assets/screenshot.png)
+![](example_page.png)
 
 ## Explanation examples
 
