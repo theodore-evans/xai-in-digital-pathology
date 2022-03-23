@@ -1,4 +1,5 @@
 # Code repository for "The explainability paradox: Challenges for xAI in digital pathology"
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6379345.svg)](https://doi.org/10.5281/zenodo.6379345)
 
 Questionnaire supporting a usability case study for submission to [FGCS Special Issue for Explainable AI in Healthcare](https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare).
 
