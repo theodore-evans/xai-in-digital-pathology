@@ -1,7 +1,8 @@
-# Code repository for "The explainability paradox: Challenges for xAI in digital pathology"
+# The explainability paradox: Challenges for xAI in digital pathology CODE REPOSITORY
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6379345.svg)](https://doi.org/10.5281/zenodo.6379345)
 
-Questionnaire supporting a usability case study for submission to [FGCS Special Issue for Explainable AI in Healthcare](https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare).
+Online questionnaire data and data processing, supporting:
 
 > Evans, T., Retzlaff, C., Geißler, C., Kargl, M., Plass, M., & Müller, H. et al. (2022). The explainability paradox: Challenges for xAI in digital pathology. Future Generation Computer Systems. doi: [10.1016/j.future.2022.03.009](https://doi.org/10.1016/j.future.2022.03.009)
 
