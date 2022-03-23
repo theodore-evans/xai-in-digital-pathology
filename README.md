@@ -1,16 +1,15 @@
-# XAI Survey
-# Usability study for XAI approaches to a sample Ki-67 app
+# Code repository for "The explainability paradox: Challenges for xAI in digital pathology"
 
 Questionnaire supporting a usability case study for submission to [FGCS Special Issue for Explainable AI in Healthcare](https://www.journals.elsevier.com/future-generation-computer-systems/call-for-papers/explainable-artificial-intelligence-for-healthcare).
 
 > Evans, T., Retzlaff, C., Geißler, C., Kargl, M., Plass, M., & Müller, H. et al. (2022). The explainability paradox: Challenges for xAI in digital pathology. Future Generation Computer Systems. doi: [10.1016/j.future.2022.03.009](https://doi.org/10.1016/j.future.2022.03.009)
 
-Questionnaire data analysis is available in the accompanying [Jupyter notebook](/DataProcessing/data_processing.ipynb)
+Data analysis is available in the accompanying [Jupyter notebook](/DataProcessing/data_processing.ipynb)
 
 ## Questionnaire contents
 
 - User profiling questions, collecting data on usage of and familiarity with AI applications in pathology, and with machine learning in general
-- 8-10 (TBC) example implementations of explainability methods on a sample Ki-67 app output (some real, some mocked up), with 3 Likert-scale feedback questions to gauge intelligibility, usefulness and time criticality (exact questions TBC)
+- 7 example implementations of explainability methods on a sample Ki-67 app output, with 4 Likert-scale feedback questions to evalluate intelligibility, informativeness and value to user.
 
 ## Viewing the survey
 
@@ -46,6 +45,8 @@ GradCAM heatmap generated using [Neuroscope-1.0](https://github.com/c3di/neurosc
 Example interpolations mocked up using [DiffMorph](https://github.com/volotat/DiffMorph)
 
 All other graphics created with GIMP
+
+For more detail on example creation, please refer to Method > Questionnaire design in [Evans et Al (2022)](doi.org/10.1016/j.future.2022.03.009)
 
 This survey is build in React.js using survey.js. The project was adapted from [SurveyJS for React quickstart project](https://github.com/surveyjs/surveyjs_react_quickstart.git)
 Public code repo for FGCS Special Issue on xAI in healthcare
