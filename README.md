@@ -11,7 +11,7 @@ Data analysis is available in the accompanying [Jupyter notebook](/DataProcessin
 ## Questionnaire contents
 
 - User profiling questions, collecting data on usage of and familiarity with AI applications in pathology, and with machine learning in general
-- 7 example implementations of explainability methods on a sample Ki-67 app output, with 4 Likert-scale feedback questions to evalluate intelligibility, informativeness and value to user.
+- 7 example implementations of explainability methods on a sample Ki-67 app output, with 4 Likert-scale feedback questions to evaluate intelligibility, informativeness and value to user.
 
 ## Viewing the survey
 
