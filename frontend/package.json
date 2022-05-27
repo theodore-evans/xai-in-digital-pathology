@@ -7,7 +7,7 @@
 		"bootstrap": "^5.0.1",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
-		"survey-react": "^1.8.49"
+		"survey-react": "^1.9.23"
 	},
 	"scripts": {
 		"start": "node_modules/.bin/webpack serve --mode=development",
